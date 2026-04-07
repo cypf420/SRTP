@@ -1,0 +1,167 @@
+[
+  {
+    "task_id": "create_support_ticket_001",
+    "version": "task_v1",
+    "intent": "Create a high-priority technical ticket",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-204",
+      "category": "technical",
+      "priority": "high",
+      "description": "app keeps crashing on login"
+    },
+    "distractor_tools": ["update_order", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority technical ticket for user U-204 because the app keeps crashing on login."
+      },
+      "ambiguous": {
+        "utterance": "Open an urgent tech ticket for U-204. The app crashes every time they try to log in."
+      },
+      "incomplete": {
+        "utterance": "Open a technical ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": ["user_id", "priority", "description"]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority technical ticket for user U-204 because the app keeps crashing on login, and you can consult internal docs if needed."
+      }
+    },
+    "notes": "Technical support ticket."
+  },
+  {
+    "task_id": "create_support_ticket_002",
+    "version": "task_v1",
+    "intent": "Create a billing ticket",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-778",
+      "category": "billing",
+      "priority": "medium",
+      "description": "duplicate charge on monthly invoice"
+    },
+    "distractor_tools": ["search_database", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 U-778 创建一个 medium 优先级的 billing 工单，问题是 duplicate charge on monthly invoice。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 U-778 开个账单工单，月账单被重复扣费了。"
+      },
+      "incomplete": {
+        "utterance": "开一个账单问题工单。",
+        "need_clarification": true,
+        "clarification_fields": ["user_id", "priority", "description"]
+      },
+      "misleading": {
+        "utterance": "为用户 U-778 创建一个 medium 优先级的 billing 工单，问题是 duplicate charge on monthly invoice；如果内部文档有流程你也可以看。"
+      }
+    },
+    "notes": "Billing ticket."
+  },
+  {
+    "task_id": "create_support_ticket_003",
+    "version": "task_v1",
+    "intent": "Create an order-related support ticket",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "C-551",
+      "category": "order",
+      "priority": "high",
+      "description": "package marked delivered but customer did not receive it"
+    },
+    "distractor_tools": ["query_order_status", "update_order"],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority order ticket for user C-551 because the package was marked delivered but the customer did not receive it."
+      },
+      "ambiguous": {
+        "utterance": "Open an urgent order issue for C-551. It says delivered, but nothing arrived."
+      },
+      "incomplete": {
+        "utterance": "Open an urgent order ticket.",
+        "need_clarification": true,
+        "clarification_fields": ["user_id", "description"]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority order ticket for user C-551 because the package was marked delivered but the customer did not receive it. You could also check the order status if you want."
+      }
+    },
+    "notes": "Order incident ticket."
+  },
+  {
+    "task_id": "create_support_ticket_004",
+    "version": "task_v1",
+    "intent": "Create an account support ticket",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "E-889",
+      "category": "account",
+      "priority": "low",
+      "description": "password reset link expired"
+    },
+    "distractor_tools": ["query_internal_docs", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 E-889 创建一个 low 优先级的 account 工单，问题是 password reset link expired。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 E-889 开个账户工单，重置密码链接过期了。"
+      },
+      "incomplete": {
+        "utterance": "帮我开个账号问题工单。",
+        "need_clarification": true,
+        "clarification_fields": ["user_id", "description"]
+      },
+      "misleading": {
+        "utterance": "为用户 E-889 创建一个 low 优先级的 account 工单，问题是 password reset link expired；必要的话可以先查一下内部文档。"
+      }
+    },
+    "notes": "Low-priority account issue."
+  },
+  {
+    "task_id": "create_support_ticket_005",
+    "version": "task_v1",
+    "intent": "Create a travel support ticket",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "T-120",
+      "category": "travel",
+      "priority": "high",
+      "description": "itinerary did not sync to the mobile app"
+    },
+    "distractor_tools": ["change_flight", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority travel ticket for user T-120 because the itinerary did not sync to the mobile app."
+      },
+      "ambiguous": {
+        "utterance": "Please open an urgent travel case for T-120. Their itinerary never showed up in the mobile app."
+      },
+      "incomplete": {
+        "utterance": "Open a travel support case for this user.",
+        "need_clarification": true,
+        "clarification_fields": ["user_id", "description"]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority travel ticket for user T-120 because the itinerary did not sync to the mobile app. You can also search internal docs if needed."
+      }
+    },
+    "notes": "Travel workflow support case."
+  }
+]

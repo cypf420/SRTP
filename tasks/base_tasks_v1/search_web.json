@@ -1,0 +1,157 @@
+[
+  {
+    "task_id": "search_web_001",
+    "version": "task_v1",
+    "intent": "Search public news about OpenAI model releases",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "OpenAI 最新 模型 发布 新闻",
+      "max_results": 5
+    },
+    "distractor_tools": ["search_database", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，给我公开网页上的信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看最近有没有新模型的消息。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个。",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。"
+      }
+    },
+    "notes": "Public web search with database distractor."
+  },
+  {
+    "task_id": "search_web_002",
+    "version": "task_v1",
+    "intent": "Search public news about Tesla layoffs",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Tesla layoffs recent news",
+      "max_results": 5
+    },
+    "distractor_tools": ["search_database", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "Find recent public web news about Tesla layoffs."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what is going on with Tesla layoffs lately?"
+      },
+      "incomplete": {
+        "utterance": "Look it up for me.",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "Find recent Tesla layoff news, and if the company database has anything similar you can check that too."
+      }
+    },
+    "notes": "Public news lookup."
+  },
+  {
+    "task_id": "search_web_003",
+    "version": "task_v1",
+    "intent": "Search public news about a product recall",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "儿童 安全 座椅 召回 新闻",
+      "max_results": 5
+    },
+    "distractor_tools": ["search_database", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上最近有没有儿童安全座椅召回新闻。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看那个儿童座椅最近是不是出过事。"
+      },
+      "incomplete": {
+        "utterance": "搜一下最近有没有这种情况。",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "查一下最近有没有儿童安全座椅召回新闻，如果内部手册里提过也顺便看看。"
+      }
+    },
+    "notes": "Public safety recall query."
+  },
+  {
+    "task_id": "search_web_004",
+    "version": "task_v1",
+    "intent": "Search a public conference website",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "PyCon 2026 schedule keynote page",
+      "max_results": 5
+    },
+    "distractor_tools": ["query_internal_docs", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for the PyCon 2026 schedule and keynote page."
+      },
+      "ambiguous": {
+        "utterance": "Can you find the keynote timing for PyCon 2026?"
+      },
+      "incomplete": {
+        "utterance": "Find the schedule page.",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "Search the PyCon 2026 public schedule page, but if an internal handbook mentions it you can use that too."
+      }
+    },
+    "notes": "Public web schedule query."
+  },
+  {
+    "task_id": "search_web_005",
+    "version": "task_v1",
+    "intent": "Search public analyst coverage of Microsoft earnings",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "微软 财报 分析师 观点 公开 新闻",
+      "max_results": 5
+    },
+    "distractor_tools": ["search_database", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上分析师对微软最新财报的观点。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看外面的人怎么评价微软最新财报。"
+      },
+      "incomplete": {
+        "utterance": "查一下外面的看法。",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "查一下分析师对微软最新财报的公开观点，必要的话也可以去数据库里搜搜。"
+      }
+    },
+    "notes": "Public market commentary."
+  }
+]

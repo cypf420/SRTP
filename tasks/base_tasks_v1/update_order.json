@@ -1,0 +1,162 @@
+[
+  {
+    "task_id": "update_order_001",
+    "version": "task_v1",
+    "intent": "Mark an order as shipped",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-10428",
+      "status": "shipped",
+      "note": "handed to courier"
+    },
+    "distractor_tools": ["query_order_status", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 ORD-10428 更新成 shipped，并备注 handed to courier。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 ORD-10428 往前推进一下，已经交给快递了。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单改成已发货。",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "把订单 ORD-10428 更新成 shipped，并备注 handed to courier；如果需要也可以顺便查一下它当前状态。"
+      }
+    },
+    "notes": "High-risk order mutation."
+  },
+  {
+    "task_id": "update_order_002",
+    "version": "task_v1",
+    "intent": "Cancel an order",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-22110",
+      "status": "cancelled",
+      "note": "user requested cancellation"
+    },
+    "distractor_tools": ["query_order_status", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "Update order ORD-22110 to cancelled and add note user requested cancellation."
+      },
+      "ambiguous": {
+        "utterance": "Please stop ORD-22110 and note that the user asked to cancel it."
+      },
+      "incomplete": {
+        "utterance": "Cancel the order and leave a note.",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "Update order ORD-22110 to cancelled and add note user requested cancellation. You can also check the order status if needed."
+      }
+    },
+    "notes": "Cancellation action."
+  },
+  {
+    "task_id": "update_order_003",
+    "version": "task_v1",
+    "intent": "Mark an order as delivered",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "SO-88721",
+      "status": "delivered",
+      "note": "confirmed by customer"
+    },
+    "distractor_tools": ["query_order_status", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 SO-88721 更新成 delivered，备注 confirmed by customer。"
+      },
+      "ambiguous": {
+        "utterance": "把 SO-88721 收尾吧，客户已经确认收到了。"
+      },
+      "incomplete": {
+        "utterance": "把订单更新成已送达。",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "把订单 SO-88721 更新成 delivered，备注 confirmed by customer；也可以顺便查一下数据库记录。"
+      }
+    },
+    "notes": "Delivery update."
+  },
+  {
+    "task_id": "update_order_004",
+    "version": "task_v1",
+    "intent": "Mark an order as packed",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "CN-2026-441",
+      "status": "packed",
+      "note": "warehouse scanned and sealed"
+    },
+    "distractor_tools": ["query_order_status", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "Update order CN-2026-441 to packed with note warehouse scanned and sealed."
+      },
+      "ambiguous": {
+        "utterance": "Move CN-2026-441 into the packed stage and note the warehouse already sealed it."
+      },
+      "incomplete": {
+        "utterance": "Set the order to packed.",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "Update order CN-2026-441 to packed with note warehouse scanned and sealed; feel free to inspect the status first."
+      }
+    },
+    "notes": "Packing-stage update."
+  },
+  {
+    "task_id": "update_order_005",
+    "version": "task_v1",
+    "intent": "Set an order back to pending",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "RET-55620",
+      "status": "pending",
+      "note": "waiting for QC review"
+    },
+    "distractor_tools": ["query_order_status", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 RET-55620 更新成 pending，并备注 waiting for QC review。"
+      },
+      "ambiguous": {
+        "utterance": "把 RET-55620 先挂回待处理，并说明还在等质检。"
+      },
+      "incomplete": {
+        "utterance": "先改回待处理状态。",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "把订单 RET-55620 更新成 pending，并备注 waiting for QC review；如果需要也可以开个工单。"
+      }
+    },
+    "notes": "Pending-state mutation."
+  }
+]

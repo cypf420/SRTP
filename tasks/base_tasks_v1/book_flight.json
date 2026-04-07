@@ -1,0 +1,172 @@
+[
+  {
+    "task_id": "book_flight_001",
+    "version": "task_v1",
+    "intent": "Book a Shanghai to Beijing flight",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "book_flight",
+    "gold_params": {
+      "date": "2026-05-12",
+      "flight_no": "MU123",
+      "origin": "Shanghai",
+      "destination": "Beijing",
+      "seat_class": "economy"
+    },
+    "distractor_tools": ["change_flight", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "帮我预订 2026-05-12 的 MU123，从 Shanghai 到 Beijing，economy。"
+      },
+      "ambiguous": {
+        "utterance": "把 5 月 12 号那班 MU123 订了吧，上海飞北京，经济舱。"
+      },
+      "incomplete": {
+        "utterance": "帮我订 MU123 的航班。",
+        "need_clarification": true,
+        "clarification_fields": ["date", "origin", "destination"]
+      },
+      "misleading": {
+        "utterance": "帮我预订 2026-05-12 的 MU123，从 Shanghai 到 Beijing，economy；如果网上有信息你也可以搜一下。"
+      }
+    },
+    "notes": "Flight booking with all core slots."
+  },
+  {
+    "task_id": "book_flight_002",
+    "version": "task_v1",
+    "intent": "Book a Beijing to Shenzhen flight",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "book_flight",
+    "gold_params": {
+      "date": "2026-06-01",
+      "flight_no": "CA188",
+      "origin": "Beijing",
+      "destination": "Shenzhen",
+      "seat_class": "business"
+    },
+    "distractor_tools": ["change_flight", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "Book flight CA188 on 2026-06-01 from Beijing to Shenzhen in business class."
+      },
+      "ambiguous": {
+        "utterance": "Please lock in CA188 for June 1 from Beijing down to Shenzhen, business class."
+      },
+      "incomplete": {
+        "utterance": "Book CA188 for me in business class.",
+        "need_clarification": true,
+        "clarification_fields": ["date", "origin", "destination"]
+      },
+      "misleading": {
+        "utterance": "Book flight CA188 on 2026-06-01 from Beijing to Shenzhen in business class, and you can search the web if needed."
+      }
+    },
+    "notes": "English travel booking."
+  },
+  {
+    "task_id": "book_flight_003",
+    "version": "task_v1",
+    "intent": "Book a Guangzhou to Chengdu flight",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "book_flight",
+    "gold_params": {
+      "date": "2026-07-15",
+      "flight_no": "CZ3101",
+      "origin": "Guangzhou",
+      "destination": "Chengdu",
+      "seat_class": "economy"
+    },
+    "distractor_tools": ["change_flight", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "预订 2026-07-15 的 CZ3101，从 Guangzhou 到 Chengdu，economy。"
+      },
+      "ambiguous": {
+        "utterance": "把 7 月 15 号 CZ3101 订一下，广州飞成都，经济舱。"
+      },
+      "incomplete": {
+        "utterance": "帮我订 7 月中那趟广州飞成都的航班。",
+        "need_clarification": true,
+        "clarification_fields": ["date", "flight_no"]
+      },
+      "misleading": {
+        "utterance": "预订 2026-07-15 的 CZ3101，从 Guangzhou 到 Chengdu，economy；如果网页上更方便也可以先查。"
+      }
+    },
+    "notes": "Booking with mixed Chinese and English slots."
+  },
+  {
+    "task_id": "book_flight_004",
+    "version": "task_v1",
+    "intent": "Book a domestic US flight",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "book_flight",
+    "gold_params": {
+      "date": "2026-09-02",
+      "flight_no": "UA857",
+      "origin": "San Francisco",
+      "destination": "Seattle",
+      "seat_class": "economy"
+    },
+    "distractor_tools": ["change_flight", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "Book flight UA857 on 2026-09-02 from San Francisco to Seattle in economy."
+      },
+      "ambiguous": {
+        "utterance": "Can you book UA857 for September 2 from San Francisco up to Seattle, economy?"
+      },
+      "incomplete": {
+        "utterance": "Book the Seattle flight for me.",
+        "need_clarification": true,
+        "clarification_fields": ["date", "flight_no", "origin"]
+      },
+      "misleading": {
+        "utterance": "Book flight UA857 on 2026-09-02 from San Francisco to Seattle in economy, and check the web if you need public details."
+      }
+    },
+    "notes": "US domestic booking."
+  },
+  {
+    "task_id": "book_flight_005",
+    "version": "task_v1",
+    "intent": "Book a Nanjing to Sanya flight",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "book_flight",
+    "gold_params": {
+      "date": "2026-10-20",
+      "flight_no": "HO1256",
+      "origin": "Nanjing",
+      "destination": "Sanya",
+      "seat_class": "premium_economy"
+    },
+    "distractor_tools": ["change_flight", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "帮我预订 2026-10-20 的 HO1256，从 Nanjing 到 Sanya，premium_economy。"
+      },
+      "ambiguous": {
+        "utterance": "把 10 月 20 号 HO1256 订一下，南京飞三亚，高经舱。"
+      },
+      "incomplete": {
+        "utterance": "帮我订 HO1256 去三亚的票。",
+        "need_clarification": true,
+        "clarification_fields": ["date", "origin"]
+      },
+      "misleading": {
+        "utterance": "帮我预订 2026-10-20 的 HO1256，从 Nanjing 到 Sanya，premium_economy；如果需要也可以先去网页查公开信息。"
+      }
+    },
+    "notes": "Booking with premium economy slot."
+  }
+]

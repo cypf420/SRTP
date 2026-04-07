@@ -1,0 +1,152 @@
+[
+  {
+    "task_id": "query_order_status_001",
+    "version": "task_v1",
+    "intent": "Check status for a specific order",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "ORD-10428"
+    },
+    "distractor_tools": ["search_database", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 ORD-10428 的状态。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看 ORD-10428 现在到哪一步了。"
+      },
+      "incomplete": {
+        "utterance": "帮我看看那个订单现在怎么样了。",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "查一下订单 ORD-10428 的状态，如果网页上也许能找到你也可以顺便搜。"
+      }
+    },
+    "notes": "Low-ambiguity order status query."
+  },
+  {
+    "task_id": "query_order_status_002",
+    "version": "task_v1",
+    "intent": "Check shipping status for an order",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "ORD-11002"
+    },
+    "distractor_tools": ["search_database", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "Check the status for order ORD-11002."
+      },
+      "ambiguous": {
+        "utterance": "Can you see where ORD-11002 is right now?"
+      },
+      "incomplete": {
+        "utterance": "Can you check my order status?",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "Check the status for order ORD-11002. If the web has something useful, feel free to search there too."
+      }
+    },
+    "notes": "Simple order lookup."
+  },
+  {
+    "task_id": "query_order_status_003",
+    "version": "task_v1",
+    "intent": "Check order progress for a sales order",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "SO-88721"
+    },
+    "distractor_tools": ["search_database", "update_order"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下销售订单 SO-88721 的当前状态。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看 SO-88721 现在处理到哪了。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下销售订单的状态。",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "查一下销售订单 SO-88721 的状态，如果数据库全记录更方便你也可以去那边看。"
+      }
+    },
+    "notes": "Status-only, not a full database record."
+  },
+  {
+    "task_id": "query_order_status_004",
+    "version": "task_v1",
+    "intent": "Check status for a return order",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "RET-55620"
+    },
+    "distractor_tools": ["search_database", "update_order"],
+    "variants": {
+      "clear": {
+        "utterance": "Check the current status of return order RET-55620."
+      },
+      "ambiguous": {
+        "utterance": "Can you see where return RET-55620 stands now?"
+      },
+      "incomplete": {
+        "utterance": "Check the return status for me.",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "Check the status of return order RET-55620, though a database lookup may also be useful."
+      }
+    },
+    "notes": "Return order status."
+  },
+  {
+    "task_id": "query_order_status_005",
+    "version": "task_v1",
+    "intent": "Check status for a CN order",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "CN-2026-441"
+    },
+    "distractor_tools": ["search_web", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 CN-2026-441 的配送状态。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 CN-2026-441 送到哪了。"
+      },
+      "incomplete": {
+        "utterance": "帮我看下那个快递订单到哪了。",
+        "need_clarification": true,
+        "clarification_fields": ["order_id"]
+      },
+      "misleading": {
+        "utterance": "查一下订单 CN-2026-441 的配送状态，网页上也许能找到信息的话你也可以看看。"
+      }
+    },
+    "notes": "Shipping progress lookup."
+  }
+]

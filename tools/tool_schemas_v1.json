@@ -1,0 +1,353 @@
+[
+  {
+    "name": "search_web",
+    "group": "similar_tools",
+    "version": "tool_v1",
+    "risk_level": "low",
+    "description": "Search public internet sources for recent or general factual information such as news, public company details, and public websites.",
+    "confusion_with": ["search_database", "query_internal_docs"],
+    "required": ["query"],
+    "parameters": {
+      "query": {
+        "type": "string",
+        "description": "The public-facing search query.",
+        "grounded": false
+      },
+      "max_results": {
+        "type": "integer",
+        "description": "Maximum number of search results to retrieve.",
+        "minimum": 1,
+        "maximum": 10,
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Find recent public news about Tesla layoffs.",
+        "arguments": {
+          "query": "Tesla layoffs recent news",
+          "max_results": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "search_database",
+    "group": "similar_tools",
+    "version": "tool_v1",
+    "risk_level": "medium",
+    "description": "Search structured internal database records such as customers, products, transactions, and CRM entities.",
+    "confusion_with": ["search_web", "query_internal_docs"],
+    "required": ["query", "entity_type"],
+    "parameters": {
+      "query": {
+        "type": "string",
+        "description": "The structured record lookup query.",
+        "grounded": false
+      },
+      "entity_type": {
+        "type": "string",
+        "description": "The database entity family to search.",
+        "enum": ["customer", "product", "order", "employee", "ticket"],
+        "grounded": false
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of records to return.",
+        "minimum": 1,
+        "maximum": 20,
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Look up customer record for Olivia Chen in the CRM.",
+        "arguments": {
+          "query": "Olivia Chen",
+          "entity_type": "customer",
+          "limit": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "query_internal_docs",
+    "group": "similar_tools",
+    "version": "tool_v1",
+    "risk_level": "medium",
+    "description": "Search internal SOPs, policy documents, onboarding guides, and internal knowledge-base articles.",
+    "confusion_with": ["search_web", "search_database"],
+    "required": ["query"],
+    "parameters": {
+      "query": {
+        "type": "string",
+        "description": "The internal documentation question or keyword query.",
+        "grounded": false
+      },
+      "department": {
+        "type": "string",
+        "description": "Optional department namespace for the query.",
+        "enum": ["hr", "finance", "it", "operations", "support"],
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Find the internal PTO carryover policy.",
+        "arguments": {
+          "query": "PTO carryover policy",
+          "department": "hr"
+        }
+      }
+    ]
+  },
+  {
+    "name": "query_order_status",
+    "group": "low_ambiguity",
+    "version": "tool_v1",
+    "risk_level": "low",
+    "description": "Retrieve the current fulfillment or shipping status for one specific order by order ID.",
+    "confusion_with": ["search_database", "search_web"],
+    "required": ["order_id"],
+    "parameters": {
+      "order_id": {
+        "type": "string",
+        "description": "The order identifier to query.",
+        "grounded": true
+      }
+    },
+    "examples": [
+      {
+        "user": "Check the shipping status for order ORD-10428.",
+        "arguments": {
+          "order_id": "ORD-10428"
+        }
+      }
+    ]
+  },
+  {
+    "name": "update_order",
+    "group": "complex_parameters",
+    "version": "tool_v1",
+    "risk_level": "high",
+    "description": "Change the status or internal note for an existing order record when the order ID and new status are explicitly provided.",
+    "confusion_with": ["query_order_status", "create_support_ticket"],
+    "required": ["order_id", "status"],
+    "parameters": {
+      "order_id": {
+        "type": "string",
+        "description": "The order identifier to update.",
+        "grounded": true
+      },
+      "status": {
+        "type": "string",
+        "description": "The new order status.",
+        "enum": ["pending", "packed", "shipped", "cancelled", "delivered"],
+        "grounded": true
+      },
+      "note": {
+        "type": "string",
+        "description": "Optional operator note explaining the change.",
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Mark order ORD-10428 as shipped and add note handed to courier.",
+        "arguments": {
+          "order_id": "ORD-10428",
+          "status": "shipped",
+          "note": "handed to courier"
+        }
+      }
+    ]
+  },
+  {
+    "name": "book_flight",
+    "group": "complex_parameters",
+    "version": "tool_v1",
+    "risk_level": "high",
+    "description": "Book a flight when travel date, flight number, origin, and destination are all provided clearly.",
+    "confusion_with": ["change_flight", "search_web"],
+    "required": ["date", "flight_no", "origin", "destination"],
+    "parameters": {
+      "date": {
+        "type": "string",
+        "description": "Travel date in YYYY-MM-DD format.",
+        "grounded": true
+      },
+      "flight_no": {
+        "type": "string",
+        "description": "Flight number such as MU123.",
+        "grounded": true
+      },
+      "origin": {
+        "type": "string",
+        "description": "Departure city or airport.",
+        "grounded": true
+      },
+      "destination": {
+        "type": "string",
+        "description": "Arrival city or airport.",
+        "grounded": true
+      },
+      "seat_class": {
+        "type": "string",
+        "description": "Optional seat class.",
+        "enum": ["economy", "premium_economy", "business"],
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Book flight MU123 on 2026-05-12 from Shanghai to Beijing in economy.",
+        "arguments": {
+          "date": "2026-05-12",
+          "flight_no": "MU123",
+          "origin": "Shanghai",
+          "destination": "Beijing",
+          "seat_class": "economy"
+        }
+      }
+    ]
+  },
+  {
+    "name": "change_flight",
+    "group": "complex_parameters",
+    "version": "tool_v1",
+    "risk_level": "high",
+    "description": "Change an existing flight reservation when the booking ID and requested new date are explicitly provided.",
+    "confusion_with": ["book_flight", "create_support_ticket"],
+    "required": ["booking_id", "new_date"],
+    "parameters": {
+      "booking_id": {
+        "type": "string",
+        "description": "Existing booking identifier.",
+        "grounded": true
+      },
+      "new_date": {
+        "type": "string",
+        "description": "New desired travel date in YYYY-MM-DD format.",
+        "grounded": true
+      },
+      "reason": {
+        "type": "string",
+        "description": "Optional change reason.",
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Move booking BK-8831 to 2026-05-15 because the meeting changed.",
+        "arguments": {
+          "booking_id": "BK-8831",
+          "new_date": "2026-05-15",
+          "reason": "meeting changed"
+        }
+      }
+    ]
+  },
+  {
+    "name": "create_support_ticket",
+    "group": "complex_parameters",
+    "version": "tool_v1",
+    "risk_level": "medium",
+    "description": "Create a support ticket when the user identity, category, priority, and problem description are available.",
+    "confusion_with": ["update_order", "query_internal_docs"],
+    "required": ["user_id", "category", "priority", "description"],
+    "parameters": {
+      "user_id": {
+        "type": "string",
+        "description": "Identifier of the affected user.",
+        "grounded": true
+      },
+      "category": {
+        "type": "string",
+        "description": "Ticket category.",
+        "enum": ["billing", "technical", "travel", "account", "order"],
+        "grounded": true
+      },
+      "priority": {
+        "type": "string",
+        "description": "Urgency level.",
+        "enum": ["low", "medium", "high"],
+        "grounded": true
+      },
+      "description": {
+        "type": "string",
+        "description": "Detailed issue description.",
+        "grounded": false
+      }
+    },
+    "examples": [
+      {
+        "user": "Open a high-priority technical ticket for user U-204 because the app keeps crashing on login.",
+        "arguments": {
+          "user_id": "U-204",
+          "category": "technical",
+          "priority": "high",
+          "description": "app keeps crashing on login"
+        }
+      }
+    ]
+  },
+  {
+    "name": "get_weather",
+    "group": "low_ambiguity",
+    "version": "tool_v1",
+    "risk_level": "low",
+    "description": "Get the weather forecast for a specified city and optionally a date.",
+    "confusion_with": ["search_web"],
+    "required": ["city"],
+    "parameters": {
+      "city": {
+        "type": "string",
+        "description": "City to query.",
+        "grounded": true
+      },
+      "date": {
+        "type": "string",
+        "description": "Optional forecast date in YYYY-MM-DD format.",
+        "grounded": true
+      }
+    },
+    "examples": [
+      {
+        "user": "What is the weather in Hangzhou tomorrow?",
+        "arguments": {
+          "city": "Hangzhou"
+        }
+      }
+    ]
+  },
+  {
+    "name": "translate_text",
+    "group": "low_ambiguity",
+    "version": "tool_v1",
+    "risk_level": "low",
+    "description": "Translate a given text string into a specified target language.",
+    "confusion_with": ["query_internal_docs", "search_web"],
+    "required": ["text", "target_lang"],
+    "parameters": {
+      "text": {
+        "type": "string",
+        "description": "Text that should be translated.",
+        "grounded": true
+      },
+      "target_lang": {
+        "type": "string",
+        "description": "Target language code or language name.",
+        "grounded": true
+      }
+    },
+    "examples": [
+      {
+        "user": "Translate 'meeting delayed by 20 minutes' to Chinese.",
+        "arguments": {
+          "text": "meeting delayed by 20 minutes",
+          "target_lang": "Chinese"
+        }
+      }
+    ]
+  }
+]

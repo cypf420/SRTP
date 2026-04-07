@@ -1,0 +1,157 @@
+[
+  {
+    "task_id": "query_internal_docs_001",
+    "version": "task_v1",
+    "intent": "Find the PTO carryover policy",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "年假 结转 政策",
+      "department": "hr"
+    },
+    "distractor_tools": ["search_web", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里的年假结转政策。"
+      },
+      "ambiguous": {
+        "utterance": "帮我找一下休假结转那个规定。"
+      },
+      "incomplete": {
+        "utterance": "找一下那个内部规定文档。",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "查一下内部文档里的年假结转政策，如果公开网页上也有类似说法你也可以看看。"
+      }
+    },
+    "notes": "Internal policy lookup."
+  },
+  {
+    "task_id": "query_internal_docs_002",
+    "version": "task_v1",
+    "intent": "Find the VPN setup guide",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "VPN setup guide",
+      "department": "it"
+    },
+    "distractor_tools": ["search_web", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "Search the internal docs for the VPN setup guide."
+      },
+      "ambiguous": {
+        "utterance": "Can you find the document for getting onto the company VPN?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal setup doc.",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "Search the internal docs for the VPN setup guide, though a web search might also look relevant."
+      }
+    },
+    "notes": "Internal IT guide."
+  },
+  {
+    "task_id": "query_internal_docs_003",
+    "version": "task_v1",
+    "intent": "Find the reimbursement SOP",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "报销 SOP",
+      "department": "finance"
+    },
+    "distractor_tools": ["search_database", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部财务文档里的报销 SOP。"
+      },
+      "ambiguous": {
+        "utterance": "帮我找一下报销流程那份内部说明。"
+      },
+      "incomplete": {
+        "utterance": "找一下财务那份流程文档。",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "查一下内部报销 SOP，如果数据库里有流程记录也可以顺便看。"
+      }
+    },
+    "notes": "Finance SOP."
+  },
+  {
+    "task_id": "query_internal_docs_004",
+    "version": "task_v1",
+    "intent": "Find the warehouse safety checklist",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "warehouse safety checklist",
+      "department": "operations"
+    },
+    "distractor_tools": ["search_web", "search_database"],
+    "variants": {
+      "clear": {
+        "utterance": "Find the warehouse safety checklist in the internal operations docs."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull up the internal checklist for warehouse safety?"
+      },
+      "incomplete": {
+        "utterance": "Find the internal checklist.",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "Find the warehouse safety checklist in internal operations docs, but if the public web has something similar you can use that too."
+      }
+    },
+    "notes": "Operations documentation lookup."
+  },
+  {
+    "task_id": "query_internal_docs_005",
+    "version": "task_v1",
+    "intent": "Find the refund escalation process",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "退款 升级 流程",
+      "department": "support"
+    },
+    "distractor_tools": ["search_database", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部客服文档里的退款升级流程。"
+      },
+      "ambiguous": {
+        "utterance": "帮我找一下退款往上升级处理的那个内部流程。"
+      },
+      "incomplete": {
+        "utterance": "找一下客服内部流程文档。",
+        "need_clarification": true,
+        "clarification_fields": ["query"]
+      },
+      "misleading": {
+        "utterance": "查一下内部退款升级流程，如果网页上也有相关说明你也可以看。"
+      }
+    },
+    "notes": "Internal support process."
+  }
+]

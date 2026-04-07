@@ -1,0 +1,162 @@
+[
+  {
+    "task_id": "change_flight_001",
+    "version": "task_v1",
+    "intent": "Move an existing booking to a later date",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-8831",
+      "new_date": "2026-05-15",
+      "reason": "meeting changed"
+    },
+    "distractor_tools": ["book_flight", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 BK-8831 改到 2026-05-15，原因是 meeting changed。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 BK-8831 往后改到 5 月 15 号，会议改时间了。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": ["booking_id", "new_date"]
+      },
+      "misleading": {
+        "utterance": "把预订 BK-8831 改到 2026-05-15，原因是 meeting changed；如果需要你也可以查公开航班信息。"
+      }
+    },
+    "notes": "Reschedule existing reservation."
+  },
+  {
+    "task_id": "change_flight_002",
+    "version": "task_v1",
+    "intent": "Change a booking date after a conflict",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-9902",
+      "new_date": "2026-06-20",
+      "reason": "personal conflict"
+    },
+    "distractor_tools": ["book_flight", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "Change booking BK-9902 to 2026-06-20 because of a personal conflict."
+      },
+      "ambiguous": {
+        "utterance": "Please move BK-9902 to June 20 since I have a conflict."
+      },
+      "incomplete": {
+        "utterance": "Please change my flight booking.",
+        "need_clarification": true,
+        "clarification_fields": ["booking_id", "new_date"]
+      },
+      "misleading": {
+        "utterance": "Change booking BK-9902 to 2026-06-20 because of a personal conflict. You can also look up the flight online if needed."
+      }
+    },
+    "notes": "English change request."
+  },
+  {
+    "task_id": "change_flight_003",
+    "version": "task_v1",
+    "intent": "Change a flight because of weather",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "TR-5510",
+      "new_date": "2026-07-08",
+      "reason": "weather issue"
+    },
+    "distractor_tools": ["book_flight", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 TR-5510 改到 2026-07-08，原因是 weather issue。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 TR-5510 改到 7 月 8 号，天气有问题。"
+      },
+      "incomplete": {
+        "utterance": "帮我改到下周吧。",
+        "need_clarification": true,
+        "clarification_fields": ["booking_id", "new_date"]
+      },
+      "misleading": {
+        "utterance": "把预订 TR-5510 改到 2026-07-08，原因是 weather issue；如果网页上有航班信息你也可以查。"
+      }
+    },
+    "notes": "Travel reschedule under weather reason."
+  },
+  {
+    "task_id": "change_flight_004",
+    "version": "task_v1",
+    "intent": "Change a booking after a conference moved",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "PNR-2026-114",
+      "new_date": "2026-08-18",
+      "reason": "conference moved"
+    },
+    "distractor_tools": ["book_flight", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "Change booking PNR-2026-114 to 2026-08-18 because the conference moved."
+      },
+      "ambiguous": {
+        "utterance": "Please push PNR-2026-114 to August 18 since the conference shifted."
+      },
+      "incomplete": {
+        "utterance": "Please reschedule PNR-2026-114.",
+        "need_clarification": true,
+        "clarification_fields": ["new_date"]
+      },
+      "misleading": {
+        "utterance": "Change booking PNR-2026-114 to 2026-08-18 because the conference moved; you can search the web if that helps."
+      }
+    },
+    "notes": "Change existing reservation."
+  },
+  {
+    "task_id": "change_flight_005",
+    "version": "task_v1",
+    "intent": "Change a booking on client request",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-CN-7788",
+      "new_date": "2026-09-30",
+      "reason": "client request"
+    },
+    "distractor_tools": ["book_flight", "create_support_ticket"],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 BK-CN-7788 改到 2026-09-30，原因是 client request。"
+      },
+      "ambiguous": {
+        "utterance": "客户要改时间，帮我把 BK-CN-7788 挪到 9 月 30 号。"
+      },
+      "incomplete": {
+        "utterance": "客户要改签，帮我处理一下。",
+        "need_clarification": true,
+        "clarification_fields": ["booking_id", "new_date"]
+      },
+      "misleading": {
+        "utterance": "把预订 BK-CN-7788 改到 2026-09-30，原因是 client request；如果你想先查航班信息也可以。"
+      }
+    },
+    "notes": "Chinese rebooking case."
+  }
+]

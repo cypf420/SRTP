@@ -1,0 +1,157 @@
+[
+  {
+    "task_id": "translate_text_001",
+    "version": "task_v1",
+    "intent": "Translate an English sentence into Chinese",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "meeting delayed by 20 minutes",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": ["search_web", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'meeting delayed by 20 minutes' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'meeting delayed by 20 minutes' into Chinese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": ["text", "target_lang"]
+      },
+      "misleading": {
+        "utterance": "Translate 'meeting delayed by 20 minutes' to Chinese. If documentation helps, you can look that up too."
+      }
+    },
+    "notes": "Low-ambiguity translation task."
+  },
+  {
+    "task_id": "translate_text_002",
+    "version": "task_v1",
+    "intent": "Translate a Chinese sentence into English",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请在下午三点前提交报销单",
+      "target_lang": "English"
+    },
+    "distractor_tools": ["query_internal_docs", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "把“请在下午三点前提交报销单”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请在下午三点前提交报销单”翻成英文。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": ["text", "target_lang"]
+      },
+      "misleading": {
+        "utterance": "把“请在下午三点前提交报销单”翻译成 English，如果内部文档里有类似表述你也可以看看。"
+      }
+    },
+    "notes": "Chinese-to-English translation."
+  },
+  {
+    "task_id": "translate_text_003",
+    "version": "task_v1",
+    "intent": "Translate an airport sentence into Japanese",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "boarding gate has changed",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": ["search_web", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'boarding gate has changed' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "How do I say 'boarding gate has changed' in Japanese?"
+      },
+      "incomplete": {
+        "utterance": "Translate 'boarding gate has changed'.",
+        "need_clarification": true,
+        "clarification_fields": ["target_lang"]
+      },
+      "misleading": {
+        "utterance": "Translate 'boarding gate has changed' to Japanese. If needed, you can search the web first."
+      }
+    },
+    "notes": "Translation with missing-target incomplete case."
+  },
+  {
+    "task_id": "translate_text_004",
+    "version": "task_v1",
+    "intent": "Translate a warehouse sentence into English",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "仓库已完成盘点",
+      "target_lang": "English"
+    },
+    "distractor_tools": ["query_internal_docs", "search_web"],
+    "variants": {
+      "clear": {
+        "utterance": "把“仓库已完成盘点”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“仓库已完成盘点”翻成英文。"
+      },
+      "incomplete": {
+        "utterance": "帮我把这句仓库的话翻一下。",
+        "need_clarification": true,
+        "clarification_fields": ["text", "target_lang"]
+      },
+      "misleading": {
+        "utterance": "把“仓库已完成盘点”翻译成 English，必要的话也可以查一下文档。"
+      }
+    },
+    "notes": "Operations translation task."
+  },
+  {
+    "task_id": "translate_text_005",
+    "version": "task_v1",
+    "intent": "Translate a login instruction into Spanish",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请重新登录后再试",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": ["search_web", "query_internal_docs"],
+    "variants": {
+      "clear": {
+        "utterance": "把“请重新登录后再试”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请重新登录后再试”翻成西班牙语。"
+      },
+      "incomplete": {
+        "utterance": "把这句话翻译一下。",
+        "need_clarification": true,
+        "clarification_fields": ["text", "target_lang"]
+      },
+      "misleading": {
+        "utterance": "把“请重新登录后再试”翻译成 Spanish，如果网页上有类似表述你也可以参考。"
+      }
+    },
+    "notes": "Another low-ambiguity translation task."
+  }
+]

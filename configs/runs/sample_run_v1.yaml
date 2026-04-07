@@ -1,0 +1,14 @@
+run_name: sample_run_v1
+model_config_path: configs/models/openai_gpt4o.yaml
+tools_path: tools/tool_schemas_v1.json
+tasks_glob: tasks/base_tasks_v1/*.json
+prompt_path: prompts/system_prompt_v1.txt
+output_dir: data/raw_runs
+variant_names:
+  - clear
+  - ambiguous
+  - incomplete
+  - misleading
+task_limit: 12
+seed: 42
+overwrite: false

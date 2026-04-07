@@ -1,0 +1,9 @@
+backend: openai_chat
+model_name: qwen2.5-instruct-tool
+api_key_env: OPENAI_API_KEY
+base_url_env: OPEN_MODEL_ENDPOINT
+temperature: 0.0
+top_p: 1.0
+max_tokens: 512
+timeout_seconds: 60
+support_tool_calling: true
