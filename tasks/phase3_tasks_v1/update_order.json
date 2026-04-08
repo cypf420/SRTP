@@ -1,0 +1,1007 @@
+[
+  {
+    "task_id": "update_order_001",
+    "version": "task_v2",
+    "template_family": "update_order_001",
+    "task_set": "main",
+    "intent": "Mark an order as shipped",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-10428",
+      "status": "shipped",
+      "note": "handed to courier"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 ORD-10428 更新成 shipped，并备注 handed to courier。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我把 ORD-10428 往前推进一下，已经交给快递了。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "把这个订单改成已发货。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 ORD-10428 更新成 shipped，并备注 handed to courier；如果需要也可以顺便查一下它当前状态。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "High-risk order mutation."
+  },
+  {
+    "task_id": "update_order_002",
+    "version": "task_v2",
+    "template_family": "update_order_001",
+    "task_set": "main",
+    "intent": "Mark an order as shipped：ORD-10432",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-10432",
+      "status": "shipped",
+      "note": "handoff confirmed at sorting center"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 ORD-10432 更新成 shipped，并备注 handoff confirmed at sorting center。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 ORD-10432 调到 shipped，备注一下 handoff confirmed at sorting center。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 ORD-10432 更新成 shipped 并备注 handoff confirmed at sorting center；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_003",
+    "version": "task_v2",
+    "template_family": "update_order_001",
+    "task_set": "main",
+    "intent": "Mark an order as shipped：ORD-10437",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-10437",
+      "status": "shipped",
+      "note": "courier pickup completed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 ORD-10437 更新成 shipped，并备注 courier pickup completed。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 ORD-10437 调到 shipped，备注一下 courier pickup completed。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 ORD-10437 更新成 shipped 并备注 courier pickup completed；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_004",
+    "version": "task_v2",
+    "template_family": "update_order_001",
+    "task_set": "main",
+    "intent": "Mark an order as shipped：ORD-10444",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-10444",
+      "status": "shipped",
+      "note": "outbound scan completed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 ORD-10444 更新成 shipped，并备注 outbound scan completed。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 ORD-10444 调到 shipped，备注一下 outbound scan completed。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 ORD-10444 更新成 shipped 并备注 outbound scan completed；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_005",
+    "version": "task_v2",
+    "template_family": "update_order_001",
+    "task_set": "main",
+    "intent": "Mark an order as shipped：ORD-10451",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-10451",
+      "status": "shipped",
+      "note": "label scanned by carrier"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 ORD-10451 更新成 shipped，并备注 label scanned by carrier。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 ORD-10451 调到 shipped，备注一下 label scanned by carrier。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 ORD-10451 更新成 shipped 并备注 label scanned by carrier；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_006",
+    "version": "task_v2",
+    "template_family": "update_order_002",
+    "task_set": "main",
+    "intent": "Cancel an order",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-22110",
+      "status": "cancelled",
+      "note": "user requested cancellation"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order ORD-22110 to cancelled and add note user requested cancellation.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Please stop ORD-22110 and note that the user asked to cancel it.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Cancel the order and leave a note.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order ORD-22110 to cancelled and add note user requested cancellation. You can also check the order status if needed.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Cancellation action."
+  },
+  {
+    "task_id": "update_order_007",
+    "version": "task_v2",
+    "template_family": "update_order_002",
+    "task_set": "main",
+    "intent": "Cancel an order for ORD-22114",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-22114",
+      "status": "cancelled",
+      "note": "customer cancelled before dispatch"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order ORD-22114 to cancelled and add note customer cancelled before dispatch."
+      },
+      "ambiguous": {
+        "utterance": "Please move ORD-22114 to cancelled and note customer cancelled before dispatch."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order ORD-22114 to cancelled with note customer cancelled before dispatch; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_008",
+    "version": "task_v2",
+    "template_family": "update_order_002",
+    "task_set": "main",
+    "intent": "Cancel an order for ORD-22119",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-22119",
+      "status": "cancelled",
+      "note": "payment verification failed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order ORD-22119 to cancelled and add note payment verification failed."
+      },
+      "ambiguous": {
+        "utterance": "Please move ORD-22119 to cancelled and note payment verification failed."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order ORD-22119 to cancelled with note payment verification failed; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_009",
+    "version": "task_v2",
+    "template_family": "update_order_002",
+    "task_set": "main",
+    "intent": "Cancel an order for ORD-22126",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-22126",
+      "status": "cancelled",
+      "note": "inventory shortage confirmed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order ORD-22126 to cancelled and add note inventory shortage confirmed."
+      },
+      "ambiguous": {
+        "utterance": "Please move ORD-22126 to cancelled and note inventory shortage confirmed."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order ORD-22126 to cancelled with note inventory shortage confirmed; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_010",
+    "version": "task_v2",
+    "template_family": "update_order_002",
+    "task_set": "main",
+    "intent": "Cancel an order for ORD-22133",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "ORD-22133",
+      "status": "cancelled",
+      "note": "duplicate order removed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order ORD-22133 to cancelled and add note duplicate order removed."
+      },
+      "ambiguous": {
+        "utterance": "Please move ORD-22133 to cancelled and note duplicate order removed."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order ORD-22133 to cancelled with note duplicate order removed; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_011",
+    "version": "task_v2",
+    "template_family": "update_order_003",
+    "task_set": "main",
+    "intent": "Mark an order as delivered",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "SO-88721",
+      "status": "delivered",
+      "note": "confirmed by customer"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 SO-88721 更新成 delivered，备注 confirmed by customer。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "把 SO-88721 收尾吧，客户已经确认收到了。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "把订单更新成已送达。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 SO-88721 更新成 delivered，备注 confirmed by customer；也可以顺便查一下数据库记录。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Delivery update."
+  },
+  {
+    "task_id": "update_order_012",
+    "version": "task_v2",
+    "template_family": "update_order_003",
+    "task_set": "main",
+    "intent": "Mark an order as delivered：SO-88725",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "SO-88725",
+      "status": "delivered",
+      "note": "customer signed for the package"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 SO-88725 更新成 delivered，并备注 customer signed for the package。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 SO-88725 调到 delivered，备注一下 customer signed for the package。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 SO-88725 更新成 delivered 并备注 customer signed for the package；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_013",
+    "version": "task_v2",
+    "template_family": "update_order_003",
+    "task_set": "main",
+    "intent": "Mark an order as delivered：SO-88730",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "SO-88730",
+      "status": "delivered",
+      "note": "delivery photo uploaded"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 SO-88730 更新成 delivered，并备注 delivery photo uploaded。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 SO-88730 调到 delivered，备注一下 delivery photo uploaded。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 SO-88730 更新成 delivered 并备注 delivery photo uploaded；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_014",
+    "version": "task_v2",
+    "template_family": "update_order_003",
+    "task_set": "main",
+    "intent": "Mark an order as delivered：SO-88737",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "SO-88737",
+      "status": "delivered",
+      "note": "locker pickup confirmed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 SO-88737 更新成 delivered，并备注 locker pickup confirmed。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 SO-88737 调到 delivered，备注一下 locker pickup confirmed。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 SO-88737 更新成 delivered 并备注 locker pickup confirmed；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_015",
+    "version": "task_v2",
+    "template_family": "update_order_003",
+    "task_set": "main",
+    "intent": "Mark an order as delivered：SO-88744",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "SO-88744",
+      "status": "delivered",
+      "note": "front desk accepted parcel"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 SO-88744 更新成 delivered，并备注 front desk accepted parcel。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 SO-88744 调到 delivered，备注一下 front desk accepted parcel。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 SO-88744 更新成 delivered 并备注 front desk accepted parcel；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_016",
+    "version": "task_v2",
+    "template_family": "update_order_004",
+    "task_set": "main",
+    "intent": "Mark an order as packed",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "CN-2026-441",
+      "status": "packed",
+      "note": "warehouse scanned and sealed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order CN-2026-441 to packed with note warehouse scanned and sealed.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Move CN-2026-441 into the packed stage and note the warehouse already sealed it.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Set the order to packed.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order CN-2026-441 to packed with note warehouse scanned and sealed; feel free to inspect the status first.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Packing-stage update."
+  },
+  {
+    "task_id": "update_order_017",
+    "version": "task_v2",
+    "template_family": "update_order_004",
+    "task_set": "main",
+    "intent": "Mark an order as packed for CN-2026-445",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "CN-2026-445",
+      "status": "packed",
+      "note": "warehouse sealed carton"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order CN-2026-445 to packed and add note warehouse sealed carton."
+      },
+      "ambiguous": {
+        "utterance": "Please move CN-2026-445 to packed and note warehouse sealed carton."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order CN-2026-445 to packed with note warehouse sealed carton; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_018",
+    "version": "task_v2",
+    "template_family": "update_order_004",
+    "task_set": "main",
+    "intent": "Mark an order as packed for CN-2026-450",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "CN-2026-450",
+      "status": "packed",
+      "note": "items picked and packed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order CN-2026-450 to packed and add note items picked and packed."
+      },
+      "ambiguous": {
+        "utterance": "Please move CN-2026-450 to packed and note items picked and packed."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order CN-2026-450 to packed with note items picked and packed; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_019",
+    "version": "task_v2",
+    "template_family": "update_order_004",
+    "task_set": "main",
+    "intent": "Mark an order as packed for CN-2026-457",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "CN-2026-457",
+      "status": "packed",
+      "note": "packing QA completed"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order CN-2026-457 to packed and add note packing QA completed."
+      },
+      "ambiguous": {
+        "utterance": "Please move CN-2026-457 to packed and note packing QA completed."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order CN-2026-457 to packed with note packing QA completed; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_020",
+    "version": "task_v2",
+    "template_family": "update_order_004",
+    "task_set": "main",
+    "intent": "Mark an order as packed for CN-2026-464",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "CN-2026-464",
+      "status": "packed",
+      "note": "fragile label applied"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Update order CN-2026-464 to packed and add note fragile label applied."
+      },
+      "ambiguous": {
+        "utterance": "Please move CN-2026-464 to packed and note fragile label applied."
+      },
+      "incomplete": {
+        "utterance": "Update this order status for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Update order CN-2026-464 to packed with note fragile label applied; you can also inspect its status if needed."
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_021",
+    "version": "task_v2",
+    "template_family": "update_order_005",
+    "task_set": "main",
+    "intent": "Set an order back to pending",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "RET-55620",
+      "status": "pending",
+      "note": "waiting for QC review"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 RET-55620 更新成 pending，并备注 waiting for QC review。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "把 RET-55620 先挂回待处理，并说明还在等质检。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "先改回待处理状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 RET-55620 更新成 pending，并备注 waiting for QC review；如果需要也可以开个工单。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Pending-state mutation."
+  },
+  {
+    "task_id": "update_order_022",
+    "version": "task_v2",
+    "template_family": "update_order_005",
+    "task_set": "main",
+    "intent": "Set an order back to pending：RET-55624",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "RET-55624",
+      "status": "pending",
+      "note": "awaiting compliance review"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 RET-55624 更新成 pending，并备注 awaiting compliance review。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 RET-55624 调到 pending，备注一下 awaiting compliance review。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 RET-55624 更新成 pending 并备注 awaiting compliance review；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_023",
+    "version": "task_v2",
+    "template_family": "update_order_005",
+    "task_set": "main",
+    "intent": "Set an order back to pending：RET-55629",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "RET-55629",
+      "status": "pending",
+      "note": "waiting for payment confirmation"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 RET-55629 更新成 pending，并备注 waiting for payment confirmation。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 RET-55629 调到 pending，备注一下 waiting for payment confirmation。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 RET-55629 更新成 pending 并备注 waiting for payment confirmation；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_024",
+    "version": "task_v2",
+    "template_family": "update_order_005",
+    "task_set": "main",
+    "intent": "Set an order back to pending：RET-55636",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "RET-55636",
+      "status": "pending",
+      "note": "QC hold requested"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 RET-55636 更新成 pending，并备注 QC hold requested。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 RET-55636 调到 pending，备注一下 QC hold requested。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 RET-55636 更新成 pending 并备注 QC hold requested；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  },
+  {
+    "task_id": "update_order_025",
+    "version": "task_v2",
+    "template_family": "update_order_005",
+    "task_set": "main",
+    "intent": "Set an order back to pending：RET-55643",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "update_order",
+    "gold_params": {
+      "order_id": "RET-55643",
+      "status": "pending",
+      "note": "address verification pending"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把订单 RET-55643 更新成 pending，并备注 address verification pending。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把 RET-55643 调到 pending，备注一下 address verification pending。"
+      },
+      "incomplete": {
+        "utterance": "把这个订单状态改一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "把订单 RET-55643 更新成 pending 并备注 address verification pending；如果需要也可以顺便查一下当前状态。"
+      }
+    },
+    "notes": "Phase 3 expanded order mutation sample."
+  }
+]

@@ -35,6 +35,8 @@ class TaskVariant(BaseModel):
 class TaskTemplate(BaseModel):
     task_id: str
     version: str = "task_v1"
+    template_family: Optional[str] = None
+    task_set: str = "main"
     intent: str
     domain: str
     language: Literal["zh", "en"]

@@ -1,0 +1,351 @@
+task_id,template_family,task_set,split,language,domain,gold_tool,intent
+book_flight_ext_001,book_flight_001,external_eval,external_eval,zh,travel,book_flight,Book a Shanghai to Beijing flight（2026-06-26）
+book_flight_ext_002,book_flight_001,external_eval,external_eval,zh,travel,book_flight,Book a Shanghai to Beijing flight（2026-07-12）
+book_flight_ext_003,book_flight_002,external_eval,external_eval,en,travel,book_flight,Book a Beijing to Shenzhen flight on 2026-07-16
+book_flight_ext_004,book_flight_002,external_eval,external_eval,en,travel,book_flight,Book a Beijing to Shenzhen flight on 2026-08-01
+book_flight_ext_005,book_flight_003,external_eval,external_eval,zh,travel,book_flight,Book a Guangzhou to Chengdu flight（2026-08-29）
+book_flight_ext_006,book_flight_003,external_eval,external_eval,zh,travel,book_flight,Book a Guangzhou to Chengdu flight（2026-09-14）
+book_flight_ext_007,book_flight_004,external_eval,external_eval,en,travel,book_flight,Book a domestic US flight on 2026-10-17
+book_flight_ext_008,book_flight_004,external_eval,external_eval,en,travel,book_flight,Book a domestic US flight on 2026-11-02
+book_flight_ext_009,book_flight_005,external_eval,external_eval,zh,travel,book_flight,Book a Nanjing to Sanya flight（2026-12-04）
+book_flight_ext_010,book_flight_005,external_eval,external_eval,zh,travel,book_flight,Book a Nanjing to Sanya flight（2026-12-20）
+change_flight_ext_001,change_flight_001,external_eval,external_eval,zh,travel,change_flight,Move an existing booking to a later date：BK-8856
+change_flight_ext_002,change_flight_001,external_eval,external_eval,zh,travel,change_flight,Move an existing booking to a later date：BK-8871
+change_flight_ext_003,change_flight_002,external_eval,external_eval,en,travel,change_flight,Change a booking date after a conflict for BK-9927
+change_flight_ext_004,change_flight_002,external_eval,external_eval,en,travel,change_flight,Change a booking date after a conflict for BK-9942
+change_flight_ext_005,change_flight_003,external_eval,external_eval,zh,travel,change_flight,Change a flight because of weather：TR-5535
+change_flight_ext_006,change_flight_003,external_eval,external_eval,zh,travel,change_flight,Change a flight because of weather：TR-5550
+change_flight_ext_007,change_flight_004,external_eval,external_eval,en,travel,change_flight,Change a booking after a conference moved for PNR-2026-139
+change_flight_ext_008,change_flight_004,external_eval,external_eval,en,travel,change_flight,Change a booking after a conference moved for PNR-2026-154
+change_flight_ext_009,change_flight_005,external_eval,external_eval,zh,travel,change_flight,Change a booking on client request：BK-CN-7813
+change_flight_ext_010,change_flight_005,external_eval,external_eval,zh,travel,change_flight,Change a booking on client request：BK-CN-7828
+create_support_ticket_ext_001,create_support_ticket_001,external_eval,external_eval,en,support,create_support_ticket,Create a high-priority technical ticket for U-234
+create_support_ticket_ext_002,create_support_ticket_001,external_eval,external_eval,en,support,create_support_ticket,Create a high-priority technical ticket for U-248
+create_support_ticket_ext_003,create_support_ticket_002,external_eval,external_eval,zh,support,create_support_ticket,Create a billing ticket：U-808
+create_support_ticket_ext_004,create_support_ticket_002,external_eval,external_eval,zh,support,create_support_ticket,Create a billing ticket：U-822
+create_support_ticket_ext_005,create_support_ticket_003,external_eval,external_eval,en,support,create_support_ticket,Create an order-related support ticket for C-581
+create_support_ticket_ext_006,create_support_ticket_003,external_eval,external_eval,en,support,create_support_ticket,Create an order-related support ticket for C-595
+create_support_ticket_ext_007,create_support_ticket_004,external_eval,external_eval,zh,support,create_support_ticket,Create an account support ticket：E-919
+create_support_ticket_ext_008,create_support_ticket_004,external_eval,external_eval,zh,support,create_support_ticket,Create an account support ticket：E-933
+create_support_ticket_ext_009,create_support_ticket_005,external_eval,external_eval,en,support,create_support_ticket,Create a travel support ticket for T-150
+create_support_ticket_ext_010,create_support_ticket_005,external_eval,external_eval,en,support,create_support_ticket,Create a travel support ticket for T-164
+get_weather_ext_001,get_weather_001,external_eval,external_eval,zh,weather,get_weather,Get weather for Hangzhou（2026-07-15）
+get_weather_ext_002,get_weather_001,external_eval,external_eval,zh,weather,get_weather,Get weather for Hangzhou（2026-08-11）
+get_weather_ext_003,get_weather_002,external_eval,external_eval,en,weather,get_weather,Get weather for New York on 2026-08-18
+get_weather_ext_004,get_weather_002,external_eval,external_eval,en,weather,get_weather,Get weather for New York on 2026-09-14
+get_weather_ext_005,get_weather_003,external_eval,external_eval,zh,weather,get_weather,Get weather for Chengdu（2026-09-06）
+get_weather_ext_006,get_weather_003,external_eval,external_eval,zh,weather,get_weather,Get weather for Chengdu（2026-10-03）
+get_weather_ext_007,get_weather_004,external_eval,external_eval,en,weather,get_weather,Get weather for Tokyo on 2026-07-05
+get_weather_ext_008,get_weather_004,external_eval,external_eval,en,weather,get_weather,Get weather for Tokyo on 2026-08-01
+get_weather_ext_009,get_weather_005,external_eval,external_eval,zh,weather,get_weather,Get weather for Guangzhou（2026-10-24）
+get_weather_ext_010,get_weather_005,external_eval,external_eval,zh,weather,get_weather,Get weather for Guangzhou（2026-11-20）
+query_internal_docs_ext_001,query_internal_docs_001,external_eval,external_eval,zh,hr,query_internal_docs,查找内部文档：manager handbook for probation review
+query_internal_docs_ext_002,query_internal_docs_001,external_eval,external_eval,zh,hr,query_internal_docs,查找内部文档：temporary contractor offboarding steps
+query_internal_docs_ext_003,query_internal_docs_002,external_eval,external_eval,en,it,query_internal_docs,Find the internal doc for vpn split tunneling rules
+query_internal_docs_ext_004,query_internal_docs_002,external_eval,external_eval,en,it,query_internal_docs,Find the internal doc for hardware replacement SLA
+query_internal_docs_ext_005,query_internal_docs_003,external_eval,external_eval,zh,finance,query_internal_docs,查找内部文档：annual budget submission SOP
+query_internal_docs_ext_006,query_internal_docs_003,external_eval,external_eval,zh,finance,query_internal_docs,查找内部文档：foreign currency reimbursement rule
+query_internal_docs_ext_007,query_internal_docs_004,external_eval,external_eval,en,operations,query_internal_docs,Find the internal doc for cold-chain exception handling
+query_internal_docs_ext_008,query_internal_docs_004,external_eval,external_eval,en,operations,query_internal_docs,Find the internal doc for returns triage checklist
+query_internal_docs_ext_009,query_internal_docs_005,external_eval,external_eval,zh,support,query_internal_docs,查找内部文档：chat handoff checklist
+query_internal_docs_ext_010,query_internal_docs_005,external_eval,external_eval,zh,support,query_internal_docs,查找内部文档：refund fraud review SOP
+query_order_status_ext_001,query_order_status_001,external_eval,external_eval,zh,commerce,query_order_status,Check status for a specific order：ORD-10439
+query_order_status_ext_002,query_order_status_001,external_eval,external_eval,zh,commerce,query_order_status,Check status for a specific order：ORD-10450
+query_order_status_ext_003,query_order_status_002,external_eval,external_eval,en,commerce,query_order_status,Check shipping status for an order for ORD-11013
+query_order_status_ext_004,query_order_status_002,external_eval,external_eval,en,commerce,query_order_status,Check shipping status for an order for ORD-11024
+query_order_status_ext_005,query_order_status_003,external_eval,external_eval,zh,commerce,query_order_status,Check order progress for a sales order：SO-88732
+query_order_status_ext_006,query_order_status_003,external_eval,external_eval,zh,commerce,query_order_status,Check order progress for a sales order：SO-88743
+query_order_status_ext_007,query_order_status_004,external_eval,external_eval,en,commerce,query_order_status,Check status for a return order for RET-55631
+query_order_status_ext_008,query_order_status_004,external_eval,external_eval,en,commerce,query_order_status,Check status for a return order for RET-55642
+query_order_status_ext_009,query_order_status_005,external_eval,external_eval,zh,commerce,query_order_status,Check status for a CN order：CN-2026-452
+query_order_status_ext_010,query_order_status_005,external_eval,external_eval,zh,commerce,query_order_status,Check status for a CN order：CN-2026-463
+search_database_ext_001,search_database_001,external_eval,external_eval,en,crm,search_database,Lookup a customer record for Sophia Kim
+search_database_ext_002,search_database_001,external_eval,external_eval,en,crm,search_database,Lookup a customer record for Ethan Rivera
+search_database_ext_003,search_database_002,external_eval,external_eval,zh,inventory,search_database,查询数据库中的 product 记录：SKU-5800
+search_database_ext_004,search_database_002,external_eval,external_eval,zh,inventory,search_database,查询数据库中的 product 记录：SKU-6621
+search_database_ext_005,search_database_003,external_eval,external_eval,en,hris,search_database,Lookup a employee record for Elena Gomez
+search_database_ext_006,search_database_003,external_eval,external_eval,en,hris,search_database,Lookup a employee record for Victor Huang
+search_database_ext_007,search_database_004,external_eval,external_eval,zh,commerce,search_database,查询数据库中的 order 记录：PO-61224
+search_database_ext_008,search_database_004,external_eval,external_eval,zh,commerce,search_database,查询数据库中的 order 记录：WEB-2026-881
+search_database_ext_009,search_database_005,external_eval,external_eval,en,support,search_database,Lookup a ticket record for TCK-5902
+search_database_ext_010,search_database_005,external_eval,external_eval,en,support,search_database,Lookup a ticket record for TCK-7001
+search_web_ext_001,search_web_001,external_eval,external_eval,zh,public_info,search_web,Search public reaction to OpenAI platform outages
+search_web_ext_002,search_web_001,external_eval,external_eval,zh,public_info,search_web,Search public coverage of OpenAI safety policy updates
+search_web_ext_003,search_web_002,external_eval,external_eval,en,public_info,search_web,Search public news about Tesla earnings guidance
+search_web_ext_004,search_web_002,external_eval,external_eval,en,public_info,search_web,Search public news about Tesla supplier negotiations
+search_web_ext_005,search_web_003,external_eval,external_eval,zh,public_info,search_web,Search public news about medication recall notices
+search_web_ext_006,search_web_003,external_eval,external_eval,zh,public_info,search_web,Search public news about e-bike battery recalls
+search_web_ext_007,search_web_004,external_eval,external_eval,en,public_info,search_web,Search a public workshop agenda page
+search_web_ext_008,search_web_004,external_eval,external_eval,en,public_info,search_web,Search a public meetup call-for-speakers page
+search_web_ext_009,search_web_005,external_eval,external_eval,zh,public_info,search_web,Search public analyst coverage of Google capex
+search_web_ext_010,search_web_005,external_eval,external_eval,zh,public_info,search_web,Search public analyst coverage of AMD AI roadmap
+translate_text_ext_001,translate_text_001,external_eval,external_eval,en,translation,translate_text,Translate an English sentence into Chinese: maintenance starts after business hours
+translate_text_ext_002,translate_text_001,external_eval,external_eval,en,translation,translate_text,Translate an English sentence into Chinese: please confirm receipt before noon
+translate_text_ext_003,translate_text_002,external_eval,external_eval,zh,translation,translate_text,Translate a Chinese sentence into English：请先联系采购确认预算
+translate_text_ext_004,translate_text_002,external_eval,external_eval,zh,translation,translate_text,Translate a Chinese sentence into English：请在今天下班前回复客户
+translate_text_ext_005,translate_text_003,external_eval,external_eval,en,translation,translate_text,Translate an airport sentence into Japanese: the flight is delayed due to runway traffic
+translate_text_ext_006,translate_text_003,external_eval,external_eval,en,translation,translate_text,Translate an airport sentence into Japanese: baggage claim moved to carousel seven
+translate_text_ext_007,translate_text_004,external_eval,external_eval,zh,translation,translate_text,Translate a warehouse sentence into English：冷链货物需要优先装车
+translate_text_ext_008,translate_text_004,external_eval,external_eval,zh,translation,translate_text,Translate a warehouse sentence into English：缺货商品请移到待处理区
+translate_text_ext_009,translate_text_005,external_eval,external_eval,zh,translation,translate_text,Translate a login instruction into Spanish：登录会话已失效，请重新认证
+translate_text_ext_010,translate_text_005,external_eval,external_eval,zh,translation,translate_text,Translate a login instruction into Spanish：请确认网络恢复后再次提交
+update_order_ext_001,update_order_001,external_eval,external_eval,zh,commerce,update_order,Mark an order as shipped：ORD-10443
+update_order_ext_002,update_order_001,external_eval,external_eval,zh,commerce,update_order,Mark an order as shipped：ORD-10455
+update_order_ext_003,update_order_002,external_eval,external_eval,en,commerce,update_order,Cancel an order for ORD-22125
+update_order_ext_004,update_order_002,external_eval,external_eval,en,commerce,update_order,Cancel an order for ORD-22137
+update_order_ext_005,update_order_003,external_eval,external_eval,zh,commerce,update_order,Mark an order as delivered：SO-88736
+update_order_ext_006,update_order_003,external_eval,external_eval,zh,commerce,update_order,Mark an order as delivered：SO-88748
+update_order_ext_007,update_order_004,external_eval,external_eval,en,commerce,update_order,Mark an order as packed for CN-2026-456
+update_order_ext_008,update_order_004,external_eval,external_eval,en,commerce,update_order,Mark an order as packed for CN-2026-468
+update_order_ext_009,update_order_005,external_eval,external_eval,zh,commerce,update_order,Set an order back to pending：RET-55635
+update_order_ext_010,update_order_005,external_eval,external_eval,zh,commerce,update_order,Set an order back to pending：RET-55647
+book_flight_001,book_flight_001,main,dev,zh,travel,book_flight,Book a Shanghai to Beijing flight
+book_flight_002,book_flight_001,main,dev,zh,travel,book_flight,Book a Shanghai to Beijing flight（2026-05-17）
+book_flight_003,book_flight_001,main,dev,zh,travel,book_flight,Book a Shanghai to Beijing flight（2026-05-24）
+book_flight_004,book_flight_001,main,dev,zh,travel,book_flight,Book a Shanghai to Beijing flight（2026-05-31）
+book_flight_005,book_flight_001,main,dev,zh,travel,book_flight,Book a Shanghai to Beijing flight（2026-06-14）
+book_flight_006,book_flight_002,main,train,en,travel,book_flight,Book a Beijing to Shenzhen flight
+book_flight_007,book_flight_002,main,train,en,travel,book_flight,Book a Beijing to Shenzhen flight on 2026-06-06
+book_flight_008,book_flight_002,main,train,en,travel,book_flight,Book a Beijing to Shenzhen flight on 2026-06-13
+book_flight_009,book_flight_002,main,train,en,travel,book_flight,Book a Beijing to Shenzhen flight on 2026-06-20
+book_flight_010,book_flight_002,main,train,en,travel,book_flight,Book a Beijing to Shenzhen flight on 2026-07-04
+book_flight_011,book_flight_003,main,dev,zh,travel,book_flight,Book a Guangzhou to Chengdu flight
+book_flight_012,book_flight_003,main,dev,zh,travel,book_flight,Book a Guangzhou to Chengdu flight（2026-07-20）
+book_flight_013,book_flight_003,main,dev,zh,travel,book_flight,Book a Guangzhou to Chengdu flight（2026-07-27）
+book_flight_014,book_flight_003,main,dev,zh,travel,book_flight,Book a Guangzhou to Chengdu flight（2026-08-03）
+book_flight_015,book_flight_003,main,dev,zh,travel,book_flight,Book a Guangzhou to Chengdu flight（2026-08-17）
+book_flight_016,book_flight_004,main,test,en,travel,book_flight,Book a domestic US flight
+book_flight_017,book_flight_004,main,test,en,travel,book_flight,Book a domestic US flight on 2026-09-07
+book_flight_018,book_flight_004,main,test,en,travel,book_flight,Book a domestic US flight on 2026-09-14
+book_flight_019,book_flight_004,main,test,en,travel,book_flight,Book a domestic US flight on 2026-09-21
+book_flight_020,book_flight_004,main,test,en,travel,book_flight,Book a domestic US flight on 2026-10-05
+book_flight_021,book_flight_005,main,train,zh,travel,book_flight,Book a Nanjing to Sanya flight
+book_flight_022,book_flight_005,main,train,zh,travel,book_flight,Book a Nanjing to Sanya flight（2026-10-25）
+book_flight_023,book_flight_005,main,train,zh,travel,book_flight,Book a Nanjing to Sanya flight（2026-11-01）
+book_flight_024,book_flight_005,main,train,zh,travel,book_flight,Book a Nanjing to Sanya flight（2026-11-08）
+book_flight_025,book_flight_005,main,train,zh,travel,book_flight,Book a Nanjing to Sanya flight（2026-11-22）
+change_flight_001,change_flight_001,main,train,zh,travel,change_flight,Move an existing booking to a later date
+change_flight_002,change_flight_001,main,train,zh,travel,change_flight,Move an existing booking to a later date：BK-8834
+change_flight_003,change_flight_001,main,train,zh,travel,change_flight,Move an existing booking to a later date：BK-8839
+change_flight_004,change_flight_001,main,train,zh,travel,change_flight,Move an existing booking to a later date：BK-8846
+change_flight_005,change_flight_001,main,train,zh,travel,change_flight,Move an existing booking to a later date：BK-8853
+change_flight_006,change_flight_002,main,dev,en,travel,change_flight,Change a booking date after a conflict
+change_flight_007,change_flight_002,main,dev,en,travel,change_flight,Change a booking date after a conflict for BK-9905
+change_flight_008,change_flight_002,main,dev,en,travel,change_flight,Change a booking date after a conflict for BK-9910
+change_flight_009,change_flight_002,main,dev,en,travel,change_flight,Change a booking date after a conflict for BK-9917
+change_flight_010,change_flight_002,main,dev,en,travel,change_flight,Change a booking date after a conflict for BK-9924
+change_flight_011,change_flight_003,main,train,zh,travel,change_flight,Change a flight because of weather
+change_flight_012,change_flight_003,main,train,zh,travel,change_flight,Change a flight because of weather：TR-5513
+change_flight_013,change_flight_003,main,train,zh,travel,change_flight,Change a flight because of weather：TR-5518
+change_flight_014,change_flight_003,main,train,zh,travel,change_flight,Change a flight because of weather：TR-5525
+change_flight_015,change_flight_003,main,train,zh,travel,change_flight,Change a flight because of weather：TR-5532
+change_flight_016,change_flight_004,main,train,en,travel,change_flight,Change a booking after a conference moved
+change_flight_017,change_flight_004,main,train,en,travel,change_flight,Change a booking after a conference moved for PNR-2026-117
+change_flight_018,change_flight_004,main,train,en,travel,change_flight,Change a booking after a conference moved for PNR-2026-122
+change_flight_019,change_flight_004,main,train,en,travel,change_flight,Change a booking after a conference moved for PNR-2026-129
+change_flight_020,change_flight_004,main,train,en,travel,change_flight,Change a booking after a conference moved for PNR-2026-136
+change_flight_021,change_flight_005,main,test,zh,travel,change_flight,Change a booking on client request
+change_flight_022,change_flight_005,main,test,zh,travel,change_flight,Change a booking on client request：BK-CN-7791
+change_flight_023,change_flight_005,main,test,zh,travel,change_flight,Change a booking on client request：BK-CN-7796
+change_flight_024,change_flight_005,main,test,zh,travel,change_flight,Change a booking on client request：BK-CN-7803
+change_flight_025,change_flight_005,main,test,zh,travel,change_flight,Change a booking on client request：BK-CN-7810
+create_support_ticket_001,create_support_ticket_001,main,train,en,support,create_support_ticket,Create a high-priority technical ticket
+create_support_ticket_002,create_support_ticket_001,main,train,en,support,create_support_ticket,Create a high-priority technical ticket for U-209
+create_support_ticket_003,create_support_ticket_001,main,train,en,support,create_support_ticket,Create a high-priority technical ticket for U-215
+create_support_ticket_004,create_support_ticket_001,main,train,en,support,create_support_ticket,Create a high-priority technical ticket for U-223
+create_support_ticket_005,create_support_ticket_001,main,train,en,support,create_support_ticket,Create a high-priority technical ticket for U-231
+create_support_ticket_006,create_support_ticket_002,main,train,zh,support,create_support_ticket,Create a billing ticket
+create_support_ticket_007,create_support_ticket_002,main,train,zh,support,create_support_ticket,Create a billing ticket：U-783
+create_support_ticket_008,create_support_ticket_002,main,train,zh,support,create_support_ticket,Create a billing ticket：U-789
+create_support_ticket_009,create_support_ticket_002,main,train,zh,support,create_support_ticket,Create a billing ticket：U-797
+create_support_ticket_010,create_support_ticket_002,main,train,zh,support,create_support_ticket,Create a billing ticket：U-805
+create_support_ticket_011,create_support_ticket_003,main,dev,en,support,create_support_ticket,Create an order-related support ticket
+create_support_ticket_012,create_support_ticket_003,main,dev,en,support,create_support_ticket,Create an order-related support ticket for C-556
+create_support_ticket_013,create_support_ticket_003,main,dev,en,support,create_support_ticket,Create an order-related support ticket for C-562
+create_support_ticket_014,create_support_ticket_003,main,dev,en,support,create_support_ticket,Create an order-related support ticket for C-570
+create_support_ticket_015,create_support_ticket_003,main,dev,en,support,create_support_ticket,Create an order-related support ticket for C-578
+create_support_ticket_016,create_support_ticket_004,main,train,zh,support,create_support_ticket,Create an account support ticket
+create_support_ticket_017,create_support_ticket_004,main,train,zh,support,create_support_ticket,Create an account support ticket：E-894
+create_support_ticket_018,create_support_ticket_004,main,train,zh,support,create_support_ticket,Create an account support ticket：E-900
+create_support_ticket_019,create_support_ticket_004,main,train,zh,support,create_support_ticket,Create an account support ticket：E-908
+create_support_ticket_020,create_support_ticket_004,main,train,zh,support,create_support_ticket,Create an account support ticket：E-916
+create_support_ticket_021,create_support_ticket_005,main,train,en,support,create_support_ticket,Create a travel support ticket
+create_support_ticket_022,create_support_ticket_005,main,train,en,support,create_support_ticket,Create a travel support ticket for T-125
+create_support_ticket_023,create_support_ticket_005,main,train,en,support,create_support_ticket,Create a travel support ticket for T-131
+create_support_ticket_024,create_support_ticket_005,main,train,en,support,create_support_ticket,Create a travel support ticket for T-139
+create_support_ticket_025,create_support_ticket_005,main,train,en,support,create_support_ticket,Create a travel support ticket for T-147
+get_weather_001,get_weather_001,main,train,zh,weather,get_weather,Get weather for Hangzhou
+get_weather_002,get_weather_001,main,train,zh,weather,get_weather,Get weather for Hangzhou（2026-05-14）
+get_weather_003,get_weather_001,main,train,zh,weather,get_weather,Get weather for Hangzhou（2026-05-21）
+get_weather_004,get_weather_001,main,train,zh,weather,get_weather,Get weather for Hangzhou（2026-05-28）
+get_weather_005,get_weather_001,main,train,zh,weather,get_weather,Get weather for Hangzhou（2026-06-04）
+get_weather_006,get_weather_002,main,dev,en,weather,get_weather,Get weather for New York
+get_weather_007,get_weather_002,main,dev,en,weather,get_weather,Get weather for New York on 2026-06-17
+get_weather_008,get_weather_002,main,dev,en,weather,get_weather,Get weather for New York on 2026-06-24
+get_weather_009,get_weather_002,main,dev,en,weather,get_weather,Get weather for New York on 2026-07-01
+get_weather_010,get_weather_002,main,dev,en,weather,get_weather,Get weather for New York on 2026-07-08
+get_weather_011,get_weather_003,main,test,zh,weather,get_weather,Get weather for Chengdu
+get_weather_012,get_weather_003,main,test,zh,weather,get_weather,Get weather for Chengdu（2026-07-06）
+get_weather_013,get_weather_003,main,test,zh,weather,get_weather,Get weather for Chengdu（2026-07-13）
+get_weather_014,get_weather_003,main,test,zh,weather,get_weather,Get weather for Chengdu（2026-07-20）
+get_weather_015,get_weather_003,main,test,zh,weather,get_weather,Get weather for Chengdu（2026-07-27）
+get_weather_016,get_weather_004,main,test,en,weather,get_weather,Get weather for Tokyo
+get_weather_017,get_weather_004,main,test,en,weather,get_weather,Get weather for Tokyo on 2026-05-04
+get_weather_018,get_weather_004,main,test,en,weather,get_weather,Get weather for Tokyo on 2026-05-11
+get_weather_019,get_weather_004,main,test,en,weather,get_weather,Get weather for Tokyo on 2026-05-18
+get_weather_020,get_weather_004,main,test,en,weather,get_weather,Get weather for Tokyo on 2026-05-25
+get_weather_021,get_weather_005,main,test,zh,weather,get_weather,Get weather for Guangzhou
+get_weather_022,get_weather_005,main,test,zh,weather,get_weather,Get weather for Guangzhou（2026-08-23）
+get_weather_023,get_weather_005,main,test,zh,weather,get_weather,Get weather for Guangzhou（2026-08-30）
+get_weather_024,get_weather_005,main,test,zh,weather,get_weather,Get weather for Guangzhou（2026-09-06）
+get_weather_025,get_weather_005,main,test,zh,weather,get_weather,Get weather for Guangzhou（2026-09-13）
+query_internal_docs_001,query_internal_docs_001,main,test,zh,hr,query_internal_docs,Find the PTO carryover policy
+query_internal_docs_002,query_internal_docs_001,main,test,zh,hr,query_internal_docs,查找内部文档：remote work stipend policy
+query_internal_docs_003,query_internal_docs_001,main,test,zh,hr,query_internal_docs,查找内部文档：new-hire onboarding checklist
+query_internal_docs_004,query_internal_docs_001,main,test,zh,hr,query_internal_docs,查找内部文档：promotion review timeline
+query_internal_docs_005,query_internal_docs_001,main,test,zh,hr,query_internal_docs,查找内部文档：leave approval escalation path
+query_internal_docs_006,query_internal_docs_002,main,train,en,it,query_internal_docs,Find the VPN setup guide
+query_internal_docs_007,query_internal_docs_002,main,train,en,it,query_internal_docs,Find the internal doc for laptop disk encryption guide
+query_internal_docs_008,query_internal_docs_002,main,train,en,it,query_internal_docs,Find the internal doc for password manager setup steps
+query_internal_docs_009,query_internal_docs_002,main,train,en,it,query_internal_docs,Find the internal doc for okta enrollment instructions
+query_internal_docs_010,query_internal_docs_002,main,train,en,it,query_internal_docs,Find the internal doc for wifi certificate renewal guide
+query_internal_docs_011,query_internal_docs_003,main,test,zh,finance,query_internal_docs,Find the reimbursement SOP
+query_internal_docs_012,query_internal_docs_003,main,test,zh,finance,query_internal_docs,查找内部文档：travel reimbursement timeline
+query_internal_docs_013,query_internal_docs_003,main,test,zh,finance,query_internal_docs,查找内部文档：corporate card receipt policy
+query_internal_docs_014,query_internal_docs_003,main,test,zh,finance,query_internal_docs,查找内部文档：expense audit checklist
+query_internal_docs_015,query_internal_docs_003,main,test,zh,finance,query_internal_docs,查找内部文档：vendor payment approval flow
+query_internal_docs_016,query_internal_docs_004,main,train,en,operations,query_internal_docs,Find the warehouse safety checklist
+query_internal_docs_017,query_internal_docs_004,main,train,en,operations,query_internal_docs,Find the internal doc for forklift inspection checklist
+query_internal_docs_018,query_internal_docs_004,main,train,en,operations,query_internal_docs,Find the internal doc for warehouse shift handoff SOP
+query_internal_docs_019,query_internal_docs_004,main,train,en,operations,query_internal_docs,Find the internal doc for inventory discrepancy process
+query_internal_docs_020,query_internal_docs_004,main,train,en,operations,query_internal_docs,Find the internal doc for dock safety incident escalation
+query_internal_docs_021,query_internal_docs_005,main,train,zh,support,query_internal_docs,Find the refund escalation process
+query_internal_docs_022,query_internal_docs_005,main,train,zh,support,query_internal_docs,查找内部文档：premium customer escalation matrix
+query_internal_docs_023,query_internal_docs_005,main,train,zh,support,query_internal_docs,查找内部文档：refund exception policy
+query_internal_docs_024,query_internal_docs_005,main,train,zh,support,query_internal_docs,查找内部文档：weekend paging process
+query_internal_docs_025,query_internal_docs_005,main,train,zh,support,query_internal_docs,查找内部文档：sla breach escalation steps
+query_order_status_001,query_order_status_001,main,train,zh,commerce,query_order_status,Check status for a specific order
+query_order_status_002,query_order_status_001,main,train,zh,commerce,query_order_status,Check status for a specific order：ORD-10431
+query_order_status_003,query_order_status_001,main,train,zh,commerce,query_order_status,Check status for a specific order：ORD-10435
+query_order_status_004,query_order_status_001,main,train,zh,commerce,query_order_status,Check status for a specific order：ORD-10440
+query_order_status_005,query_order_status_001,main,train,zh,commerce,query_order_status,Check status for a specific order：ORD-10446
+query_order_status_006,query_order_status_002,main,train,en,commerce,query_order_status,Check shipping status for an order
+query_order_status_007,query_order_status_002,main,train,en,commerce,query_order_status,Check shipping status for an order for ORD-11005
+query_order_status_008,query_order_status_002,main,train,en,commerce,query_order_status,Check shipping status for an order for ORD-11009
+query_order_status_009,query_order_status_002,main,train,en,commerce,query_order_status,Check shipping status for an order for ORD-11014
+query_order_status_010,query_order_status_002,main,train,en,commerce,query_order_status,Check shipping status for an order for ORD-11020
+query_order_status_011,query_order_status_003,main,train,zh,commerce,query_order_status,Check order progress for a sales order
+query_order_status_012,query_order_status_003,main,train,zh,commerce,query_order_status,Check order progress for a sales order：SO-88724
+query_order_status_013,query_order_status_003,main,train,zh,commerce,query_order_status,Check order progress for a sales order：SO-88728
+query_order_status_014,query_order_status_003,main,train,zh,commerce,query_order_status,Check order progress for a sales order：SO-88733
+query_order_status_015,query_order_status_003,main,train,zh,commerce,query_order_status,Check order progress for a sales order：SO-88739
+query_order_status_016,query_order_status_004,main,test,en,commerce,query_order_status,Check status for a return order
+query_order_status_017,query_order_status_004,main,test,en,commerce,query_order_status,Check status for a return order for RET-55623
+query_order_status_018,query_order_status_004,main,test,en,commerce,query_order_status,Check status for a return order for RET-55627
+query_order_status_019,query_order_status_004,main,test,en,commerce,query_order_status,Check status for a return order for RET-55632
+query_order_status_020,query_order_status_004,main,test,en,commerce,query_order_status,Check status for a return order for RET-55638
+query_order_status_021,query_order_status_005,main,dev,zh,commerce,query_order_status,Check status for a CN order
+query_order_status_022,query_order_status_005,main,dev,zh,commerce,query_order_status,Check status for a CN order：CN-2026-444
+query_order_status_023,query_order_status_005,main,dev,zh,commerce,query_order_status,Check status for a CN order：CN-2026-448
+query_order_status_024,query_order_status_005,main,dev,zh,commerce,query_order_status,Check status for a CN order：CN-2026-453
+query_order_status_025,query_order_status_005,main,dev,zh,commerce,query_order_status,Check status for a CN order：CN-2026-459
+search_database_001,search_database_001,main,train,en,crm,search_database,Lookup a customer record in the CRM
+search_database_002,search_database_001,main,train,en,crm,search_database,Lookup a customer record for Olivia Chen
+search_database_003,search_database_001,main,train,en,crm,search_database,Lookup a customer record for Noah Patel
+search_database_004,search_database_001,main,train,en,crm,search_database,Lookup a customer record for Liam Carter
+search_database_005,search_database_001,main,train,en,crm,search_database,Lookup a customer record for Mia Zhang
+search_database_006,search_database_002,main,dev,zh,inventory,search_database,Lookup a product record by SKU
+search_database_007,search_database_002,main,dev,zh,inventory,search_database,查询数据库中的 product 记录：SKU-1002
+search_database_008,search_database_002,main,dev,zh,inventory,search_database,查询数据库中的 product 记录：SKU-2048
+search_database_009,search_database_002,main,dev,zh,inventory,search_database,查询数据库中的 product 记录：SKU-3301
+search_database_010,search_database_002,main,dev,zh,inventory,search_database,查询数据库中的 product 记录：SKU-4410
+search_database_011,search_database_003,main,test,en,hris,search_database,Lookup an employee directory record
+search_database_012,search_database_003,main,test,en,hris,search_database,Lookup a employee record for Dana Brooks
+search_database_013,search_database_003,main,test,en,hris,search_database,Lookup a employee record for Mason Lee
+search_database_014,search_database_003,main,test,en,hris,search_database,Lookup a employee record for Priya Nair
+search_database_015,search_database_003,main,test,en,hris,search_database,Lookup a employee record for Jordan Miles
+search_database_016,search_database_004,main,train,zh,commerce,search_database,Lookup an order record by ID in the database
+search_database_017,search_database_004,main,train,zh,commerce,search_database,查询数据库中的 order 记录：ORD-55319
+search_database_018,search_database_004,main,train,zh,commerce,search_database,查询数据库中的 order 记录：SO-77210
+search_database_019,search_database_004,main,train,zh,commerce,search_database,查询数据库中的 order 记录：CN-44820
+search_database_020,search_database_004,main,train,zh,commerce,search_database,查询数据库中的 order 记录：RET-99112
+search_database_021,search_database_005,main,dev,en,support,search_database,Lookup a support ticket record
+search_database_022,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-1008
+search_database_023,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-2219
+search_database_024,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-3900
+search_database_025,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-4881
+search_web_001,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI model releases
+search_web_002,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI developer conference updates
+search_web_003,search_web_001,main,dev,zh,public_info,search_web,Search public coverage of OpenAI reasoning model benchmarks
+search_web_004,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI API pricing changes
+search_web_005,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI enterprise product launches
+search_web_006,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla layoffs
+search_web_007,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla price cuts
+search_web_008,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla delivery numbers
+search_web_009,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla factory expansion
+search_web_010,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla autopilot investigation
+search_web_011,search_web_003,main,train,zh,public_info,search_web,Search public news about a product recall
+search_web_012,search_web_003,main,train,zh,public_info,search_web,Search public news about stroller safety recalls
+search_web_013,search_web_003,main,train,zh,public_info,search_web,Search public news about toy battery recalls
+search_web_014,search_web_003,main,train,zh,public_info,search_web,Search public news about food contamination alerts
+search_web_015,search_web_003,main,train,zh,public_info,search_web,Search public news about appliance fire-risk recalls
+search_web_016,search_web_004,main,dev,en,public_info,search_web,Search a public conference website
+search_web_017,search_web_004,main,dev,en,public_info,search_web,Search a public conference registration website
+search_web_018,search_web_004,main,dev,en,public_info,search_web,Search a public conference CFP website
+search_web_019,search_web_004,main,dev,en,public_info,search_web,Search a public summit livestream page
+search_web_020,search_web_004,main,dev,en,public_info,search_web,Search a public conference venue page
+search_web_021,search_web_005,main,test,zh,public_info,search_web,Search public analyst coverage of Microsoft earnings
+search_web_022,search_web_005,main,test,zh,public_info,search_web,Search public analyst coverage of Apple earnings
+search_web_023,search_web_005,main,test,zh,public_info,search_web,Search public analyst coverage of Nvidia guidance
+search_web_024,search_web_005,main,test,zh,public_info,search_web,Search public analyst coverage of Amazon cloud margins
+search_web_025,search_web_005,main,test,zh,public_info,search_web,Search public analyst coverage of Meta ad revenue
+translate_text_001,translate_text_001,main,train,en,translation,translate_text,Translate an English sentence into Chinese
+translate_text_002,translate_text_001,main,train,en,translation,translate_text,Translate an English sentence into Chinese: please join the call five minutes early
+translate_text_003,translate_text_001,main,train,en,translation,translate_text,Translate an English sentence into Chinese: the deployment window starts at midnight
+translate_text_004,translate_text_001,main,train,en,translation,translate_text,Translate an English sentence into Chinese: customer requested a revised invoice
+translate_text_005,translate_text_001,main,train,en,translation,translate_text,Translate an English sentence into Chinese: meeting room changed to 3B
+translate_text_006,translate_text_002,main,train,zh,translation,translate_text,Translate a Chinese sentence into English
+translate_text_007,translate_text_002,main,train,zh,translation,translate_text,Translate a Chinese sentence into English：请把审批结果发给财务团队
+translate_text_008,translate_text_002,main,train,zh,translation,translate_text,Translate a Chinese sentence into English：请在周五前完成合同签署
+translate_text_009,translate_text_002,main,train,zh,translation,translate_text,Translate a Chinese sentence into English：请确认新的出差日期
+translate_text_010,translate_text_002,main,train,zh,translation,translate_text,Translate a Chinese sentence into English：请把附件同步到共享盘
+translate_text_011,translate_text_003,main,train,en,translation,translate_text,Translate an airport sentence into Japanese
+translate_text_012,translate_text_003,main,train,en,translation,translate_text,Translate an airport sentence into Japanese: boarding starts at gate C12
+translate_text_013,translate_text_003,main,train,en,translation,translate_text,Translate an airport sentence into Japanese: your passport will be checked again
+translate_text_014,translate_text_003,main,train,en,translation,translate_text,Translate an airport sentence into Japanese: the connection time is only 40 minutes
+translate_text_015,translate_text_003,main,train,en,translation,translate_text,Translate an airport sentence into Japanese: please proceed to the transfer desk
+translate_text_016,translate_text_004,main,train,zh,translation,translate_text,Translate a warehouse sentence into English
+translate_text_017,translate_text_004,main,train,zh,translation,translate_text,Translate a warehouse sentence into English：请先完成入库扫码
+translate_text_018,translate_text_004,main,train,zh,translation,translate_text,Translate a warehouse sentence into English：今晚需要加做一轮抽检
+translate_text_019,translate_text_004,main,train,zh,translation,translate_text,Translate a warehouse sentence into English：托盘标签已经重新打印
+translate_text_020,translate_text_004,main,train,zh,translation,translate_text,Translate a warehouse sentence into English：拣货区临时改到 B 通道
+translate_text_021,translate_text_005,main,train,zh,translation,translate_text,Translate a login instruction into Spanish
+translate_text_022,translate_text_005,main,train,zh,translation,translate_text,Translate a login instruction into Spanish：请更新浏览器后再尝试
+translate_text_023,translate_text_005,main,train,zh,translation,translate_text,Translate a login instruction into Spanish：验证码已过期，请重新获取
+translate_text_024,translate_text_005,main,train,zh,translation,translate_text,Translate a login instruction into Spanish：系统检测到异常登录行为
+translate_text_025,translate_text_005,main,train,zh,translation,translate_text,Translate a login instruction into Spanish：请先退出再重新进入应用
+update_order_001,update_order_001,main,train,zh,commerce,update_order,Mark an order as shipped
+update_order_002,update_order_001,main,train,zh,commerce,update_order,Mark an order as shipped：ORD-10432
+update_order_003,update_order_001,main,train,zh,commerce,update_order,Mark an order as shipped：ORD-10437
+update_order_004,update_order_001,main,train,zh,commerce,update_order,Mark an order as shipped：ORD-10444
+update_order_005,update_order_001,main,train,zh,commerce,update_order,Mark an order as shipped：ORD-10451
+update_order_006,update_order_002,main,train,en,commerce,update_order,Cancel an order
+update_order_007,update_order_002,main,train,en,commerce,update_order,Cancel an order for ORD-22114
+update_order_008,update_order_002,main,train,en,commerce,update_order,Cancel an order for ORD-22119
+update_order_009,update_order_002,main,train,en,commerce,update_order,Cancel an order for ORD-22126
+update_order_010,update_order_002,main,train,en,commerce,update_order,Cancel an order for ORD-22133
+update_order_011,update_order_003,main,train,zh,commerce,update_order,Mark an order as delivered
+update_order_012,update_order_003,main,train,zh,commerce,update_order,Mark an order as delivered：SO-88725
+update_order_013,update_order_003,main,train,zh,commerce,update_order,Mark an order as delivered：SO-88730
+update_order_014,update_order_003,main,train,zh,commerce,update_order,Mark an order as delivered：SO-88737
+update_order_015,update_order_003,main,train,zh,commerce,update_order,Mark an order as delivered：SO-88744
+update_order_016,update_order_004,main,train,en,commerce,update_order,Mark an order as packed
+update_order_017,update_order_004,main,train,en,commerce,update_order,Mark an order as packed for CN-2026-445
+update_order_018,update_order_004,main,train,en,commerce,update_order,Mark an order as packed for CN-2026-450
+update_order_019,update_order_004,main,train,en,commerce,update_order,Mark an order as packed for CN-2026-457
+update_order_020,update_order_004,main,train,en,commerce,update_order,Mark an order as packed for CN-2026-464
+update_order_021,update_order_005,main,train,zh,commerce,update_order,Set an order back to pending
+update_order_022,update_order_005,main,train,zh,commerce,update_order,Set an order back to pending：RET-55624
+update_order_023,update_order_005,main,train,zh,commerce,update_order,Set an order back to pending：RET-55629
+update_order_024,update_order_005,main,train,zh,commerce,update_order,Set an order back to pending：RET-55636
+update_order_025,update_order_005,main,train,zh,commerce,update_order,Set an order back to pending：RET-55643

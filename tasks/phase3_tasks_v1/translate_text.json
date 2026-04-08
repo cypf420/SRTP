@@ -1,0 +1,1002 @@
+[
+  {
+    "task_id": "translate_text_001",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "main",
+    "intent": "Translate an English sentence into Chinese",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "meeting delayed by 20 minutes",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'meeting delayed by 20 minutes' to Chinese.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'meeting delayed by 20 minutes' into Chinese for me?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'meeting delayed by 20 minutes' to Chinese. If documentation helps, you can look that up too.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Low-ambiguity translation task."
+  },
+  {
+    "task_id": "translate_text_002",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "main",
+    "intent": "Translate an English sentence into Chinese: please join the call five minutes early",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "please join the call five minutes early",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'please join the call five minutes early' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'please join the call five minutes early' into Chinese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'please join the call five minutes early' to Chinese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_003",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "main",
+    "intent": "Translate an English sentence into Chinese: the deployment window starts at midnight",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "the deployment window starts at midnight",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'the deployment window starts at midnight' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'the deployment window starts at midnight' into Chinese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'the deployment window starts at midnight' to Chinese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_004",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "main",
+    "intent": "Translate an English sentence into Chinese: customer requested a revised invoice",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "customer requested a revised invoice",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'customer requested a revised invoice' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'customer requested a revised invoice' into Chinese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'customer requested a revised invoice' to Chinese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_005",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "main",
+    "intent": "Translate an English sentence into Chinese: meeting room changed to 3B",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "meeting room changed to 3B",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'meeting room changed to 3B' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'meeting room changed to 3B' into Chinese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'meeting room changed to 3B' to Chinese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_006",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "main",
+    "intent": "Translate a Chinese sentence into English",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请在下午三点前提交报销单",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请在下午三点前提交报销单”翻译成 English。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请在下午三点前提交报销单”翻成英文。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请在下午三点前提交报销单”翻译成 English，如果内部文档里有类似表述你也可以看看。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Chinese-to-English translation."
+  },
+  {
+    "task_id": "translate_text_007",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "main",
+    "intent": "Translate a Chinese sentence into English：请把审批结果发给财务团队",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请把审批结果发给财务团队",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请把审批结果发给财务团队”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请把审批结果发给财务团队”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请把审批结果发给财务团队”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_008",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "main",
+    "intent": "Translate a Chinese sentence into English：请在周五前完成合同签署",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请在周五前完成合同签署",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请在周五前完成合同签署”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请在周五前完成合同签署”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请在周五前完成合同签署”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_009",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "main",
+    "intent": "Translate a Chinese sentence into English：请确认新的出差日期",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请确认新的出差日期",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请确认新的出差日期”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请确认新的出差日期”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请确认新的出差日期”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_010",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "main",
+    "intent": "Translate a Chinese sentence into English：请把附件同步到共享盘",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请把附件同步到共享盘",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请把附件同步到共享盘”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请把附件同步到共享盘”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请把附件同步到共享盘”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_011",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "main",
+    "intent": "Translate an airport sentence into Japanese",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "boarding gate has changed",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'boarding gate has changed' to Japanese.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "How do I say 'boarding gate has changed' in Japanese?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Translate 'boarding gate has changed'.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'boarding gate has changed' to Japanese. If needed, you can search the web first.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Translation with missing-target incomplete case."
+  },
+  {
+    "task_id": "translate_text_012",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "main",
+    "intent": "Translate an airport sentence into Japanese: boarding starts at gate C12",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "boarding starts at gate C12",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'boarding starts at gate C12' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'boarding starts at gate C12' into Japanese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'boarding starts at gate C12' to Japanese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_013",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "main",
+    "intent": "Translate an airport sentence into Japanese: your passport will be checked again",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "your passport will be checked again",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'your passport will be checked again' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'your passport will be checked again' into Japanese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'your passport will be checked again' to Japanese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_014",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "main",
+    "intent": "Translate an airport sentence into Japanese: the connection time is only 40 minutes",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "the connection time is only 40 minutes",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'the connection time is only 40 minutes' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'the connection time is only 40 minutes' into Japanese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'the connection time is only 40 minutes' to Japanese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_015",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "main",
+    "intent": "Translate an airport sentence into Japanese: please proceed to the transfer desk",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "please proceed to the transfer desk",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'please proceed to the transfer desk' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "Can you put 'please proceed to the transfer desk' into Japanese for me?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'please proceed to the transfer desk' to Japanese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_016",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "main",
+    "intent": "Translate a warehouse sentence into English",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "仓库已完成盘点",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“仓库已完成盘点”翻译成 English。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我把“仓库已完成盘点”翻成英文。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我把这句仓库的话翻一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“仓库已完成盘点”翻译成 English，必要的话也可以查一下文档。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Operations translation task."
+  },
+  {
+    "task_id": "translate_text_017",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "main",
+    "intent": "Translate a warehouse sentence into English：请先完成入库扫码",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请先完成入库扫码",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请先完成入库扫码”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请先完成入库扫码”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请先完成入库扫码”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_018",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "main",
+    "intent": "Translate a warehouse sentence into English：今晚需要加做一轮抽检",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "今晚需要加做一轮抽检",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“今晚需要加做一轮抽检”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“今晚需要加做一轮抽检”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“今晚需要加做一轮抽检”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_019",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "main",
+    "intent": "Translate a warehouse sentence into English：托盘标签已经重新打印",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "托盘标签已经重新打印",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“托盘标签已经重新打印”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“托盘标签已经重新打印”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“托盘标签已经重新打印”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_020",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "main",
+    "intent": "Translate a warehouse sentence into English：拣货区临时改到 B 通道",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "拣货区临时改到 B 通道",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“拣货区临时改到 B 通道”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“拣货区临时改到 B 通道”翻成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“拣货区临时改到 B 通道”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_021",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "main",
+    "intent": "Translate a login instruction into Spanish",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请重新登录后再试",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请重新登录后再试”翻译成 Spanish。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请重新登录后再试”翻成西班牙语。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "把这句话翻译一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请重新登录后再试”翻译成 Spanish，如果网页上有类似表述你也可以参考。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Another low-ambiguity translation task."
+  },
+  {
+    "task_id": "translate_text_022",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "main",
+    "intent": "Translate a login instruction into Spanish：请更新浏览器后再尝试",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请更新浏览器后再尝试",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请更新浏览器后再尝试”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请更新浏览器后再尝试”翻成 Spanish。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请更新浏览器后再尝试”翻译成 Spanish，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_023",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "main",
+    "intent": "Translate a login instruction into Spanish：验证码已过期，请重新获取",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "验证码已过期，请重新获取",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“验证码已过期，请重新获取”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“验证码已过期，请重新获取”翻成 Spanish。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“验证码已过期，请重新获取”翻译成 Spanish，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_024",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "main",
+    "intent": "Translate a login instruction into Spanish：系统检测到异常登录行为",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "系统检测到异常登录行为",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“系统检测到异常登录行为”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“系统检测到异常登录行为”翻成 Spanish。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“系统检测到异常登录行为”翻译成 Spanish，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_025",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "main",
+    "intent": "Translate a login instruction into Spanish：请先退出再重新进入应用",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请先退出再重新进入应用",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请先退出再重新进入应用”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把“请先退出再重新进入应用”翻成 Spanish。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请先退出再重新进入应用”翻译成 Spanish，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  }
+]

@@ -1,0 +1,962 @@
+[
+  {
+    "task_id": "get_weather_001",
+    "version": "task_v2",
+    "template_family": "get_weather_001",
+    "task_set": "main",
+    "intent": "Get weather for Hangzhou",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "杭州",
+      "date": "2026-05-11"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-05-11 杭州的天气。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我看看杭州 5 月 11 号天气怎么样。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city",
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-05-11 杭州的天气，如果公开网页上有说法你也可以顺便搜。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Low-ambiguity weather lookup."
+  },
+  {
+    "task_id": "get_weather_002",
+    "version": "task_v2",
+    "template_family": "get_weather_001",
+    "task_set": "main",
+    "intent": "Get weather for Hangzhou（2026-05-14）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "杭州",
+      "date": "2026-05-14"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-05-14 杭州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 杭州 在 2026-05-14 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city",
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-05-14 杭州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_003",
+    "version": "task_v2",
+    "template_family": "get_weather_001",
+    "task_set": "main",
+    "intent": "Get weather for Hangzhou（2026-05-21）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "杭州",
+      "date": "2026-05-21"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-05-21 杭州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 杭州 在 2026-05-21 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city",
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-05-21 杭州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_004",
+    "version": "task_v2",
+    "template_family": "get_weather_001",
+    "task_set": "main",
+    "intent": "Get weather for Hangzhou（2026-05-28）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "杭州",
+      "date": "2026-05-28"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-05-28 杭州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 杭州 在 2026-05-28 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city",
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-05-28 杭州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_005",
+    "version": "task_v2",
+    "template_family": "get_weather_001",
+    "task_set": "main",
+    "intent": "Get weather for Hangzhou（2026-06-04）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "杭州",
+      "date": "2026-06-04"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-06-04 杭州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 杭州 在 2026-06-04 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city",
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-06-04 杭州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_006",
+    "version": "task_v2",
+    "template_family": "get_weather_002",
+    "task_set": "main",
+    "intent": "Get weather for New York",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "New York",
+      "date": "2026-06-14"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for New York on 2026-06-14.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "What will New York look like weather-wise on June 14, 2026?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for New York on 2026-06-14. If a web search helps, you can do that too.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Simple weather request."
+  },
+  {
+    "task_id": "get_weather_007",
+    "version": "task_v2",
+    "template_family": "get_weather_002",
+    "task_set": "main",
+    "intent": "Get weather for New York on 2026-06-17",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "New York",
+      "date": "2026-06-17"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for New York on 2026-06-17."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in New York on 2026-06-17?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for New York on 2026-06-17. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_008",
+    "version": "task_v2",
+    "template_family": "get_weather_002",
+    "task_set": "main",
+    "intent": "Get weather for New York on 2026-06-24",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "New York",
+      "date": "2026-06-24"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for New York on 2026-06-24."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in New York on 2026-06-24?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for New York on 2026-06-24. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_009",
+    "version": "task_v2",
+    "template_family": "get_weather_002",
+    "task_set": "main",
+    "intent": "Get weather for New York on 2026-07-01",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "New York",
+      "date": "2026-07-01"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for New York on 2026-07-01."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in New York on 2026-07-01?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for New York on 2026-07-01. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_010",
+    "version": "task_v2",
+    "template_family": "get_weather_002",
+    "task_set": "main",
+    "intent": "Get weather for New York on 2026-07-08",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "New York",
+      "date": "2026-07-08"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for New York on 2026-07-08."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in New York on 2026-07-08?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for New York on 2026-07-08. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_011",
+    "version": "task_v2",
+    "template_family": "get_weather_003",
+    "task_set": "main",
+    "intent": "Get weather for Chengdu",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "成都",
+      "date": "2026-07-03"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-07-03 成都的天气。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 7 月 3 号成都天气。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我查一下成都的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-07-03 成都的天气，必要的话也可以去网页上搜。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Weather with missing-date incomplete case."
+  },
+  {
+    "task_id": "get_weather_012",
+    "version": "task_v2",
+    "template_family": "get_weather_003",
+    "task_set": "main",
+    "intent": "Get weather for Chengdu（2026-07-06）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "成都",
+      "date": "2026-07-06"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-07-06 成都 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 成都 在 2026-07-06 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-07-06 成都 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_013",
+    "version": "task_v2",
+    "template_family": "get_weather_003",
+    "task_set": "main",
+    "intent": "Get weather for Chengdu（2026-07-13）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "成都",
+      "date": "2026-07-13"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-07-13 成都 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 成都 在 2026-07-13 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-07-13 成都 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_014",
+    "version": "task_v2",
+    "template_family": "get_weather_003",
+    "task_set": "main",
+    "intent": "Get weather for Chengdu（2026-07-20）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "成都",
+      "date": "2026-07-20"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-07-20 成都 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 成都 在 2026-07-20 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-07-20 成都 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_015",
+    "version": "task_v2",
+    "template_family": "get_weather_003",
+    "task_set": "main",
+    "intent": "Get weather for Chengdu（2026-07-27）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "成都",
+      "date": "2026-07-27"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-07-27 成都 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 成都 在 2026-07-27 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "date"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-07-27 成都 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_016",
+    "version": "task_v2",
+    "template_family": "get_weather_004",
+    "task_set": "main",
+    "intent": "Get weather for Tokyo",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "Tokyo",
+      "date": "2026-05-01"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather in Tokyo on 2026-05-01.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "How is Tokyo weather on May 1, 2026?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "How is the weather on 2026-05-01?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather in Tokyo on 2026-05-01, or search the web if that seems easier.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Date known, city missing in incomplete variant."
+  },
+  {
+    "task_id": "get_weather_017",
+    "version": "task_v2",
+    "template_family": "get_weather_004",
+    "task_set": "main",
+    "intent": "Get weather for Tokyo on 2026-05-04",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "Tokyo",
+      "date": "2026-05-04"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for Tokyo on 2026-05-04."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in Tokyo on 2026-05-04?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for Tokyo on 2026-05-04. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_018",
+    "version": "task_v2",
+    "template_family": "get_weather_004",
+    "task_set": "main",
+    "intent": "Get weather for Tokyo on 2026-05-11",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "Tokyo",
+      "date": "2026-05-11"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for Tokyo on 2026-05-11."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in Tokyo on 2026-05-11?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for Tokyo on 2026-05-11. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_019",
+    "version": "task_v2",
+    "template_family": "get_weather_004",
+    "task_set": "main",
+    "intent": "Get weather for Tokyo on 2026-05-18",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "Tokyo",
+      "date": "2026-05-18"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for Tokyo on 2026-05-18."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in Tokyo on 2026-05-18?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for Tokyo on 2026-05-18. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_020",
+    "version": "task_v2",
+    "template_family": "get_weather_004",
+    "task_set": "main",
+    "intent": "Get weather for Tokyo on 2026-05-25",
+    "domain": "weather",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "Tokyo",
+      "date": "2026-05-25"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Get the weather for Tokyo on 2026-05-25."
+      },
+      "ambiguous": {
+        "utterance": "What will the weather be like in Tokyo on 2026-05-25?"
+      },
+      "incomplete": {
+        "utterance": "Can you check the weather for me?",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "Get the weather for Tokyo on 2026-05-25. If web search helps, you can do that too."
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_021",
+    "version": "task_v2",
+    "template_family": "get_weather_005",
+    "task_set": "main",
+    "intent": "Get weather for Guangzhou",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "广州",
+      "date": "2026-08-20"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-08-20 广州的天气。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我看下广州 8 月 20 号天气。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我查一下 2026-08-20 的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-08-20 广州的天气，如果外部网页也有数据你可以顺便搜。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Another low-ambiguity weather task."
+  },
+  {
+    "task_id": "get_weather_022",
+    "version": "task_v2",
+    "template_family": "get_weather_005",
+    "task_set": "main",
+    "intent": "Get weather for Guangzhou（2026-08-23）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "广州",
+      "date": "2026-08-23"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-08-23 广州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 广州 在 2026-08-23 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-08-23 广州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_023",
+    "version": "task_v2",
+    "template_family": "get_weather_005",
+    "task_set": "main",
+    "intent": "Get weather for Guangzhou（2026-08-30）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "广州",
+      "date": "2026-08-30"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-08-30 广州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 广州 在 2026-08-30 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-08-30 广州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_024",
+    "version": "task_v2",
+    "template_family": "get_weather_005",
+    "task_set": "main",
+    "intent": "Get weather for Guangzhou（2026-09-06）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "广州",
+      "date": "2026-09-06"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-09-06 广州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 广州 在 2026-09-06 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-09-06 广州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  },
+  {
+    "task_id": "get_weather_025",
+    "version": "task_v2",
+    "template_family": "get_weather_005",
+    "task_set": "main",
+    "intent": "Get weather for Guangzhou（2026-09-13）",
+    "domain": "weather",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "get_weather",
+    "gold_params": {
+      "city": "广州",
+      "date": "2026-09-13"
+    },
+    "distractor_tools": [
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 2026-09-13 广州 的天气。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看下 广州 在 2026-09-13 的天气怎么样。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那天的天气。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "city"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 2026-09-13 广州 的天气，如果公开网页上有相关内容你也可以顺便搜。"
+      }
+    },
+    "notes": "Phase 3 expanded weather sample."
+  }
+]

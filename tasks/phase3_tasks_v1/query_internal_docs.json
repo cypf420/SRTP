@@ -1,0 +1,982 @@
+[
+  {
+    "task_id": "query_internal_docs_001",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "main",
+    "intent": "Find the PTO carryover policy",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "年假 结转 政策",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里的年假结转政策。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我找一下休假结转那个规定。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "找一下那个内部规定文档。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下内部文档里的年假结转政策，如果公开网页上也有类似说法你也可以看看。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Internal policy lookup."
+  },
+  {
+    "task_id": "query_internal_docs_002",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "main",
+    "intent": "查找内部文档：remote work stipend policy",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "remote work stipend policy",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“remote work stipend policy”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 remote work stipend policy。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 remote work stipend policy 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_003",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "main",
+    "intent": "查找内部文档：new-hire onboarding checklist",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "new-hire onboarding checklist",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“new-hire onboarding checklist”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 new-hire onboarding checklist。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 new-hire onboarding checklist 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_004",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "main",
+    "intent": "查找内部文档：promotion review timeline",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "promotion review timeline",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“promotion review timeline”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 promotion review timeline。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 promotion review timeline 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_005",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "main",
+    "intent": "查找内部文档：leave approval escalation path",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "leave approval escalation path",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“leave approval escalation path”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 leave approval escalation path。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 leave approval escalation path 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_006",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "main",
+    "intent": "Find the VPN setup guide",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "VPN setup guide",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the internal docs for the VPN setup guide.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Can you find the document for getting onto the company VPN?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Find that internal setup doc.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the internal docs for the VPN setup guide, though a web search might also look relevant.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Internal IT guide."
+  },
+  {
+    "task_id": "query_internal_docs_007",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "main",
+    "intent": "Find the internal doc for laptop disk encryption guide",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "laptop disk encryption guide",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'laptop disk encryption guide'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for laptop disk encryption guide?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for laptop disk encryption guide, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_008",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "main",
+    "intent": "Find the internal doc for password manager setup steps",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "password manager setup steps",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'password manager setup steps'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for password manager setup steps?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for password manager setup steps, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_009",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "main",
+    "intent": "Find the internal doc for okta enrollment instructions",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "okta enrollment instructions",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'okta enrollment instructions'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for okta enrollment instructions?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for okta enrollment instructions, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_010",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "main",
+    "intent": "Find the internal doc for wifi certificate renewal guide",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "wifi certificate renewal guide",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'wifi certificate renewal guide'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for wifi certificate renewal guide?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for wifi certificate renewal guide, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_011",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "main",
+    "intent": "Find the reimbursement SOP",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "报销 SOP",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部财务文档里的报销 SOP。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我找一下报销流程那份内部说明。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "找一下财务那份流程文档。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下内部报销 SOP，如果数据库里有流程记录也可以顺便看。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Finance SOP."
+  },
+  {
+    "task_id": "query_internal_docs_012",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "main",
+    "intent": "查找内部文档：travel reimbursement timeline",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "travel reimbursement timeline",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“travel reimbursement timeline”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 travel reimbursement timeline。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 travel reimbursement timeline 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_013",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "main",
+    "intent": "查找内部文档：corporate card receipt policy",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "corporate card receipt policy",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“corporate card receipt policy”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 corporate card receipt policy。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 corporate card receipt policy 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_014",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "main",
+    "intent": "查找内部文档：expense audit checklist",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "expense audit checklist",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“expense audit checklist”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 expense audit checklist。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 expense audit checklist 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_015",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "main",
+    "intent": "查找内部文档：vendor payment approval flow",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "vendor payment approval flow",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“vendor payment approval flow”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 vendor payment approval flow。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 vendor payment approval flow 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_016",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "main",
+    "intent": "Find the warehouse safety checklist",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "warehouse safety checklist",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the warehouse safety checklist in the internal operations docs.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Can you pull up the internal checklist for warehouse safety?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Find the internal checklist.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the warehouse safety checklist in internal operations docs, but if the public web has something similar you can use that too.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Operations documentation lookup."
+  },
+  {
+    "task_id": "query_internal_docs_017",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "main",
+    "intent": "Find the internal doc for forklift inspection checklist",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "forklift inspection checklist",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'forklift inspection checklist'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for forklift inspection checklist?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for forklift inspection checklist, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_018",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "main",
+    "intent": "Find the internal doc for warehouse shift handoff SOP",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "warehouse shift handoff SOP",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'warehouse shift handoff SOP'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for warehouse shift handoff SOP?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for warehouse shift handoff SOP, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_019",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "main",
+    "intent": "Find the internal doc for inventory discrepancy process",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "inventory discrepancy process",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'inventory discrepancy process'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for inventory discrepancy process?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for inventory discrepancy process, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_020",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "main",
+    "intent": "Find the internal doc for dock safety incident escalation",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "dock safety incident escalation",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'dock safety incident escalation'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for dock safety incident escalation?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for dock safety incident escalation, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_021",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "main",
+    "intent": "Find the refund escalation process",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "退款 升级 流程",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部客服文档里的退款升级流程。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我找一下退款往上升级处理的那个内部流程。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "找一下客服内部流程文档。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下内部退款升级流程，如果网页上也有相关说明你也可以看。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Internal support process."
+  },
+  {
+    "task_id": "query_internal_docs_022",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "main",
+    "intent": "查找内部文档：premium customer escalation matrix",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "premium customer escalation matrix",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“premium customer escalation matrix”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 premium customer escalation matrix。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 premium customer escalation matrix 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_023",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "main",
+    "intent": "查找内部文档：refund exception policy",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "refund exception policy",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“refund exception policy”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 refund exception policy。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 refund exception policy 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_024",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "main",
+    "intent": "查找内部文档：weekend paging process",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "weekend paging process",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“weekend paging process”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 weekend paging process。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 weekend paging process 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_025",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "main",
+    "intent": "查找内部文档：sla breach escalation steps",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "sla breach escalation steps",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“sla breach escalation steps”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 sla breach escalation steps。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 sla breach escalation steps 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  }
+]

@@ -1,0 +1,1067 @@
+[
+  {
+    "task_id": "create_support_ticket_001",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_001",
+    "task_set": "main",
+    "intent": "Create a high-priority technical ticket",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-204",
+      "category": "technical",
+      "priority": "high",
+      "description": "app keeps crashing on login"
+    },
+    "distractor_tools": [
+      "update_order",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority technical ticket for user U-204 because the app keeps crashing on login.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Open an urgent tech ticket for U-204. The app crashes every time they try to log in.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Open a technical ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority technical ticket for user U-204 because the app keeps crashing on login, and you can consult internal docs if needed.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Technical support ticket."
+  },
+  {
+    "task_id": "create_support_ticket_002",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_001",
+    "task_set": "main",
+    "intent": "Create a high-priority technical ticket for U-209",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-209",
+      "category": "technical",
+      "priority": "high",
+      "description": "mobile app freezes after MFA"
+    },
+    "distractor_tools": [
+      "update_order",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority technical ticket for user U-209 because mobile app freezes after MFA."
+      },
+      "ambiguous": {
+        "utterance": "Open a high technical ticket for U-209. The issue is mobile app freezes after MFA."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority technical ticket for user U-209 because mobile app freezes after MFA. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_003",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_001",
+    "task_set": "main",
+    "intent": "Create a high-priority technical ticket for U-215",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-215",
+      "category": "technical",
+      "priority": "high",
+      "description": "dashboard spins forever on report export"
+    },
+    "distractor_tools": [
+      "update_order",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority technical ticket for user U-215 because dashboard spins forever on report export."
+      },
+      "ambiguous": {
+        "utterance": "Open a high technical ticket for U-215. The issue is dashboard spins forever on report export."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority technical ticket for user U-215 because dashboard spins forever on report export. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_004",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_001",
+    "task_set": "main",
+    "intent": "Create a high-priority technical ticket for U-223",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-223",
+      "category": "technical",
+      "priority": "medium",
+      "description": "desktop client fails to sync settings"
+    },
+    "distractor_tools": [
+      "update_order",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a medium-priority technical ticket for user U-223 because desktop client fails to sync settings."
+      },
+      "ambiguous": {
+        "utterance": "Open a medium technical ticket for U-223. The issue is desktop client fails to sync settings."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a medium-priority technical ticket for user U-223 because desktop client fails to sync settings. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_005",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_001",
+    "task_set": "main",
+    "intent": "Create a high-priority technical ticket for U-231",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-231",
+      "category": "technical",
+      "priority": "high",
+      "description": "users hit a blank screen after login"
+    },
+    "distractor_tools": [
+      "update_order",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority technical ticket for user U-231 because users hit a blank screen after login."
+      },
+      "ambiguous": {
+        "utterance": "Open a high technical ticket for U-231. The issue is users hit a blank screen after login."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority technical ticket for user U-231 because users hit a blank screen after login. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_006",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_002",
+    "task_set": "main",
+    "intent": "Create a billing ticket",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-778",
+      "category": "billing",
+      "priority": "medium",
+      "description": "duplicate charge on monthly invoice"
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 U-778 创建一个 medium 优先级的 billing 工单，问题是 duplicate charge on monthly invoice。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我给 U-778 开个账单工单，月账单被重复扣费了。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "开一个账单问题工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 U-778 创建一个 medium 优先级的 billing 工单，问题是 duplicate charge on monthly invoice；如果内部文档有流程你也可以看。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Billing ticket."
+  },
+  {
+    "task_id": "create_support_ticket_007",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_002",
+    "task_set": "main",
+    "intent": "Create a billing ticket：U-783",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-783",
+      "category": "billing",
+      "priority": "medium",
+      "description": "invoice still shows a cancelled add-on"
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 U-783 创建一个 medium 优先级的 billing 工单，问题是 invoice still shows a cancelled add-on。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 U-783 开个 billing 工单，优先级 medium，问题是 invoice still shows a cancelled add-on。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 U-783 创建一个 medium 优先级的 billing 工单，问题是 invoice still shows a cancelled add-on；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_008",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_002",
+    "task_set": "main",
+    "intent": "Create a billing ticket：U-789",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-789",
+      "category": "billing",
+      "priority": "medium",
+      "description": "tax amount looks duplicated on renewal"
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 U-789 创建一个 medium 优先级的 billing 工单，问题是 tax amount looks duplicated on renewal。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 U-789 开个 billing 工单，优先级 medium，问题是 tax amount looks duplicated on renewal。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 U-789 创建一个 medium 优先级的 billing 工单，问题是 tax amount looks duplicated on renewal；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_009",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_002",
+    "task_set": "main",
+    "intent": "Create a billing ticket：U-797",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-797",
+      "category": "billing",
+      "priority": "high",
+      "description": "credit note never applied to the account"
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 U-797 创建一个 high 优先级的 billing 工单，问题是 credit note never applied to the account。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 U-797 开个 billing 工单，优先级 high，问题是 credit note never applied to the account。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 U-797 创建一个 high 优先级的 billing 工单，问题是 credit note never applied to the account；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_010",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_002",
+    "task_set": "main",
+    "intent": "Create a billing ticket：U-805",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "U-805",
+      "category": "billing",
+      "priority": "medium",
+      "description": "annual prepayment was charged twice"
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 U-805 创建一个 medium 优先级的 billing 工单，问题是 annual prepayment was charged twice。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 U-805 开个 billing 工单，优先级 medium，问题是 annual prepayment was charged twice。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "priority",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 U-805 创建一个 medium 优先级的 billing 工单，问题是 annual prepayment was charged twice；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_011",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_003",
+    "task_set": "main",
+    "intent": "Create an order-related support ticket",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "C-551",
+      "category": "order",
+      "priority": "high",
+      "description": "package marked delivered but customer did not receive it"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority order ticket for user C-551 because the package was marked delivered but the customer did not receive it.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Open an urgent order issue for C-551. It says delivered, but nothing arrived.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Open an urgent order ticket.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority order ticket for user C-551 because the package was marked delivered but the customer did not receive it. You could also check the order status if you want.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Order incident ticket."
+  },
+  {
+    "task_id": "create_support_ticket_012",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_003",
+    "task_set": "main",
+    "intent": "Create an order-related support ticket for C-556",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "C-556",
+      "category": "order",
+      "priority": "high",
+      "description": "tracking page stopped updating for three days"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority order ticket for user C-556 because tracking page stopped updating for three days."
+      },
+      "ambiguous": {
+        "utterance": "Open a high order ticket for C-556. The issue is tracking page stopped updating for three days."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority order ticket for user C-556 because tracking page stopped updating for three days. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_013",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_003",
+    "task_set": "main",
+    "intent": "Create an order-related support ticket for C-562",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "C-562",
+      "category": "order",
+      "priority": "medium",
+      "description": "customer received only part of the shipment"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a medium-priority order ticket for user C-562 because customer received only part of the shipment."
+      },
+      "ambiguous": {
+        "utterance": "Open a medium order ticket for C-562. The issue is customer received only part of the shipment."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a medium-priority order ticket for user C-562 because customer received only part of the shipment. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_014",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_003",
+    "task_set": "main",
+    "intent": "Create an order-related support ticket for C-570",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "C-570",
+      "category": "order",
+      "priority": "high",
+      "description": "replacement order was never released"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority order ticket for user C-570 because replacement order was never released."
+      },
+      "ambiguous": {
+        "utterance": "Open a high order ticket for C-570. The issue is replacement order was never released."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority order ticket for user C-570 because replacement order was never released. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_015",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_003",
+    "task_set": "main",
+    "intent": "Create an order-related support ticket for C-578",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "C-578",
+      "category": "order",
+      "priority": "medium",
+      "description": "order shows exception after customs scan"
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a medium-priority order ticket for user C-578 because order shows exception after customs scan."
+      },
+      "ambiguous": {
+        "utterance": "Open a medium order ticket for C-578. The issue is order shows exception after customs scan."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a medium-priority order ticket for user C-578 because order shows exception after customs scan. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_016",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_004",
+    "task_set": "main",
+    "intent": "Create an account support ticket",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "E-889",
+      "category": "account",
+      "priority": "low",
+      "description": "password reset link expired"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 E-889 创建一个 low 优先级的 account 工单，问题是 password reset link expired。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我给 E-889 开个账户工单，重置密码链接过期了。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我开个账号问题工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 E-889 创建一个 low 优先级的 account 工单，问题是 password reset link expired；必要的话可以先查一下内部文档。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Low-priority account issue."
+  },
+  {
+    "task_id": "create_support_ticket_017",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_004",
+    "task_set": "main",
+    "intent": "Create an account support ticket：E-894",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "E-894",
+      "category": "account",
+      "priority": "low",
+      "description": "email verification link has expired"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 E-894 创建一个 low 优先级的 account 工单，问题是 email verification link has expired。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 E-894 开个 account 工单，优先级 low，问题是 email verification link has expired。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 E-894 创建一个 low 优先级的 account 工单，问题是 email verification link has expired；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_018",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_004",
+    "task_set": "main",
+    "intent": "Create an account support ticket：E-900",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "E-900",
+      "category": "account",
+      "priority": "medium",
+      "description": "role assignment vanished after profile edit"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 E-900 创建一个 medium 优先级的 account 工单，问题是 role assignment vanished after profile edit。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 E-900 开个 account 工单，优先级 medium，问题是 role assignment vanished after profile edit。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 E-900 创建一个 medium 优先级的 account 工单，问题是 role assignment vanished after profile edit；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_019",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_004",
+    "task_set": "main",
+    "intent": "Create an account support ticket：E-908",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "E-908",
+      "category": "account",
+      "priority": "medium",
+      "description": "account is locked after repeated MFA prompts"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 E-908 创建一个 medium 优先级的 account 工单，问题是 account is locked after repeated MFA prompts。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 E-908 开个 account 工单，优先级 medium，问题是 account is locked after repeated MFA prompts。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 E-908 创建一个 medium 优先级的 account 工单，问题是 account is locked after repeated MFA prompts；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_020",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_004",
+    "task_set": "main",
+    "intent": "Create an account support ticket：E-916",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "E-916",
+      "category": "account",
+      "priority": "low",
+      "description": "self-service password reset never sends mail"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "为用户 E-916 创建一个 low 优先级的 account 工单，问题是 self-service password reset never sends mail。"
+      },
+      "ambiguous": {
+        "utterance": "帮我给 E-916 开个 account 工单，优先级 low，问题是 self-service password reset never sends mail。"
+      },
+      "incomplete": {
+        "utterance": "帮我开一个这个用户的支持工单。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "为用户 E-916 创建一个 low 优先级的 account 工单，问题是 self-service password reset never sends mail；如果内部文档或订单系统能提供背景你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_021",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_005",
+    "task_set": "main",
+    "intent": "Create a travel support ticket",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "T-120",
+      "category": "travel",
+      "priority": "high",
+      "description": "itinerary did not sync to the mobile app"
+    },
+    "distractor_tools": [
+      "change_flight",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority travel ticket for user T-120 because the itinerary did not sync to the mobile app.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Please open an urgent travel case for T-120. Their itinerary never showed up in the mobile app.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Open a travel support case for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority travel ticket for user T-120 because the itinerary did not sync to the mobile app. You can also search internal docs if needed.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Travel workflow support case."
+  },
+  {
+    "task_id": "create_support_ticket_022",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_005",
+    "task_set": "main",
+    "intent": "Create a travel support ticket for T-125",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "T-125",
+      "category": "travel",
+      "priority": "high",
+      "description": "hotel booking never synced to the itinerary"
+    },
+    "distractor_tools": [
+      "change_flight",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority travel ticket for user T-125 because hotel booking never synced to the itinerary."
+      },
+      "ambiguous": {
+        "utterance": "Open a high travel ticket for T-125. The issue is hotel booking never synced to the itinerary."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority travel ticket for user T-125 because hotel booking never synced to the itinerary. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_023",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_005",
+    "task_set": "main",
+    "intent": "Create a travel support ticket for T-131",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "T-131",
+      "category": "travel",
+      "priority": "medium",
+      "description": "expense receipt upload failed in the trip portal"
+    },
+    "distractor_tools": [
+      "change_flight",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a medium-priority travel ticket for user T-131 because expense receipt upload failed in the trip portal."
+      },
+      "ambiguous": {
+        "utterance": "Open a medium travel ticket for T-131. The issue is expense receipt upload failed in the trip portal."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a medium-priority travel ticket for user T-131 because expense receipt upload failed in the trip portal. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_024",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_005",
+    "task_set": "main",
+    "intent": "Create a travel support ticket for T-139",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "T-139",
+      "category": "travel",
+      "priority": "high",
+      "description": "traveler profile lost passport details"
+    },
+    "distractor_tools": [
+      "change_flight",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a high-priority travel ticket for user T-139 because traveler profile lost passport details."
+      },
+      "ambiguous": {
+        "utterance": "Open a high travel ticket for T-139. The issue is traveler profile lost passport details."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a high-priority travel ticket for user T-139 because traveler profile lost passport details. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  },
+  {
+    "task_id": "create_support_ticket_025",
+    "version": "task_v2",
+    "template_family": "create_support_ticket_005",
+    "task_set": "main",
+    "intent": "Create a travel support ticket for T-147",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "create_support_ticket",
+    "gold_params": {
+      "user_id": "T-147",
+      "category": "travel",
+      "priority": "medium",
+      "description": "car rental confirmation is missing from the app"
+    },
+    "distractor_tools": [
+      "change_flight",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Create a medium-priority travel ticket for user T-147 because car rental confirmation is missing from the app."
+      },
+      "ambiguous": {
+        "utterance": "Open a medium travel ticket for T-147. The issue is car rental confirmation is missing from the app."
+      },
+      "incomplete": {
+        "utterance": "Open a support ticket for this user.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "user_id",
+          "description"
+        ]
+      },
+      "misleading": {
+        "utterance": "Create a medium-priority travel ticket for user T-147 because car rental confirmation is missing from the app. You can also inspect related docs or order data if useful."
+      }
+    },
+    "notes": "Phase 3 expanded support-ticket sample."
+  }
+]

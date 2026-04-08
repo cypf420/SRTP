@@ -1,0 +1,372 @@
+[
+  {
+    "task_id": "query_order_status_ext_001",
+    "version": "task_v2",
+    "template_family": "query_order_status_001",
+    "task_set": "external_eval",
+    "intent": "Check status for a specific order：ORD-10439",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "ORD-10439"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 ORD-10439 当前的履约状态。"
+      },
+      "ambiguous": {
+        "utterance": "ORD-10439 这单客户在催，我只想知道它现在卡在哪个节点。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个订单现在什么状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下订单 ORD-10439 的状态；如果数据库或网页上也能找到类似信息你也可以查。"
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_002",
+    "version": "task_v2",
+    "template_family": "query_order_status_001",
+    "task_set": "external_eval",
+    "intent": "Check status for a specific order：ORD-10450",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "ORD-10450"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 ORD-10450 当前的履约状态。"
+      },
+      "ambiguous": {
+        "utterance": "ORD-10450 这单客户在催，我只想知道它现在卡在哪个节点。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个订单现在什么状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下订单 ORD-10450 的状态；如果数据库或网页上也能找到类似信息你也可以查。"
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_003",
+    "version": "task_v2",
+    "template_family": "query_order_status_002",
+    "task_set": "external_eval",
+    "intent": "Check shipping status for an order for ORD-11013",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "ORD-11013"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Check the current status for order ORD-11013."
+      },
+      "ambiguous": {
+        "utterance": "A customer is chasing ORD-11013. I only need to know its latest status."
+      },
+      "incomplete": {
+        "utterance": "Check the status of this order for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Check order ORD-11013, and if needed you can look in the database or public web too."
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_004",
+    "version": "task_v2",
+    "template_family": "query_order_status_002",
+    "task_set": "external_eval",
+    "intent": "Check shipping status for an order for ORD-11024",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "ORD-11024"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Check the current status for order ORD-11024."
+      },
+      "ambiguous": {
+        "utterance": "A customer is chasing ORD-11024. I only need to know its latest status."
+      },
+      "incomplete": {
+        "utterance": "Check the status of this order for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Check order ORD-11024, and if needed you can look in the database or public web too."
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_005",
+    "version": "task_v2",
+    "template_family": "query_order_status_003",
+    "task_set": "external_eval",
+    "intent": "Check order progress for a sales order：SO-88732",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "SO-88732"
+    },
+    "distractor_tools": [
+      "search_database",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 SO-88732 当前的履约状态。"
+      },
+      "ambiguous": {
+        "utterance": "SO-88732 这单客户在催，我只想知道它现在卡在哪个节点。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个订单现在什么状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下订单 SO-88732 的状态；如果数据库或网页上也能找到类似信息你也可以查。"
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_006",
+    "version": "task_v2",
+    "template_family": "query_order_status_003",
+    "task_set": "external_eval",
+    "intent": "Check order progress for a sales order：SO-88743",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "SO-88743"
+    },
+    "distractor_tools": [
+      "search_database",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 SO-88743 当前的履约状态。"
+      },
+      "ambiguous": {
+        "utterance": "SO-88743 这单客户在催，我只想知道它现在卡在哪个节点。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个订单现在什么状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下订单 SO-88743 的状态；如果数据库或网页上也能找到类似信息你也可以查。"
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_007",
+    "version": "task_v2",
+    "template_family": "query_order_status_004",
+    "task_set": "external_eval",
+    "intent": "Check status for a return order for RET-55631",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "RET-55631"
+    },
+    "distractor_tools": [
+      "search_database",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Check the current status for order RET-55631."
+      },
+      "ambiguous": {
+        "utterance": "A customer is chasing RET-55631. I only need to know its latest status."
+      },
+      "incomplete": {
+        "utterance": "Check the status of this order for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Check order RET-55631, and if needed you can look in the database or public web too."
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_008",
+    "version": "task_v2",
+    "template_family": "query_order_status_004",
+    "task_set": "external_eval",
+    "intent": "Check status for a return order for RET-55642",
+    "domain": "commerce",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "RET-55642"
+    },
+    "distractor_tools": [
+      "search_database",
+      "update_order"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Check the current status for order RET-55642."
+      },
+      "ambiguous": {
+        "utterance": "A customer is chasing RET-55642. I only need to know its latest status."
+      },
+      "incomplete": {
+        "utterance": "Check the status of this order for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "Check order RET-55642, and if needed you can look in the database or public web too."
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_009",
+    "version": "task_v2",
+    "template_family": "query_order_status_005",
+    "task_set": "external_eval",
+    "intent": "Check status for a CN order：CN-2026-452",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "CN-2026-452"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 CN-2026-452 当前的履约状态。"
+      },
+      "ambiguous": {
+        "utterance": "CN-2026-452 这单客户在催，我只想知道它现在卡在哪个节点。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个订单现在什么状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下订单 CN-2026-452 的状态；如果数据库或网页上也能找到类似信息你也可以查。"
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  },
+  {
+    "task_id": "query_order_status_ext_010",
+    "version": "task_v2",
+    "template_family": "query_order_status_005",
+    "task_set": "external_eval",
+    "intent": "Check status for a CN order：CN-2026-463",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_order_status",
+    "gold_params": {
+      "order_id": "CN-2026-463"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下订单 CN-2026-463 当前的履约状态。"
+      },
+      "ambiguous": {
+        "utterance": "CN-2026-463 这单客户在催，我只想知道它现在卡在哪个节点。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个订单现在什么状态。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "order_id"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下订单 CN-2026-463 的状态；如果数据库或网页上也能找到类似信息你也可以查。"
+      }
+    },
+    "notes": "Phase 3 expanded order-status query."
+  }
+]

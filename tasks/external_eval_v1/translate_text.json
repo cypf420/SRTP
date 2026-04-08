@@ -1,0 +1,390 @@
+[
+  {
+    "task_id": "translate_text_ext_001",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "external_eval",
+    "intent": "Translate an English sentence into Chinese: maintenance starts after business hours",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "maintenance starts after business hours",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'maintenance starts after business hours' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "How should I say 'maintenance starts after business hours' in Chinese?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'maintenance starts after business hours' to Chinese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_002",
+    "version": "task_v2",
+    "template_family": "translate_text_001",
+    "task_set": "external_eval",
+    "intent": "Translate an English sentence into Chinese: please confirm receipt before noon",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "please confirm receipt before noon",
+      "target_lang": "Chinese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'please confirm receipt before noon' to Chinese."
+      },
+      "ambiguous": {
+        "utterance": "How should I say 'please confirm receipt before noon' in Chinese?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'please confirm receipt before noon' to Chinese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_003",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "external_eval",
+    "intent": "Translate a Chinese sentence into English：请先联系采购确认预算",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请先联系采购确认预算",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请先联系采购确认预算”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "我需要把“请先联系采购确认预算”处理成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请先联系采购确认预算”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_004",
+    "version": "task_v2",
+    "template_family": "translate_text_002",
+    "task_set": "external_eval",
+    "intent": "Translate a Chinese sentence into English：请在今天下班前回复客户",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请在今天下班前回复客户",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请在今天下班前回复客户”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "我需要把“请在今天下班前回复客户”处理成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请在今天下班前回复客户”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_005",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "external_eval",
+    "intent": "Translate an airport sentence into Japanese: the flight is delayed due to runway traffic",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "the flight is delayed due to runway traffic",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'the flight is delayed due to runway traffic' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "How should I say 'the flight is delayed due to runway traffic' in Japanese?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'the flight is delayed due to runway traffic' to Japanese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_006",
+    "version": "task_v2",
+    "template_family": "translate_text_003",
+    "task_set": "external_eval",
+    "intent": "Translate an airport sentence into Japanese: baggage claim moved to carousel seven",
+    "domain": "translation",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "baggage claim moved to carousel seven",
+      "target_lang": "Japanese"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Translate 'baggage claim moved to carousel seven' to Japanese."
+      },
+      "ambiguous": {
+        "utterance": "How should I say 'baggage claim moved to carousel seven' in Japanese?"
+      },
+      "incomplete": {
+        "utterance": "Translate this sentence for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "Translate 'baggage claim moved to carousel seven' to Japanese. If related docs or web examples help, you can check them too."
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_007",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "external_eval",
+    "intent": "Translate a warehouse sentence into English：冷链货物需要优先装车",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "冷链货物需要优先装车",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“冷链货物需要优先装车”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "我需要把“冷链货物需要优先装车”处理成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“冷链货物需要优先装车”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_008",
+    "version": "task_v2",
+    "template_family": "translate_text_004",
+    "task_set": "external_eval",
+    "intent": "Translate a warehouse sentence into English：缺货商品请移到待处理区",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "缺货商品请移到待处理区",
+      "target_lang": "English"
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“缺货商品请移到待处理区”翻译成 English。"
+      },
+      "ambiguous": {
+        "utterance": "我需要把“缺货商品请移到待处理区”处理成 English。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“缺货商品请移到待处理区”翻译成 English，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_009",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "external_eval",
+    "intent": "Translate a login instruction into Spanish：登录会话已失效，请重新认证",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "登录会话已失效，请重新认证",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“登录会话已失效，请重新认证”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "我需要把“登录会话已失效，请重新认证”处理成 Spanish。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“登录会话已失效，请重新认证”翻译成 Spanish，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  },
+  {
+    "task_id": "translate_text_ext_010",
+    "version": "task_v2",
+    "template_family": "translate_text_005",
+    "task_set": "external_eval",
+    "intent": "Translate a login instruction into Spanish：请确认网络恢复后再次提交",
+    "domain": "translation",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "translate_text",
+    "gold_params": {
+      "text": "请确认网络恢复后再次提交",
+      "target_lang": "Spanish"
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把“请确认网络恢复后再次提交”翻译成 Spanish。"
+      },
+      "ambiguous": {
+        "utterance": "我需要把“请确认网络恢复后再次提交”处理成 Spanish。"
+      },
+      "incomplete": {
+        "utterance": "帮我翻译一下这句话。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "text",
+          "target_lang"
+        ]
+      },
+      "misleading": {
+        "utterance": "把“请确认网络恢复后再次提交”翻译成 Spanish，如果网页或内部文档里有类似表达你也可以参考。"
+      }
+    },
+    "notes": "Phase 3 expanded translation sample."
+  }
+]

@@ -1,0 +1,400 @@
+[
+  {
+    "task_id": "change_flight_ext_001",
+    "version": "task_v2",
+    "template_family": "change_flight_001",
+    "task_set": "external_eval",
+    "intent": "Move an existing booking to a later date：BK-8856",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-8856",
+      "new_date": "2026-06-09",
+      "reason": "speaker schedule moved"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 BK-8856 改到 2026-06-09，原因是 speaker schedule moved。"
+      },
+      "ambiguous": {
+        "utterance": "BK-8856 这张票得改到 2026-06-09，原因是 speaker schedule moved。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "把预订 BK-8856 改到 2026-06-09，原因是 speaker schedule moved；如果你想先查公开航班信息也可以。"
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_002",
+    "version": "task_v2",
+    "template_family": "change_flight_001",
+    "task_set": "external_eval",
+    "intent": "Move an existing booking to a later date：BK-8871",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-8871",
+      "new_date": "2026-06-24",
+      "reason": "hotel check-in constraint changed"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 BK-8871 改到 2026-06-24，原因是 hotel check-in constraint changed。"
+      },
+      "ambiguous": {
+        "utterance": "BK-8871 这张票得改到 2026-06-24，原因是 hotel check-in constraint changed。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "把预订 BK-8871 改到 2026-06-24，原因是 hotel check-in constraint changed；如果你想先查公开航班信息也可以。"
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_003",
+    "version": "task_v2",
+    "template_family": "change_flight_002",
+    "task_set": "external_eval",
+    "intent": "Change a booking date after a conflict for BK-9927",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-9927",
+      "new_date": "2026-07-15",
+      "reason": "school schedule conflict"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Change booking BK-9927 to 2026-07-15 because school schedule conflict."
+      },
+      "ambiguous": {
+        "utterance": "I need BK-9927 moved to 2026-07-15 since school schedule conflict."
+      },
+      "incomplete": {
+        "utterance": "Please change my flight booking.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "Change booking BK-9927 to 2026-07-15 because school schedule conflict. You can also search the public web if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_004",
+    "version": "task_v2",
+    "template_family": "change_flight_002",
+    "task_set": "external_eval",
+    "intent": "Change a booking date after a conflict for BK-9942",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-9942",
+      "new_date": "2026-07-30",
+      "reason": "transport connection changed"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Change booking BK-9942 to 2026-07-30 because transport connection changed."
+      },
+      "ambiguous": {
+        "utterance": "I need BK-9942 moved to 2026-07-30 since transport connection changed."
+      },
+      "incomplete": {
+        "utterance": "Please change my flight booking.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "Change booking BK-9942 to 2026-07-30 because transport connection changed. You can also search the public web if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_005",
+    "version": "task_v2",
+    "template_family": "change_flight_003",
+    "task_set": "external_eval",
+    "intent": "Change a flight because of weather：TR-5535",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "TR-5535",
+      "new_date": "2026-08-02",
+      "reason": "snow advisory"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 TR-5535 改到 2026-08-02，原因是 snow advisory。"
+      },
+      "ambiguous": {
+        "utterance": "TR-5535 这张票得改到 2026-08-02，原因是 snow advisory。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "把预订 TR-5535 改到 2026-08-02，原因是 snow advisory；如果你想先查公开航班信息也可以。"
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_006",
+    "version": "task_v2",
+    "template_family": "change_flight_003",
+    "task_set": "external_eval",
+    "intent": "Change a flight because of weather：TR-5550",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "TR-5550",
+      "new_date": "2026-08-17",
+      "reason": "fog disruption at departure airport"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 TR-5550 改到 2026-08-17，原因是 fog disruption at departure airport。"
+      },
+      "ambiguous": {
+        "utterance": "TR-5550 这张票得改到 2026-08-17，原因是 fog disruption at departure airport。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "把预订 TR-5550 改到 2026-08-17，原因是 fog disruption at departure airport；如果你想先查公开航班信息也可以。"
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_007",
+    "version": "task_v2",
+    "template_family": "change_flight_004",
+    "task_set": "external_eval",
+    "intent": "Change a booking after a conference moved for PNR-2026-139",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "PNR-2026-139",
+      "new_date": "2026-09-12",
+      "reason": "workshop schedule slipped"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Change booking PNR-2026-139 to 2026-09-12 because workshop schedule slipped."
+      },
+      "ambiguous": {
+        "utterance": "I need PNR-2026-139 moved to 2026-09-12 since workshop schedule slipped."
+      },
+      "incomplete": {
+        "utterance": "Please change my flight booking.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "Change booking PNR-2026-139 to 2026-09-12 because workshop schedule slipped. You can also search the public web if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_008",
+    "version": "task_v2",
+    "template_family": "change_flight_004",
+    "task_set": "external_eval",
+    "intent": "Change a booking after a conference moved for PNR-2026-154",
+    "domain": "travel",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "PNR-2026-154",
+      "new_date": "2026-09-27",
+      "reason": "registration day moved"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Change booking PNR-2026-154 to 2026-09-27 because registration day moved."
+      },
+      "ambiguous": {
+        "utterance": "I need PNR-2026-154 moved to 2026-09-27 since registration day moved."
+      },
+      "incomplete": {
+        "utterance": "Please change my flight booking.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "Change booking PNR-2026-154 to 2026-09-27 because registration day moved. You can also search the public web if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_009",
+    "version": "task_v2",
+    "template_family": "change_flight_005",
+    "task_set": "external_eval",
+    "intent": "Change a booking on client request：BK-CN-7813",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-CN-7813",
+      "new_date": "2026-10-25",
+      "reason": "procurement review changed"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 BK-CN-7813 改到 2026-10-25，原因是 procurement review changed。"
+      },
+      "ambiguous": {
+        "utterance": "BK-CN-7813 这张票得改到 2026-10-25，原因是 procurement review changed。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "把预订 BK-CN-7813 改到 2026-10-25，原因是 procurement review changed；如果你想先查公开航班信息也可以。"
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  },
+  {
+    "task_id": "change_flight_ext_010",
+    "version": "task_v2",
+    "template_family": "change_flight_005",
+    "task_set": "external_eval",
+    "intent": "Change a booking on client request：BK-CN-7828",
+    "domain": "travel",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "change_flight",
+    "gold_params": {
+      "booking_id": "BK-CN-7828",
+      "new_date": "2026-11-09",
+      "reason": "onsite demo date moved"
+    },
+    "distractor_tools": [
+      "book_flight",
+      "create_support_ticket"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "把预订 BK-CN-7828 改到 2026-11-09，原因是 onsite demo date moved。"
+      },
+      "ambiguous": {
+        "utterance": "BK-CN-7828 这张票得改到 2026-11-09，原因是 onsite demo date moved。"
+      },
+      "incomplete": {
+        "utterance": "帮我把机票改签一下。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "booking_id",
+          "new_date"
+        ]
+      },
+      "misleading": {
+        "utterance": "把预订 BK-CN-7828 改到 2026-11-09，原因是 onsite demo date moved；如果你想先查公开航班信息也可以。"
+      }
+    },
+    "notes": "Phase 3 expanded rebooking sample."
+  }
+]

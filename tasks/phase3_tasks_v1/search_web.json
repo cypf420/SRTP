@@ -1,0 +1,982 @@
+[
+  {
+    "task_id": "search_web_001",
+    "version": "task_v2",
+    "template_family": "search_web_001",
+    "task_set": "main",
+    "intent": "Search public news about OpenAI model releases",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "OpenAI 最新 模型 发布 新闻",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，给我公开网页上的信息。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我看看最近有没有新模型的消息。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Public web search with database distractor."
+  },
+  {
+    "task_id": "search_web_002",
+    "version": "task_v2",
+    "template_family": "search_web_001",
+    "task_set": "main",
+    "intent": "Search public news about OpenAI developer conference updates",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "OpenAI developer conference update public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于OpenAI 开发者大会最新公开消息的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看OpenAI 开发者大会最新公开消息最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下OpenAI 开发者大会最新公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_003",
+    "version": "task_v2",
+    "template_family": "search_web_001",
+    "task_set": "main",
+    "intent": "Search public coverage of OpenAI reasoning model benchmarks",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "OpenAI reasoning model benchmark coverage public web",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于OpenAI 推理模型 benchmark 的公开报道的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看OpenAI 推理模型 benchmark 的公开报道最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下OpenAI 推理模型 benchmark 的公开报道的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_004",
+    "version": "task_v2",
+    "template_family": "search_web_001",
+    "task_set": "main",
+    "intent": "Search public news about OpenAI API pricing changes",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "OpenAI API pricing change public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于OpenAI API 定价变动的公开新闻的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看OpenAI API 定价变动的公开新闻最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下OpenAI API 定价变动的公开新闻的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_005",
+    "version": "task_v2",
+    "template_family": "search_web_001",
+    "task_set": "main",
+    "intent": "Search public news about OpenAI enterprise product launches",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "OpenAI enterprise product launch public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于OpenAI 企业产品发布的公开消息的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看OpenAI 企业产品发布的公开消息最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下OpenAI 企业产品发布的公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_006",
+    "version": "task_v2",
+    "template_family": "search_web_002",
+    "task_set": "main",
+    "intent": "Search public news about Tesla layoffs",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Tesla layoffs recent news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find recent public web news about Tesla layoffs.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Can you see what is going on with Tesla layoffs lately?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Look it up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find recent Tesla layoff news, and if the company database has anything similar you can check that too.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Public news lookup."
+  },
+  {
+    "task_id": "search_web_007",
+    "version": "task_v2",
+    "template_family": "search_web_002",
+    "task_set": "main",
+    "intent": "Search public news about Tesla price cuts",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Tesla price cuts latest public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about Tesla 最近的降价新闻."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about Tesla 最近的降价新闻 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for Tesla 最近的降价新闻, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_008",
+    "version": "task_v2",
+    "template_family": "search_web_002",
+    "task_set": "main",
+    "intent": "Search public news about Tesla delivery numbers",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Tesla delivery numbers latest public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about Tesla 最近交付数据的公开消息."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about Tesla 最近交付数据的公开消息 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for Tesla 最近交付数据的公开消息, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_009",
+    "version": "task_v2",
+    "template_family": "search_web_002",
+    "task_set": "main",
+    "intent": "Search public news about Tesla factory expansion",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Tesla factory expansion public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about Tesla 工厂扩张的公开报道."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about Tesla 工厂扩张的公开报道 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for Tesla 工厂扩张的公开报道, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_010",
+    "version": "task_v2",
+    "template_family": "search_web_002",
+    "task_set": "main",
+    "intent": "Search public news about Tesla autopilot investigation",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Tesla autopilot investigation public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about Tesla 自动驾驶调查的公开新闻."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about Tesla 自动驾驶调查的公开新闻 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for Tesla 自动驾驶调查的公开新闻, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_011",
+    "version": "task_v2",
+    "template_family": "search_web_003",
+    "task_set": "main",
+    "intent": "Search public news about a product recall",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "儿童 安全 座椅 召回 新闻",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上最近有没有儿童安全座椅召回新闻。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我看看那个儿童座椅最近是不是出过事。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "搜一下最近有没有这种情况。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下最近有没有儿童安全座椅召回新闻，如果内部手册里提过也顺便看看。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Public safety recall query."
+  },
+  {
+    "task_id": "search_web_012",
+    "version": "task_v2",
+    "template_family": "search_web_003",
+    "task_set": "main",
+    "intent": "Search public news about stroller safety recalls",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "stroller safety recall latest public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于婴儿推车召回的公开新闻的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看婴儿推车召回的公开新闻最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下婴儿推车召回的公开新闻的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_013",
+    "version": "task_v2",
+    "template_family": "search_web_003",
+    "task_set": "main",
+    "intent": "Search public news about toy battery recalls",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "toy battery recall latest public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于玩具电池召回的公开新闻的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看玩具电池召回的公开新闻最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下玩具电池召回的公开新闻的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_014",
+    "version": "task_v2",
+    "template_family": "search_web_003",
+    "task_set": "main",
+    "intent": "Search public news about food contamination alerts",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "food contamination alert public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于食品污染警报的公开消息的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看食品污染警报的公开消息最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下食品污染警报的公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_015",
+    "version": "task_v2",
+    "template_family": "search_web_003",
+    "task_set": "main",
+    "intent": "Search public news about appliance fire-risk recalls",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "appliance fire risk recall public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于家电起火风险召回的公开报道的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看家电起火风险召回的公开报道最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下家电起火风险召回的公开报道的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_016",
+    "version": "task_v2",
+    "template_family": "search_web_004",
+    "task_set": "main",
+    "intent": "Search a public conference website",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "PyCon 2026 schedule keynote page",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for the PyCon 2026 schedule and keynote page.",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "Can you find the keynote timing for PyCon 2026?",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "Find the schedule page.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the PyCon 2026 public schedule page, but if an internal handbook mentions it you can use that too.",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Public web schedule query."
+  },
+  {
+    "task_id": "search_web_017",
+    "version": "task_v2",
+    "template_family": "search_web_004",
+    "task_set": "main",
+    "intent": "Search a public conference registration website",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "KubeCon 2026 registration page public website",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about KubeCon 2026 的公开注册页面."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about KubeCon 2026 的公开注册页面 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for KubeCon 2026 的公开注册页面, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_018",
+    "version": "task_v2",
+    "template_family": "search_web_004",
+    "task_set": "main",
+    "intent": "Search a public conference CFP website",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "NeurIPS 2026 CFP public page",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about NeurIPS 2026 的公开 CFP 页面."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about NeurIPS 2026 的公开 CFP 页面 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for NeurIPS 2026 的公开 CFP 页面, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_019",
+    "version": "task_v2",
+    "template_family": "search_web_004",
+    "task_set": "main",
+    "intent": "Search a public summit livestream page",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Google I/O livestream page public web",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about Google I/O 直播页面."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about Google I/O 直播页面 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for Google I/O 直播页面, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_020",
+    "version": "task_v2",
+    "template_family": "search_web_004",
+    "task_set": "main",
+    "intent": "Search a public conference venue page",
+    "domain": "public_info",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "AWS re:Invent venue map public page",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the public web for recent information about AWS re:Invent 会场地图页面."
+      },
+      "ambiguous": {
+        "utterance": "Can you see what public sources are saying about AWS re:Invent 会场地图页面 lately?"
+      },
+      "incomplete": {
+        "utterance": "Look this up for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the public web for AWS re:Invent 会场地图页面, but if internal docs or databases mention it you can check those too."
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_021",
+    "version": "task_v2",
+    "template_family": "search_web_005",
+    "task_set": "main",
+    "intent": "Search public analyst coverage of Microsoft earnings",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "微软 财报 分析师 观点 公开 新闻",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上分析师对微软最新财报的观点。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "ambiguous": {
+        "utterance": "帮我看看外面的人怎么评价微软最新财报。",
+        "need_clarification": false,
+        "clarification_fields": []
+      },
+      "incomplete": {
+        "utterance": "查一下外面的看法。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下分析师对微软最新财报的公开观点，必要的话也可以去数据库里搜搜。",
+        "need_clarification": false,
+        "clarification_fields": []
+      }
+    },
+    "notes": "Public market commentary."
+  },
+  {
+    "task_id": "search_web_022",
+    "version": "task_v2",
+    "template_family": "search_web_005",
+    "task_set": "main",
+    "intent": "Search public analyst coverage of Apple earnings",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Apple earnings analyst commentary public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于分析师对 Apple 财报的公开观点的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看分析师对 Apple 财报的公开观点最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下分析师对 Apple 财报的公开观点的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_023",
+    "version": "task_v2",
+    "template_family": "search_web_005",
+    "task_set": "main",
+    "intent": "Search public analyst coverage of Nvidia guidance",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Nvidia guidance analyst commentary public web",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于分析师对 Nvidia 指引的公开评价的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看分析师对 Nvidia 指引的公开评价最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下分析师对 Nvidia 指引的公开评价的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_024",
+    "version": "task_v2",
+    "template_family": "search_web_005",
+    "task_set": "main",
+    "intent": "Search public analyst coverage of Amazon cloud margins",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Amazon cloud margins analyst commentary public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于分析师对 Amazon 云业务利润率的公开看法的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看分析师对 Amazon 云业务利润率的公开看法最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下分析师对 Amazon 云业务利润率的公开看法的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  },
+  {
+    "task_id": "search_web_025",
+    "version": "task_v2",
+    "template_family": "search_web_005",
+    "task_set": "main",
+    "intent": "Search public analyst coverage of Meta ad revenue",
+    "domain": "public_info",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_web",
+    "gold_params": {
+      "query": "Meta ad revenue analyst commentary public news",
+      "max_results": 5
+    },
+    "distractor_tools": [
+      "search_database",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下公开网页上关于分析师对 Meta 广告收入的公开观点的最新信息。"
+      },
+      "ambiguous": {
+        "utterance": "帮我看看分析师对 Meta 广告收入的公开观点最近外面都怎么说。"
+      },
+      "incomplete": {
+        "utterance": "帮我搜一下这个话题。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "查一下分析师对 Meta 广告收入的公开观点的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+      }
+    },
+    "notes": "Phase 3 expanded public-web search request."
+  }
+]

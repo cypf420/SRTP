@@ -1,0 +1,382 @@
+[
+  {
+    "task_id": "query_internal_docs_ext_001",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "external_eval",
+    "intent": "查找内部文档：manager handbook for probation review",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "manager handbook for probation review",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“manager handbook for probation review”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 manager handbook for probation review。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 manager handbook for probation review 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_002",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_001",
+    "task_set": "external_eval",
+    "intent": "查找内部文档：temporary contractor offboarding steps",
+    "domain": "hr",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "temporary contractor offboarding steps",
+      "department": "hr"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“temporary contractor offboarding steps”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 temporary contractor offboarding steps。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 temporary contractor offboarding steps 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_003",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "external_eval",
+    "intent": "Find the internal doc for vpn split tunneling rules",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "vpn split tunneling rules",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'vpn split tunneling rules'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for vpn split tunneling rules?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for vpn split tunneling rules, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_004",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_002",
+    "task_set": "external_eval",
+    "intent": "Find the internal doc for hardware replacement SLA",
+    "domain": "it",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "hardware replacement SLA",
+      "department": "it"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'hardware replacement SLA'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for hardware replacement SLA?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for hardware replacement SLA, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_005",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "external_eval",
+    "intent": "查找内部文档：annual budget submission SOP",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "annual budget submission SOP",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“annual budget submission SOP”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 annual budget submission SOP。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 annual budget submission SOP 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_006",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_003",
+    "task_set": "external_eval",
+    "intent": "查找内部文档：foreign currency reimbursement rule",
+    "domain": "finance",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "foreign currency reimbursement rule",
+      "department": "finance"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“foreign currency reimbursement rule”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 foreign currency reimbursement rule。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 foreign currency reimbursement rule 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_007",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "external_eval",
+    "intent": "Find the internal doc for cold-chain exception handling",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "cold-chain exception handling",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'cold-chain exception handling'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for cold-chain exception handling?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for cold-chain exception handling, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_008",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_004",
+    "task_set": "external_eval",
+    "intent": "Find the internal doc for returns triage checklist",
+    "domain": "operations",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "returns triage checklist",
+      "department": "operations"
+    },
+    "distractor_tools": [
+      "search_web",
+      "search_database"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Find the internal documentation about 'returns triage checklist'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the internal doc for returns triage checklist?"
+      },
+      "incomplete": {
+        "utterance": "Find that internal process doc for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Find the internal doc for returns triage checklist, but you can also look at public sources or database entries if they seem related."
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_009",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "external_eval",
+    "intent": "查找内部文档：chat handoff checklist",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "chat handoff checklist",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“chat handoff checklist”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 chat handoff checklist。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 chat handoff checklist 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  },
+  {
+    "task_id": "query_internal_docs_ext_010",
+    "version": "task_v2",
+    "template_family": "query_internal_docs_005",
+    "task_set": "external_eval",
+    "intent": "查找内部文档：refund fraud review SOP",
+    "domain": "support",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "query_internal_docs",
+    "gold_params": {
+      "query": "refund fraud review SOP",
+      "department": "support"
+    },
+    "distractor_tools": [
+      "search_database",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "查一下内部文档里关于“refund fraud review SOP”的说明。"
+      },
+      "ambiguous": {
+        "utterance": "帮我在内部资料里找一下 refund fraud review SOP。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下那个内部流程。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我查内部文档里关于 refund fraud review SOP 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+      }
+    },
+    "notes": "Phase 3 expanded internal-doc retrieval request."
+  }
+]

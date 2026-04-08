@@ -1,0 +1,398 @@
+[
+  {
+    "task_id": "search_database_ext_001",
+    "version": "task_v2",
+    "template_family": "search_database_001",
+    "task_set": "external_eval",
+    "intent": "Lookup a customer record for Sophia Kim",
+    "domain": "crm",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "Sophia Kim",
+      "entity_type": "customer",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the database for the customer record 'Sophia Kim'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the customer entry for Sophia Kim?"
+      },
+      "incomplete": {
+        "utterance": "Look up that customer record for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query",
+          "entity_type"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the database for Sophia Kim as a customer record, and feel free to check the web or internal docs if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded customer database lookup."
+  },
+  {
+    "task_id": "search_database_ext_002",
+    "version": "task_v2",
+    "template_family": "search_database_001",
+    "task_set": "external_eval",
+    "intent": "Lookup a customer record for Ethan Rivera",
+    "domain": "crm",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "Ethan Rivera",
+      "entity_type": "customer",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the database for the customer record 'Ethan Rivera'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the customer entry for Ethan Rivera?"
+      },
+      "incomplete": {
+        "utterance": "Look up that customer record for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query",
+          "entity_type"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the database for Ethan Rivera as a customer record, and feel free to check the web or internal docs if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded customer database lookup."
+  },
+  {
+    "task_id": "search_database_ext_003",
+    "version": "task_v2",
+    "template_family": "search_database_002",
+    "task_set": "external_eval",
+    "intent": "查询数据库中的 product 记录：SKU-5800",
+    "domain": "inventory",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "SKU-5800",
+      "entity_type": "product",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "帮我在数据库里查一下 product 记录：SKU-5800。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把这个 product 记录翻出来，关键词是 SKU-5800。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个 product 记录。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query",
+          "entity_type"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我在数据库里查 SKU-5800 这条 product 记录；如果公开网页或内部文档里也有类似信息你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded product database lookup."
+  },
+  {
+    "task_id": "search_database_ext_004",
+    "version": "task_v2",
+    "template_family": "search_database_002",
+    "task_set": "external_eval",
+    "intent": "查询数据库中的 product 记录：SKU-6621",
+    "domain": "inventory",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "SKU-6621",
+      "entity_type": "product",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "search_web",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "帮我在数据库里查一下 product 记录：SKU-6621。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把这个 product 记录翻出来，关键词是 SKU-6621。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个 product 记录。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query",
+          "entity_type"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我在数据库里查 SKU-6621 这条 product 记录；如果公开网页或内部文档里也有类似信息你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded product database lookup."
+  },
+  {
+    "task_id": "search_database_ext_005",
+    "version": "task_v2",
+    "template_family": "search_database_003",
+    "task_set": "external_eval",
+    "intent": "Lookup a employee record for Elena Gomez",
+    "domain": "hris",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "Elena Gomez",
+      "entity_type": "employee",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the database for the employee record 'Elena Gomez'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the employee entry for Elena Gomez?"
+      },
+      "incomplete": {
+        "utterance": "Look up that employee record for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query",
+          "entity_type"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the database for Elena Gomez as a employee record, and feel free to check the web or internal docs if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded employee database lookup."
+  },
+  {
+    "task_id": "search_database_ext_006",
+    "version": "task_v2",
+    "template_family": "search_database_003",
+    "task_set": "external_eval",
+    "intent": "Lookup a employee record for Victor Huang",
+    "domain": "hris",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "Victor Huang",
+      "entity_type": "employee",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "query_internal_docs",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the database for the employee record 'Victor Huang'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the employee entry for Victor Huang?"
+      },
+      "incomplete": {
+        "utterance": "Look up that employee record for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query",
+          "entity_type"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the database for Victor Huang as a employee record, and feel free to check the web or internal docs if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded employee database lookup."
+  },
+  {
+    "task_id": "search_database_ext_007",
+    "version": "task_v2",
+    "template_family": "search_database_004",
+    "task_set": "external_eval",
+    "intent": "查询数据库中的 order 记录：PO-61224",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "PO-61224",
+      "entity_type": "order",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "帮我在数据库里查一下 order 记录：PO-61224。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把这个 order 记录翻出来，关键词是 PO-61224。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个 order 记录。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我在数据库里查 PO-61224 这条 order 记录；如果公开网页或内部文档里也有类似信息你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded order database lookup."
+  },
+  {
+    "task_id": "search_database_ext_008",
+    "version": "task_v2",
+    "template_family": "search_database_004",
+    "task_set": "external_eval",
+    "intent": "查询数据库中的 order 记录：WEB-2026-881",
+    "domain": "commerce",
+    "language": "zh",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "WEB-2026-881",
+      "entity_type": "order",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "query_order_status",
+      "search_web"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "帮我在数据库里查一下 order 记录：WEB-2026-881。"
+      },
+      "ambiguous": {
+        "utterance": "帮我把这个 order 记录翻出来，关键词是 WEB-2026-881。"
+      },
+      "incomplete": {
+        "utterance": "帮我查一下这个 order 记录。",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "帮我在数据库里查 WEB-2026-881 这条 order 记录；如果公开网页或内部文档里也有类似信息你也可以看。"
+      }
+    },
+    "notes": "Phase 3 expanded order database lookup."
+  },
+  {
+    "task_id": "search_database_ext_009",
+    "version": "task_v2",
+    "template_family": "search_database_005",
+    "task_set": "external_eval",
+    "intent": "Lookup a ticket record for TCK-5902",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "TCK-5902",
+      "entity_type": "ticket",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "create_support_ticket",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the database for the ticket record 'TCK-5902'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the ticket entry for TCK-5902?"
+      },
+      "incomplete": {
+        "utterance": "Look up that ticket record for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the database for TCK-5902 as a ticket record, and feel free to check the web or internal docs if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded ticket database lookup."
+  },
+  {
+    "task_id": "search_database_ext_010",
+    "version": "task_v2",
+    "template_family": "search_database_005",
+    "task_set": "external_eval",
+    "intent": "Lookup a ticket record for TCK-7001",
+    "domain": "support",
+    "language": "en",
+    "dialog_context": [],
+    "gold_tool": "search_database",
+    "gold_params": {
+      "query": "TCK-7001",
+      "entity_type": "ticket",
+      "limit": 5
+    },
+    "distractor_tools": [
+      "create_support_ticket",
+      "query_internal_docs"
+    ],
+    "variants": {
+      "clear": {
+        "utterance": "Search the database for the ticket record 'TCK-7001'."
+      },
+      "ambiguous": {
+        "utterance": "Can you pull the ticket entry for TCK-7001?"
+      },
+      "incomplete": {
+        "utterance": "Look up that ticket record for me.",
+        "need_clarification": true,
+        "clarification_fields": [
+          "query"
+        ]
+      },
+      "misleading": {
+        "utterance": "Search the database for TCK-7001 as a ticket record, and feel free to check the web or internal docs if it helps."
+      }
+    },
+    "notes": "Phase 3 expanded ticket database lookup."
+  }
+]
