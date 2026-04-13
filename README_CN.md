@@ -25,7 +25,8 @@
 
 原因不是代码没写，而是这台机器现在还没有：
 
-- `OPENAI_API_KEY`
+- `GLM_API_KEY`
+- `OPEN_MODEL_API_KEY`
 - `OPEN_MODEL_ENDPOINT`
 - `LOCAL_HF_MODEL_ID`
 
@@ -113,9 +114,9 @@ python -m pytest tests/test_phase3_assets.py
 你把模型凭据配好后，直接跑：
 
 ```bash
-python runner/run_batch.py --config configs/runs/phase3_gpt4o_main.yaml
+python runner/run_batch.py --config configs/runs/phase3_glm_main.yaml
 python runner/run_batch.py --config configs/runs/phase3_qwen_main.yaml
-python runner/run_batch.py --config configs/runs/phase3_gpt4o_external_eval.yaml
+python runner/run_batch.py --config configs/runs/phase3_glm_external_eval.yaml
 python runner/run_batch.py --config configs/runs/phase3_qwen_external_eval.yaml
 python scripts/build_phase3_processed.py
 ```
@@ -133,3 +134,4 @@ python scripts/build_phase3_processed.py
 - `data/processed/split.csv` 和 `data/processed/task_metadata.csv` 已经是正式资产
 - `episodes.jsonl`、`labels.csv`、`run_metadata.csv`、`boundary_subset.jsonl` 目前还是“结构已准备好，但没有真实模型结果”
 - external eval 当前是 held-out realistic-style 集，不是公开 benchmark 的直接切分
+- 当前推荐的模型组合是 `GLM-4.7 + Qwen2.5-7B-Instruct`

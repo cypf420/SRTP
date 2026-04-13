@@ -1,5 +1,5 @@
 run_name: phase3_qwen_external_eval
-model_config_path: configs/models/openai_compatible_qwen.yaml
+model_config_path: configs/models/qwen2_5_7b_instruct.yaml
 tools_path: tools/tool_schemas_v1.json
 tasks_glob: tasks/external_eval_v1/*.json
 prompt_path: prompts/system_prompt_v1.txt

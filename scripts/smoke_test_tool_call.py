@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from runner.client import OpenAIChatToolClient
+from runner.client import OpenAICompatibleChatToolClient
 from runner.io_utils import load_model_config, load_tasks, load_text, load_tools
 from runner.prompting import build_messages
 
@@ -36,7 +36,7 @@ def main() -> None:
 
     task = tasks[args.task_id]
     messages = build_messages(system_prompt, task, args.variant)
-    client = OpenAIChatToolClient(model_config)
+    client = OpenAICompatibleChatToolClient(model_config)
     prediction, latency_ms, usage = client.generate(messages, tools)
 
     print("task_id:", task.task_id)

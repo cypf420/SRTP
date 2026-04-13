@@ -17,6 +17,11 @@
 
 所以“完整学会”不能只理解代码，还要能自己继续推进后面的 Phase 3~5。
 
+当前仓库推荐的模型组合是：
+
+- `GLM-4.7`
+- `Qwen2.5-7B-Instruct`
+
 我给你的现实判断是：
 
 - 达到“能跑通仓库、知道每个目录是干什么的”：`2~3 周`
@@ -220,9 +225,9 @@
 - 产出：一条你自己构造的 messages 示例
 
 ### Day 16
-- 学什么：OpenAI tool schema 是怎么从内部 schema 转出去的
+- 学什么：OpenAI-compatible tool schema 是怎么从内部 schema 转出去的
 - 看什么：`runner/prompting.py`
-- 动手做：把一个 `ToolSchema` 手工转换成 OpenAI tools 格式
+- 动手做：把一个 `ToolSchema` 手工转换成 OpenAI-compatible tools 格式
 - 产出：一份转换示例
 
 ### Day 17
@@ -304,7 +309,7 @@
 
 ### Day 30
 - 学什么：模型配置如何控制实验
-- 看什么：`configs/models/openai_gpt4o.yaml`、`configs/models/openai_compatible_qwen.yaml`
+- 看什么：`configs/models/glm_4_7.yaml`、`configs/models/qwen2_5_7b_instruct.yaml`
 - 动手做：解释 `temperature / top_p / max_tokens / timeout_seconds`
 - 产出：配置参数说明表
 
@@ -317,7 +322,7 @@
 ### Day 32
 - 学什么：环境变量和 API 密钥管理
 - 看什么：`.env.example`
-- 动手做：弄清 `OPENAI_API_KEY`、`OPENAI_BASE_URL`、`OPEN_MODEL_ENDPOINT` 的作用
+- 动手做：弄清 `GLM_API_KEY`、`GLM_BASE_URL`、`OPEN_MODEL_ENDPOINT`、`OPEN_MODEL_API_KEY` 的作用
 - 产出：一页环境变量说明
 
 ### Day 33

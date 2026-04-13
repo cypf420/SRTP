@@ -1,5 +1,5 @@
-run_name: phase3_gpt4o_external_eval
-model_config_path: configs/models/openai_gpt4o.yaml
+run_name: phase3_glm_external_eval
+model_config_path: configs/models/glm_4_7.yaml
 tools_path: tools/tool_schemas_v1.json
 tasks_glob: tasks/external_eval_v1/*.json
 prompt_path: prompts/system_prompt_v1.txt

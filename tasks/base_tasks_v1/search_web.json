@@ -2,19 +2,19 @@
   {
     "task_id": "search_web_001",
     "version": "task_v1",
-    "intent": "Search public news about OpenAI model releases",
+    "intent": "Search public news about GLM model releases",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI 最新 模型 发布 新闻",
+      "query": "GLM 最新 模型 发布 新闻",
       "max_results": 5
     },
     "distractor_tools": ["search_database", "query_internal_docs"],
     "variants": {
       "clear": {
-        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，给我公开网页上的信息。"
+        "utterance": "查一下 GLM 最近有没有新的模型发布消息，给我公开网页上的信息。"
       },
       "ambiguous": {
         "utterance": "帮我看看最近有没有新模型的消息。"
@@ -25,7 +25,7 @@
         "clarification_fields": ["query"]
       },
       "misleading": {
-        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。"
+        "utterance": "查一下 GLM 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。"
       }
     },
     "notes": "Public web search with database distractor."

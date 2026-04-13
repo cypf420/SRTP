@@ -49,7 +49,7 @@ class TaskTemplate(BaseModel):
 
 
 class ModelConfig(BaseModel):
-    backend: Literal["openai_chat"]
+    backend: Literal["openai_chat", "openai_compatible_chat"]
     model_name: str
     api_key_env: str
     base_url_env: Optional[str] = None

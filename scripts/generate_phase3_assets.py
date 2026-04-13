@@ -20,14 +20,14 @@ EXTERNAL_DIR = ROOT / "tasks" / "external_eval_v1"
 SEARCH_WEB_EXTRAS: Dict[str, Dict[str, List[Dict[str, str]]]] = {
     "search_web_001": {
         "main": [
-            {"intent": "Search public news about OpenAI developer conference updates", "query": "OpenAI developer conference update public news", "topic": "OpenAI 开发者大会最新公开消息"},
-            {"intent": "Search public coverage of OpenAI reasoning model benchmarks", "query": "OpenAI reasoning model benchmark coverage public web", "topic": "OpenAI 推理模型 benchmark 的公开报道"},
-            {"intent": "Search public news about OpenAI API pricing changes", "query": "OpenAI API pricing change public news", "topic": "OpenAI API 定价变动的公开新闻"},
-            {"intent": "Search public news about OpenAI enterprise product launches", "query": "OpenAI enterprise product launch public news", "topic": "OpenAI 企业产品发布的公开消息"},
+            {"intent": "Search public news about GLM developer conference updates", "query": "GLM developer conference update public news", "topic": "GLM 开发者大会最新公开消息"},
+            {"intent": "Search public coverage of Qwen reasoning model benchmarks", "query": "Qwen reasoning model benchmark coverage public web", "topic": "Qwen 推理模型 benchmark 的公开报道"},
+            {"intent": "Search public news about GLM API pricing changes", "query": "GLM API pricing change public news", "topic": "GLM API 定价变动的公开新闻"},
+            {"intent": "Search public news about Qwen enterprise adoption", "query": "Qwen enterprise adoption public news", "topic": "Qwen 企业落地的公开消息"},
         ],
         "external": [
-            {"intent": "Search public reaction to OpenAI platform outages", "query": "OpenAI platform outage public coverage", "topic": "OpenAI 平台故障的公开报道"},
-            {"intent": "Search public coverage of OpenAI safety policy updates", "query": "OpenAI safety policy update public news", "topic": "OpenAI 安全政策更新的公开消息"},
+            {"intent": "Search public reaction to GLM platform outages", "query": "GLM platform outage public coverage", "topic": "GLM 平台故障的公开报道"},
+            {"intent": "Search public coverage of Qwen safety updates", "query": "Qwen safety update public news", "topic": "Qwen 安全更新的公开消息"},
         ],
     },
     "search_web_002": {

@@ -4,13 +4,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "main",
-    "intent": "Search public news about OpenAI model releases",
+    "intent": "Search public news about GLM model releases",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI 最新 模型 发布 新闻",
+      "query": "GLM 最新 模型 发布 新闻",
       "max_results": 5
     },
     "distractor_tools": [
@@ -19,7 +19,7 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，给我公开网页上的信息。",
+        "utterance": "查一下 GLM 最近有没有新的模型发布消息，给我公开网页上的信息。",
         "need_clarification": false,
         "clarification_fields": []
       },
@@ -36,7 +36,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下 OpenAI 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。",
+        "utterance": "查一下 GLM 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。",
         "need_clarification": false,
         "clarification_fields": []
       }
@@ -48,13 +48,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "main",
-    "intent": "Search public news about OpenAI developer conference updates",
+    "intent": "Search public news about GLM developer conference updates",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI developer conference update public news",
+      "query": "GLM developer conference update public news",
       "max_results": 5
     },
     "distractor_tools": [
@@ -63,10 +63,10 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下公开网页上关于OpenAI 开发者大会最新公开消息的最新信息。"
+        "utterance": "查一下公开网页上关于GLM 开发者大会最新公开消息的最新信息。"
       },
       "ambiguous": {
-        "utterance": "帮我看看OpenAI 开发者大会最新公开消息最近外面都怎么说。"
+        "utterance": "帮我看看GLM 开发者大会最新公开消息最近外面都怎么说。"
       },
       "incomplete": {
         "utterance": "帮我搜一下这个话题。",
@@ -76,7 +76,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下OpenAI 开发者大会最新公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+        "utterance": "查一下GLM 开发者大会最新公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
       }
     },
     "notes": "Phase 3 expanded public-web search request."
@@ -86,13 +86,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "main",
-    "intent": "Search public coverage of OpenAI reasoning model benchmarks",
+    "intent": "Search public coverage of Qwen reasoning model benchmarks",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI reasoning model benchmark coverage public web",
+      "query": "Qwen reasoning model benchmark coverage public web",
       "max_results": 5
     },
     "distractor_tools": [
@@ -101,10 +101,10 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下公开网页上关于OpenAI 推理模型 benchmark 的公开报道的最新信息。"
+        "utterance": "查一下公开网页上关于Qwen 推理模型 benchmark 的公开报道的最新信息。"
       },
       "ambiguous": {
-        "utterance": "帮我看看OpenAI 推理模型 benchmark 的公开报道最近外面都怎么说。"
+        "utterance": "帮我看看Qwen 推理模型 benchmark 的公开报道最近外面都怎么说。"
       },
       "incomplete": {
         "utterance": "帮我搜一下这个话题。",
@@ -114,7 +114,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下OpenAI 推理模型 benchmark 的公开报道的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+        "utterance": "查一下Qwen 推理模型 benchmark 的公开报道的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
       }
     },
     "notes": "Phase 3 expanded public-web search request."
@@ -124,13 +124,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "main",
-    "intent": "Search public news about OpenAI API pricing changes",
+    "intent": "Search public news about GLM API pricing changes",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI API pricing change public news",
+      "query": "GLM API pricing change public news",
       "max_results": 5
     },
     "distractor_tools": [
@@ -139,10 +139,10 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下公开网页上关于OpenAI API 定价变动的公开新闻的最新信息。"
+        "utterance": "查一下公开网页上关于GLM API 定价变动的公开新闻的最新信息。"
       },
       "ambiguous": {
-        "utterance": "帮我看看OpenAI API 定价变动的公开新闻最近外面都怎么说。"
+        "utterance": "帮我看看GLM API 定价变动的公开新闻最近外面都怎么说。"
       },
       "incomplete": {
         "utterance": "帮我搜一下这个话题。",
@@ -152,7 +152,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下OpenAI API 定价变动的公开新闻的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+        "utterance": "查一下GLM API 定价变动的公开新闻的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
       }
     },
     "notes": "Phase 3 expanded public-web search request."
@@ -162,13 +162,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "main",
-    "intent": "Search public news about OpenAI enterprise product launches",
+    "intent": "Search public news about Qwen enterprise adoption",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI enterprise product launch public news",
+      "query": "Qwen enterprise adoption public news",
       "max_results": 5
     },
     "distractor_tools": [
@@ -177,10 +177,10 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下公开网页上关于OpenAI 企业产品发布的公开消息的最新信息。"
+        "utterance": "查一下公开网页上关于Qwen 企业落地的公开消息的最新信息。"
       },
       "ambiguous": {
-        "utterance": "帮我看看OpenAI 企业产品发布的公开消息最近外面都怎么说。"
+        "utterance": "帮我看看Qwen 企业落地的公开消息最近外面都怎么说。"
       },
       "incomplete": {
         "utterance": "帮我搜一下这个话题。",
@@ -190,7 +190,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下OpenAI 企业产品发布的公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+        "utterance": "查一下Qwen 企业落地的公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
       }
     },
     "notes": "Phase 3 expanded public-web search request."

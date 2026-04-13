@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from runner.client import OpenAIChatToolClient
+from runner.client import OpenAICompatibleChatToolClient
 from runner.io_utils import load_model_config, load_run_config, load_tasks, load_text, load_tools, write_json, write_jsonl
 from runner.metadata import collect_git_metadata, make_run_id, utc_now_iso
 from runner.prompting import build_messages
@@ -38,7 +38,7 @@ def main() -> None:
     if run_config.task_limit is not None:
         tasks = tasks[: run_config.task_limit]
 
-    client = OpenAIChatToolClient(model_config)
+    client = OpenAICompatibleChatToolClient(model_config)
     episode_rows = []
 
     for task in tqdm(tasks, desc="tasks"):
@@ -86,7 +86,7 @@ def _run_task(
     variant_names: List[str],
     tools,
     system_prompt: str,
-    client: OpenAIChatToolClient,
+    client: OpenAICompatibleChatToolClient,
     model_name: str,
 ) -> List[EpisodeRecord]:
     rows: List[EpisodeRecord] = []

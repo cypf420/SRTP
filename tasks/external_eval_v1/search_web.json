@@ -4,13 +4,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "external_eval",
-    "intent": "Search public reaction to OpenAI platform outages",
+    "intent": "Search public reaction to GLM platform outages",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI platform outage public coverage",
+      "query": "GLM platform outage public coverage",
       "max_results": 5
     },
     "distractor_tools": [
@@ -19,10 +19,10 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下公开网页上关于OpenAI 平台故障的公开报道的最新信息。"
+        "utterance": "查一下公开网页上关于GLM 平台故障的公开报道的最新信息。"
       },
       "ambiguous": {
-        "utterance": "帮我看看OpenAI 平台故障的公开报道最近外面都怎么说。"
+        "utterance": "帮我看看GLM 平台故障的公开报道最近外面都怎么说。"
       },
       "incomplete": {
         "utterance": "帮我搜一下这个话题。",
@@ -32,7 +32,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下OpenAI 平台故障的公开报道的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+        "utterance": "查一下GLM 平台故障的公开报道的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
       }
     },
     "notes": "Phase 3 expanded public-web search request."
@@ -42,13 +42,13 @@
     "version": "task_v2",
     "template_family": "search_web_001",
     "task_set": "external_eval",
-    "intent": "Search public coverage of OpenAI safety policy updates",
+    "intent": "Search public coverage of Qwen safety updates",
     "domain": "public_info",
     "language": "zh",
     "dialog_context": [],
     "gold_tool": "search_web",
     "gold_params": {
-      "query": "OpenAI safety policy update public news",
+      "query": "Qwen safety update public news",
       "max_results": 5
     },
     "distractor_tools": [
@@ -57,10 +57,10 @@
     ],
     "variants": {
       "clear": {
-        "utterance": "查一下公开网页上关于OpenAI 安全政策更新的公开消息的最新信息。"
+        "utterance": "查一下公开网页上关于Qwen 安全更新的公开消息的最新信息。"
       },
       "ambiguous": {
-        "utterance": "帮我看看OpenAI 安全政策更新的公开消息最近外面都怎么说。"
+        "utterance": "帮我看看Qwen 安全更新的公开消息最近外面都怎么说。"
       },
       "incomplete": {
         "utterance": "帮我搜一下这个话题。",
@@ -70,7 +70,7 @@
         ]
       },
       "misleading": {
-        "utterance": "查一下OpenAI 安全政策更新的公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
+        "utterance": "查一下Qwen 安全更新的公开消息的公开信息，如果内部文档或数据库里也有类似内容你也可以顺便看。"
       }
     },
     "notes": "Phase 3 expanded public-web search request."

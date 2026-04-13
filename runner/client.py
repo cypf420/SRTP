@@ -11,7 +11,7 @@ from runner.prompting import to_openai_tools
 from runner.schemas import ModelConfig, PredictionRecord, ToolSchema
 
 
-class OpenAIChatToolClient:
+class OpenAICompatibleChatToolClient:
     def __init__(self, config: ModelConfig) -> None:
         api_key = os.getenv(config.api_key_env)
         if not api_key:
@@ -66,3 +66,6 @@ class OpenAIChatToolClient:
 def _usage_to_dict(response: Any) -> Dict[str, Any]:
     usage = getattr(response, "usage", None)
     return usage.model_dump() if usage else {}
+
+
+OpenAIChatToolClient = OpenAICompatibleChatToolClient

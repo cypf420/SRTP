@@ -62,7 +62,7 @@
 - 新建 `README.md`，写清研究目标、目录说明、运行入口、数据说明和当前研究边界。
 - 新建 `.gitignore`，忽略 `.env`、`__pycache__/`、`data/raw_runs/`、模型缓存、临时图像和日志文件。
 - 新建 `requirements.txt` 与 `requirements-dev.txt`，区分运行依赖和开发依赖。
-- 新建 `.env.example`，列出 `OPENAI_API_KEY`、`OPEN_MODEL_ENDPOINT`、`OPEN_MODEL_NAME`、`HF_HOME` 等变量。
+- 新建 `.env.example`，列出 `GLM_API_KEY`、`GLM_BASE_URL`、`OPEN_MODEL_ENDPOINT`、`OPEN_MODEL_NAME`、`HF_HOME` 等变量。
 - 约定命名规范，例如 `snake_case` 文件名、`run_YYYYMMDD_xxx` 形式的实验目录名。
 
 ### 动作 0.2：建立基础目录
@@ -121,7 +121,7 @@ project/
 - 把 `pip freeze` 导出到一个锁定文件，后面复现实验时直接参考。
 
 ### 动作 0.4：准备模型接口
-- 配置 GPT-4o API。
+- 配置一个国产强闭源模型 API，例如 GLM-4.7。
 - 配置一个开源模型调用方式（本地或 vLLM）。
 - 这个开源模型必须支持导出 hidden states 或 logits，因为后续表征边界分析会用到。
 - 写统一接口，例如 `generate_tool_call(messages, tools, config)`。
@@ -380,8 +380,8 @@ runner 要能完成：
 
 ### 动作 3.3：批量跑模型
 至少跑两个模型：
-- GPT-4o
-- 开源模型
+- GLM-4.7
+- 开源模型（建议 Qwen2.5-7B-Instruct）
 
 目标规模：
 - 至少 2000 条样本
@@ -654,7 +654,7 @@ safe_tools, safe_messages, defense_meta = defense_wrapper(tools, messages)
 - 在包装器里串起：风险检测、澄清模块、工具增强模块、日志记录。
 - 包装器不要改动底层模型接口，保持可插拔。
 - 输出额外的 `defense_meta`，记录触发了哪些防御动作。
-- 让这个包装器既能接 GPT-4o，也能接开源模型。
+- 让这个包装器既能接 GLM-4.7，也能接开源模型。
 
 ### 动作 5.5：做系统评估
 对比：
@@ -797,13 +797,13 @@ safe_tools, safe_messages, defense_meta = defense_wrapper(tools, messages)
 - 如果没有 GPU，就把边界分析子集缩小，不要强行全量跑。
 
 ### 2. API / 模型资源
-- 一个闭源 API（如 GPT-4o）
+- 一个闭源 API（如 GLM-4.7）
 - 一个开源模型（Qwen / LLaMA 系）
 - 这个开源模型最好支持 hidden state 或 logits 导出
 
 ### 3. 核心软件工具
 - Python
-- OpenAI SDK
+- 兼容 OpenAI SDK 的客户端
 - Transformers / PyTorch
 - sentence-transformers
 - causal-learn / gcastle

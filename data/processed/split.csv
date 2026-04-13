@@ -69,8 +69,8 @@ search_database_ext_007,search_database_004,external_eval,external_eval,zh,comme
 search_database_ext_008,search_database_004,external_eval,external_eval,zh,commerce,search_database,查询数据库中的 order 记录：WEB-2026-881
 search_database_ext_009,search_database_005,external_eval,external_eval,en,support,search_database,Lookup a ticket record for TCK-5902
 search_database_ext_010,search_database_005,external_eval,external_eval,en,support,search_database,Lookup a ticket record for TCK-7001
-search_web_ext_001,search_web_001,external_eval,external_eval,zh,public_info,search_web,Search public reaction to OpenAI platform outages
-search_web_ext_002,search_web_001,external_eval,external_eval,zh,public_info,search_web,Search public coverage of OpenAI safety policy updates
+search_web_ext_001,search_web_001,external_eval,external_eval,zh,public_info,search_web,Search public reaction to GLM platform outages
+search_web_ext_002,search_web_001,external_eval,external_eval,zh,public_info,search_web,Search public coverage of Qwen safety updates
 search_web_ext_003,search_web_002,external_eval,external_eval,en,public_info,search_web,Search public news about Tesla earnings guidance
 search_web_ext_004,search_web_002,external_eval,external_eval,en,public_info,search_web,Search public news about Tesla supplier negotiations
 search_web_ext_005,search_web_003,external_eval,external_eval,zh,public_info,search_web,Search public news about medication recall notices
@@ -274,11 +274,11 @@ search_database_022,search_database_005,main,dev,en,support,search_database,Look
 search_database_023,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-2219
 search_database_024,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-3900
 search_database_025,search_database_005,main,dev,en,support,search_database,Lookup a ticket record for TCK-4881
-search_web_001,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI model releases
-search_web_002,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI developer conference updates
-search_web_003,search_web_001,main,dev,zh,public_info,search_web,Search public coverage of OpenAI reasoning model benchmarks
-search_web_004,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI API pricing changes
-search_web_005,search_web_001,main,dev,zh,public_info,search_web,Search public news about OpenAI enterprise product launches
+search_web_001,search_web_001,main,dev,zh,public_info,search_web,Search public news about GLM model releases
+search_web_002,search_web_001,main,dev,zh,public_info,search_web,Search public news about GLM developer conference updates
+search_web_003,search_web_001,main,dev,zh,public_info,search_web,Search public coverage of Qwen reasoning model benchmarks
+search_web_004,search_web_001,main,dev,zh,public_info,search_web,Search public news about GLM API pricing changes
+search_web_005,search_web_001,main,dev,zh,public_info,search_web,Search public news about Qwen enterprise adoption
 search_web_006,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla layoffs
 search_web_007,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla price cuts
 search_web_008,search_web_002,main,train,en,public_info,search_web,Search public news about Tesla delivery numbers

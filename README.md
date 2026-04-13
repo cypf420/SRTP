@@ -20,7 +20,7 @@ Not completed in this workspace yet:
 - real `run_metadata.csv`
 - real `boundary_subset.jsonl`
 
-The blocker is simple: this machine still has no model credentials or local model endpoint.
+The blocker is simple: this machine still has no GLM API credential or usable local-model endpoint configuration.
 
 ## What Phase 3 Added
 
@@ -84,9 +84,9 @@ python -m pytest tests/test_phase3_assets.py
 After setting model credentials, run:
 
 ```bash
-python runner/run_batch.py --config configs/runs/phase3_gpt4o_main.yaml
+python runner/run_batch.py --config configs/runs/phase3_glm_main.yaml
 python runner/run_batch.py --config configs/runs/phase3_qwen_main.yaml
-python runner/run_batch.py --config configs/runs/phase3_gpt4o_external_eval.yaml
+python runner/run_batch.py --config configs/runs/phase3_glm_external_eval.yaml
 python runner/run_batch.py --config configs/runs/phase3_qwen_external_eval.yaml
 python scripts/build_phase3_processed.py
 ```
@@ -104,3 +104,4 @@ This will populate:
 - `data/processed/split.csv` and `data/processed/task_metadata.csv` are already generated.
 - `episodes.jsonl`, `labels.csv`, `run_metadata.csv`, and `boundary_subset.jsonl` are structurally ready but still empty because no real model run has been executed.
 - The external eval set is a held-out realistic-style set, not a direct import from a public benchmark.
+- The recommended model pair is `GLM-4.7 + Qwen2.5-7B-Instruct`.
