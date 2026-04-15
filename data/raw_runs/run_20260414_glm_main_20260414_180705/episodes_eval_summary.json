@@ -1,0 +1,26 @@
+{
+  "run_id": "run_20260414_glm_main_20260414_180705",
+  "definition": {
+    "success": "evaluation main_label == correct",
+    "failure": "evaluation main_label != correct",
+    "note": "this is model tool-calling outcome, not real backend tool execution status"
+  },
+  "counts": {
+    "total": 1000,
+    "success": 828,
+    "failure": 172,
+    "tool_call_present": 741,
+    "tool_call_absent": 259
+  },
+  "failure_breakdown": {
+    "correct": 828,
+    "wrong_tool": 52,
+    "param_error": 116,
+    "should_clarify_but_called": 4
+  },
+  "paths": {
+    "success_jsonl": "C:\\Users\\Lenovo\\Desktop\\SRTP\\data\\raw_runs\\run_20260414_glm_main_20260414_180705\\episodes_eval_success.jsonl",
+    "failure_jsonl": "C:\\Users\\Lenovo\\Desktop\\SRTP\\data\\raw_runs\\run_20260414_glm_main_20260414_180705\\episodes_eval_failure.jsonl",
+    "failure_index_csv": "C:\\Users\\Lenovo\\Desktop\\SRTP\\data\\raw_runs\\run_20260414_glm_main_20260414_180705\\episodes_eval_failure_index.csv"
+  }
+}

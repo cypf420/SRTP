@@ -1,0 +1,39 @@
+{
+  "run_id": "run_20260414_glm_main_20260414_180705",
+  "run_name": "phase3_glm_main",
+  "status": "completed",
+  "resume_mode": true,
+  "started_at": "2026-04-14T10:07:10.703593+00:00",
+  "finished_at": "2026-04-14T14:32:37.429961+00:00",
+  "model_name": "glm-4.7",
+  "prompt_version": "system_prompt_v1",
+  "tool_versions": [
+    "tool_v1"
+  ],
+  "task_versions": [
+    "task_v2"
+  ],
+  "prompt_path": "prompts/system_prompt_v1.txt",
+  "tools_path": "tools/tool_schemas_v1.json",
+  "tasks_glob": "tasks/phase3_tasks_v1/*.json",
+  "variant_names": [
+    "clear",
+    "ambiguous",
+    "incomplete",
+    "misleading"
+  ],
+  "task_count": 250,
+  "episode_count": 1000,
+  "completed_sample_count": 1000,
+  "git": {
+    "is_git_repo": true,
+    "branch": "main",
+    "commit_hash": "7ab14ab0a09c2f5cbbb54e33d0a49b863fa2203f",
+    "is_dirty": true
+  },
+  "config_snapshot_paths": {
+    "run_config": "run_config_snapshot.yaml",
+    "model_config": "model_config_snapshot.yaml",
+    "prompt": "system_prompt_snapshot.txt"
+  }
+}

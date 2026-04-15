@@ -1,0 +1,13 @@
+run_name: phase3_qwen_main
+model_config_path: configs/models/qwen2_5_7b_instruct.yaml
+tools_path: tools/tool_schemas_v1.json
+tasks_glob: tasks/phase3_tasks_v1/*.json
+prompt_path: prompts/system_prompt_v1.txt
+output_dir: data/raw_runs
+variant_names:
+  - clear
+  - ambiguous
+  - incomplete
+  - misleading
+seed: 42
+overwrite: false
