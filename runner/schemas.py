@@ -58,6 +58,14 @@ class ModelConfig(BaseModel):
     max_tokens: int = 512
     timeout_seconds: int = 60
     support_tool_calling: bool = True
+    rate_limit_max_retries: int = 6
+    rate_limit_backoff_initial_seconds: float = 5.0
+    rate_limit_backoff_max_seconds: float = 120.0
+    rate_limit_backoff_jitter_seconds: float = 1.0
+    connection_error_max_retries: int = 8
+    connection_error_backoff_initial_seconds: float = 5.0
+    connection_error_backoff_max_seconds: float = 60.0
+    connection_error_backoff_jitter_seconds: float = 1.0
 
 
 class RunConfig(BaseModel):

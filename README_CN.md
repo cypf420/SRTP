@@ -129,6 +129,18 @@ python scripts/build_phase3_processed.py
 - `data/processed/run_metadata.csv`
 - `data/processed/boundary_subset.jsonl`
 
+## 中断后怎么续跑
+
+现在的 batch runner 已经支持“每条 sample 即时落盘”。
+
+如果中途停掉，用同一个 `run_id` 重新执行：
+
+```bash
+python runner/run_batch.py --config configs/runs/phase3_glm_main.yaml --run-id <已有的run_id> --resume
+```
+
+`--resume` 会自动跳过 `episodes.jsonl` 里已经完成的 `sample_id`。
+
 ## 现在你最该知道的事实
 
 - `data/processed/split.csv` 和 `data/processed/task_metadata.csv` 已经是正式资产

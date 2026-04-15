@@ -99,6 +99,18 @@ This will populate:
 - `data/processed/run_metadata.csv`
 - `data/processed/boundary_subset.jsonl`
 
+## Interrupt And Resume
+
+The batch runner now writes one episode at a time.
+
+If a run is interrupted, restart it with the same `run_id`:
+
+```bash
+python runner/run_batch.py --config configs/runs/phase3_glm_main.yaml --run-id <existing_run_id> --resume
+```
+
+Resume mode skips `sample_id`s that already exist in `episodes.jsonl`.
+
 ## Notes
 
 - `data/processed/split.csv` and `data/processed/task_metadata.csv` are already generated.

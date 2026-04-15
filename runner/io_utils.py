@@ -3,7 +3,7 @@ from __future__ import annotations
 import glob
 import json
 from pathlib import Path
-from typing import Iterable, List
+from typing import Iterable, List, Set
 
 import yaml
 
@@ -45,6 +45,35 @@ def write_jsonl(path: str | Path, rows: Iterable[dict]) -> None:
     with target.open("w", encoding="utf-8") as handle:
         for row in rows:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def append_jsonl(path: str | Path, row: dict) -> None:
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with target.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def load_jsonl_sample_ids(path: str | Path) -> Set[str]:
+    target = Path(path)
+    if not target.exists():
+        return set()
+
+    sample_ids: Set[str] = set()
+    with target.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                payload = json.loads(line)
+            except json.JSONDecodeError:
+                # Ignore truncated trailing lines so interrupted runs can still resume.
+                continue
+            sample_id = payload.get("sample_id")
+            if sample_id:
+                sample_ids.add(sample_id)
+    return sample_ids
 
 
 def write_json(path: str | Path, payload: dict) -> None:
