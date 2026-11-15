@@ -1,0 +1,85 @@
+{
+  "execution": "Codex subagent text judgments, not API function calls",
+  "requested_model_override": "gpt-5.6-terra",
+  "served_model_verified": false,
+  "method": "four isolated batches, one subagent per condition, 12 judgments in each shared batch context",
+  "plan_sha256": "a607ef436d380d7f52a2d7a4fe1202ff9b2296ca3e506e6a47354b43457a1984",
+  "pilot": {
+    "year": {
+      "pairs": 12,
+      "control": {
+        "asked_year": 12
+      },
+      "treatment": {
+        "correct_date": 12
+      },
+      "transitions": [
+        {
+          "control": "asked_year",
+          "treatment": "correct_date",
+          "pairs": 12
+        }
+      ]
+    },
+    "description": {
+      "pairs": 12,
+      "control": {
+        "correct_tool": 12
+      },
+      "treatment": {
+        "correct_tool": 12
+      },
+      "transitions": [
+        {
+          "control": "correct_tool",
+          "treatment": "correct_tool",
+          "pairs": 12
+        }
+      ]
+    }
+  },
+  "qwen_api_reference": {
+    "description": {
+      "planned_pairs": 12,
+      "complete_pairs": 12,
+      "families": 11,
+      "control": {
+        "correct_tool": 11,
+        "wrong_tool": 1
+      },
+      "treatment": {
+        "correct_tool": 12
+      },
+      "transitions": [
+        {
+          "control": "correct_tool",
+          "treatment": "correct_tool",
+          "pairs": 11
+        },
+        {
+          "control": "wrong_tool",
+          "treatment": "correct_tool",
+          "pairs": 1
+        }
+      ]
+    },
+    "year": {
+      "planned_pairs": 12,
+      "complete_pairs": 12,
+      "families": 9,
+      "control": {
+        "unsupported_year": 12
+      },
+      "treatment": {
+        "correct_date": 12
+      },
+      "transitions": [
+        {
+          "control": "unsupported_year",
+          "treatment": "correct_date",
+          "pairs": 12
+        }
+      ]
+    }
+  }
+}

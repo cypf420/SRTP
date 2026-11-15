@@ -1,0 +1,6 @@
+{
+  "type": "RateLimitError",
+  "status_code": 429,
+  "provider_code": "1113",
+  "completed": 0
+}

@@ -1,0 +1,146 @@
+{
+  "all_main": {
+    "glm-4.7": {
+      "old": {
+        "main_labels": {
+          "wrong_tool": 52,
+          "param_error": 116,
+          "should_clarify_but_called": 4,
+          "correct": 828
+        },
+        "sublabels": {
+          "no_tool_called": 13,
+          "param_value_hallucination": 4,
+          "param_value_mismatch": 112,
+          "called_without_required_context": 4
+        }
+      },
+      "new": {
+        "main_labels": {
+          "correct": 839,
+          "wrong_tool": 42,
+          "should_clarify_but_called": 7,
+          "param_error": 112
+        },
+        "sublabels": {
+          "called_without_required_context": 7,
+          "unsupported_date_year": 3,
+          "param_value_hallucination": 3,
+          "param_value_mismatch": 112,
+          "no_tool_called": 3
+        }
+      },
+      "changed_main_labels": 14,
+      "rows": 1000
+    },
+    "qwen2.5:7b": {
+      "old": {
+        "main_labels": {
+          "param_error": 198,
+          "should_clarify_but_called": 17,
+          "wrong_tool": 35,
+          "correct": 750
+        },
+        "sublabels": {
+          "param_value_hallucination": 19,
+          "called_without_required_context": 17,
+          "no_tool_called": 20,
+          "param_value_mismatch": 186,
+          "missing_required_param": 3
+        }
+      },
+      "new": {
+        "main_labels": {
+          "should_clarify_but_called": 28,
+          "wrong_tool": 33,
+          "correct": 728,
+          "param_error": 183,
+          "clarification_error": 28
+        },
+        "sublabels": {
+          "called_without_required_context": 28,
+          "unsupported_date_year": 11,
+          "param_value_hallucination": 15,
+          "no_tool_called": 18,
+          "param_value_mismatch": 183,
+          "missing_clarification_fields": 28,
+          "missing_required_param": 3
+        }
+      },
+      "changed_main_labels": 44,
+      "rows": 1000
+    }
+  },
+  "train_dev": {
+    "glm-4.7": {
+      "old": {
+        "main_labels": {
+          "wrong_tool": 49,
+          "param_error": 94,
+          "should_clarify_but_called": 2,
+          "correct": 655
+        },
+        "sublabels": {
+          "no_tool_called": 10,
+          "param_value_hallucination": 3,
+          "param_value_mismatch": 91,
+          "called_without_required_context": 2
+        }
+      },
+      "new": {
+        "main_labels": {
+          "correct": 663,
+          "wrong_tool": 42,
+          "should_clarify_but_called": 4,
+          "param_error": 91
+        },
+        "sublabels": {
+          "called_without_required_context": 4,
+          "unsupported_date_year": 2,
+          "param_value_hallucination": 2,
+          "param_value_mismatch": 91,
+          "no_tool_called": 3
+        }
+      },
+      "changed_main_labels": 10,
+      "rows": 800
+    },
+    "qwen2.5:7b": {
+      "old": {
+        "main_labels": {
+          "param_error": 172,
+          "should_clarify_but_called": 13,
+          "wrong_tool": 27,
+          "correct": 588
+        },
+        "sublabels": {
+          "param_value_hallucination": 15,
+          "called_without_required_context": 13,
+          "no_tool_called": 13,
+          "param_value_mismatch": 164,
+          "missing_required_param": 3
+        }
+      },
+      "new": {
+        "main_labels": {
+          "should_clarify_but_called": 20,
+          "wrong_tool": 25,
+          "correct": 568,
+          "param_error": 161,
+          "clarification_error": 26
+        },
+        "sublabels": {
+          "called_without_required_context": 20,
+          "unsupported_date_year": 7,
+          "param_value_hallucination": 11,
+          "no_tool_called": 11,
+          "param_value_mismatch": 161,
+          "missing_clarification_fields": 26,
+          "missing_required_param": 3
+        }
+      },
+      "changed_main_labels": 38,
+      "rows": 800
+    }
+  }
+}

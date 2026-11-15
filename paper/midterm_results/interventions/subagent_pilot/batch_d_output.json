@@ -1,0 +1,14 @@
+[
+  {"case": 1, "tool": "search_web", "arguments": {"query": "GLM 最近 新模型 发布消息"}, "reply": ""},
+  {"case": 2, "tool": "search_web", "arguments": {"query": "最近 儿童安全座椅 召回 新闻"}, "reply": ""},
+  {"case": 3, "tool": "search_web", "arguments": {"query": "recent Tesla layoff news"}, "reply": ""},
+  {"case": 4, "tool": "search_web", "arguments": {"query": "PyCon 2026 public schedule"}, "reply": ""},
+  {"case": 5, "tool": "search_database", "arguments": {"query": "SKU-7788", "entity_type": "product"}, "reply": ""},
+  {"case": 6, "tool": "search_database", "arguments": {"query": "ORD-99117", "entity_type": "order"}, "reply": ""},
+  {"case": 7, "tool": "search_database", "arguments": {"query": "Olivia Chen", "entity_type": "customer"}, "reply": ""},
+  {"case": 8, "tool": "search_database", "arguments": {"query": "TCK-4471", "entity_type": "ticket"}, "reply": ""},
+  {"case": 9, "tool": "query_internal_docs", "arguments": {"query": "内部退款升级流程"}, "reply": ""},
+  {"case": 10, "tool": "query_internal_docs", "arguments": {"query": "premium customer escalation matrix"}, "reply": ""},
+  {"case": 11, "tool": "query_internal_docs", "arguments": {"query": "VPN setup guide"}, "reply": ""},
+  {"case": 12, "tool": "query_internal_docs", "arguments": {"query": "warehouse safety checklist", "department": "operations"}, "reply": ""}
+]

@@ -1,0 +1,1730 @@
+{
+  "registry": [
+    {
+      "name": "search_web",
+      "group": "similar_tools",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Search public internet sources for recent or general factual information such as news, public company details, and public websites.",
+      "confusion_with": [
+        "search_database",
+        "query_internal_docs"
+      ],
+      "required": [
+        "query"
+      ],
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The public-facing search query.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "max_results": {
+          "type": "integer",
+          "description": "Maximum number of search results to retrieve.",
+          "grounded": false,
+          "enum": null,
+          "minimum": 1.0,
+          "maximum": 10.0
+        }
+      },
+      "examples": [
+        {
+          "user": "Find recent public news about Tesla layoffs.",
+          "arguments": {
+            "query": "Tesla layoffs recent news",
+            "max_results": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "search_database",
+      "group": "similar_tools",
+      "version": "tool_v1",
+      "risk_level": "medium",
+      "description": "Search structured internal database records such as customers, products, transactions, and CRM entities.",
+      "confusion_with": [
+        "search_web",
+        "query_internal_docs"
+      ],
+      "required": [
+        "query",
+        "entity_type"
+      ],
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The structured record lookup query.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "entity_type": {
+          "type": "string",
+          "description": "The database entity family to search.",
+          "grounded": false,
+          "enum": [
+            "customer",
+            "product",
+            "order",
+            "employee",
+            "ticket"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Maximum number of records to return.",
+          "grounded": false,
+          "enum": null,
+          "minimum": 1.0,
+          "maximum": 20.0
+        }
+      },
+      "examples": [
+        {
+          "user": "Look up customer record for Olivia Chen in the CRM.",
+          "arguments": {
+            "query": "Olivia Chen",
+            "entity_type": "customer",
+            "limit": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "query_internal_docs",
+      "group": "similar_tools",
+      "version": "tool_v1",
+      "risk_level": "medium",
+      "description": "Search internal SOPs, policy documents, onboarding guides, and internal knowledge-base articles.",
+      "confusion_with": [
+        "search_web",
+        "search_database"
+      ],
+      "required": [
+        "query"
+      ],
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The internal documentation question or keyword query.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "department": {
+          "type": "string",
+          "description": "Optional department namespace for the query.",
+          "grounded": false,
+          "enum": [
+            "hr",
+            "finance",
+            "it",
+            "operations",
+            "support"
+          ],
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Find the internal PTO carryover policy.",
+          "arguments": {
+            "query": "PTO carryover policy",
+            "department": "hr"
+          }
+        }
+      ]
+    },
+    {
+      "name": "query_order_status",
+      "group": "low_ambiguity",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Retrieve the current fulfillment or shipping status for one specific order by order ID.",
+      "confusion_with": [
+        "search_database",
+        "search_web"
+      ],
+      "required": [
+        "order_id"
+      ],
+      "parameters": {
+        "order_id": {
+          "type": "string",
+          "description": "The order identifier to query.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Check the shipping status for order ORD-10428.",
+          "arguments": {
+            "order_id": "ORD-10428"
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_order",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "high",
+      "description": "Change the status or internal note for an existing order record when the order ID and new status are explicitly provided.",
+      "confusion_with": [
+        "query_order_status",
+        "create_support_ticket"
+      ],
+      "required": [
+        "order_id",
+        "status"
+      ],
+      "parameters": {
+        "order_id": {
+          "type": "string",
+          "description": "The order identifier to update.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "status": {
+          "type": "string",
+          "description": "The new order status.",
+          "grounded": true,
+          "enum": [
+            "pending",
+            "packed",
+            "shipped",
+            "cancelled",
+            "delivered"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional operator note explaining the change.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Mark order ORD-10428 as shipped and add note handed to courier.",
+          "arguments": {
+            "order_id": "ORD-10428",
+            "status": "shipped",
+            "note": "handed to courier"
+          }
+        }
+      ]
+    },
+    {
+      "name": "book_flight",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "high",
+      "description": "Book a flight when travel date, flight number, origin, and destination are all provided clearly.",
+      "confusion_with": [
+        "change_flight",
+        "search_web"
+      ],
+      "required": [
+        "date",
+        "flight_no",
+        "origin",
+        "destination"
+      ],
+      "parameters": {
+        "date": {
+          "type": "string",
+          "description": "Travel date in YYYY-MM-DD format.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "flight_no": {
+          "type": "string",
+          "description": "Flight number such as MU123.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "origin": {
+          "type": "string",
+          "description": "Departure city or airport.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "destination": {
+          "type": "string",
+          "description": "Arrival city or airport.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "seat_class": {
+          "type": "string",
+          "description": "Optional seat class.",
+          "grounded": false,
+          "enum": [
+            "economy",
+            "premium_economy",
+            "business"
+          ],
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Book flight MU123 on 2026-05-12 from Shanghai to Beijing in economy.",
+          "arguments": {
+            "date": "2026-05-12",
+            "flight_no": "MU123",
+            "origin": "Shanghai",
+            "destination": "Beijing",
+            "seat_class": "economy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "change_flight",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "high",
+      "description": "Change an existing flight reservation when the booking ID and requested new date are explicitly provided.",
+      "confusion_with": [
+        "book_flight",
+        "create_support_ticket"
+      ],
+      "required": [
+        "booking_id",
+        "new_date"
+      ],
+      "parameters": {
+        "booking_id": {
+          "type": "string",
+          "description": "Existing booking identifier.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "new_date": {
+          "type": "string",
+          "description": "New desired travel date in YYYY-MM-DD format.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "reason": {
+          "type": "string",
+          "description": "Optional change reason.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Move booking BK-8831 to 2026-05-15 because the meeting changed.",
+          "arguments": {
+            "booking_id": "BK-8831",
+            "new_date": "2026-05-15",
+            "reason": "meeting changed"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_support_ticket",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "medium",
+      "description": "Create a support ticket when the user identity, category, priority, and problem description are available.",
+      "confusion_with": [
+        "update_order",
+        "query_internal_docs"
+      ],
+      "required": [
+        "user_id",
+        "category",
+        "priority",
+        "description"
+      ],
+      "parameters": {
+        "user_id": {
+          "type": "string",
+          "description": "Identifier of the affected user.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "category": {
+          "type": "string",
+          "description": "Ticket category.",
+          "grounded": true,
+          "enum": [
+            "billing",
+            "technical",
+            "travel",
+            "account",
+            "order"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "priority": {
+          "type": "string",
+          "description": "Urgency level.",
+          "grounded": true,
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed issue description.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Open a high-priority technical ticket for user U-204 because the app keeps crashing on login.",
+          "arguments": {
+            "user_id": "U-204",
+            "category": "technical",
+            "priority": "high",
+            "description": "app keeps crashing on login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "get_weather",
+      "group": "low_ambiguity",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Get the weather forecast for a specified city and optionally a date.",
+      "confusion_with": [
+        "search_web"
+      ],
+      "required": [
+        "city"
+      ],
+      "parameters": {
+        "city": {
+          "type": "string",
+          "description": "City to query.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "date": {
+          "type": "string",
+          "description": "Optional forecast date in YYYY-MM-DD format.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "What is the weather in Hangzhou tomorrow?",
+          "arguments": {
+            "city": "Hangzhou"
+          }
+        }
+      ]
+    },
+    {
+      "name": "translate_text",
+      "group": "low_ambiguity",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Translate a given text string into a specified target language.",
+      "confusion_with": [
+        "query_internal_docs",
+        "search_web"
+      ],
+      "required": [
+        "text",
+        "target_lang"
+      ],
+      "parameters": {
+        "text": {
+          "type": "string",
+          "description": "Text that should be translated.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "target_lang": {
+          "type": "string",
+          "description": "Target language code or language name.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Translate 'meeting delayed by 20 minutes' to Chinese.",
+          "arguments": {
+            "text": "meeting delayed by 20 minutes",
+            "target_lang": "Chinese"
+          }
+        }
+      ]
+    }
+  ],
+  "enhanced": [
+    {
+      "name": "search_web",
+      "group": "similar_tools",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Search public internet sources for recent or general factual information such as news, public company details, and public websites. Use for public websites or public news, even if the request mentions an internal database. Excludes private records and internal documents.",
+      "confusion_with": [
+        "search_database",
+        "query_internal_docs"
+      ],
+      "required": [
+        "query"
+      ],
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The public-facing search query.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "max_results": {
+          "type": "integer",
+          "description": "Maximum number of search results to retrieve.",
+          "grounded": false,
+          "enum": null,
+          "minimum": 1.0,
+          "maximum": 10.0
+        }
+      },
+      "examples": [
+        {
+          "user": "Find recent public news about Tesla layoffs.",
+          "arguments": {
+            "query": "Tesla layoffs recent news",
+            "max_results": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "search_database",
+      "group": "similar_tools",
+      "version": "tool_v1",
+      "risk_level": "medium",
+      "description": "Search structured internal database records such as customers, products, transactions, and CRM entities. Use to look up individual business records by name, ID, or field in a CRM or other structured system. Excludes public web pages and policy document retrieval.",
+      "confusion_with": [
+        "search_web",
+        "query_internal_docs"
+      ],
+      "required": [
+        "query",
+        "entity_type"
+      ],
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The structured record lookup query.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "entity_type": {
+          "type": "string",
+          "description": "The database entity family to search.",
+          "grounded": false,
+          "enum": [
+            "customer",
+            "product",
+            "order",
+            "employee",
+            "ticket"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Maximum number of records to return.",
+          "grounded": false,
+          "enum": null,
+          "minimum": 1.0,
+          "maximum": 20.0
+        }
+      },
+      "examples": [
+        {
+          "user": "Look up customer record for Olivia Chen in the CRM.",
+          "arguments": {
+            "query": "Olivia Chen",
+            "entity_type": "customer",
+            "limit": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "query_internal_docs",
+      "group": "similar_tools",
+      "version": "tool_v1",
+      "risk_level": "medium",
+      "description": "Search internal SOPs, policy documents, onboarding guides, and internal knowledge-base articles. Use to retrieve internal policy, manuals, procedures, or other unstructured documents. Excludes public websites and individual records in a structured system.",
+      "confusion_with": [
+        "search_web",
+        "search_database"
+      ],
+      "required": [
+        "query"
+      ],
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The internal documentation question or keyword query.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "department": {
+          "type": "string",
+          "description": "Optional department namespace for the query.",
+          "grounded": false,
+          "enum": [
+            "hr",
+            "finance",
+            "it",
+            "operations",
+            "support"
+          ],
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Find the internal PTO carryover policy.",
+          "arguments": {
+            "query": "PTO carryover policy",
+            "department": "hr"
+          }
+        }
+      ]
+    },
+    {
+      "name": "query_order_status",
+      "group": "low_ambiguity",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Retrieve the current fulfillment or shipping status for one specific order by order ID.",
+      "confusion_with": [
+        "search_database",
+        "search_web"
+      ],
+      "required": [
+        "order_id"
+      ],
+      "parameters": {
+        "order_id": {
+          "type": "string",
+          "description": "The order identifier to query.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Check the shipping status for order ORD-10428.",
+          "arguments": {
+            "order_id": "ORD-10428"
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_order",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "high",
+      "description": "Change the status or internal note for an existing order record when the order ID and new status are explicitly provided.",
+      "confusion_with": [
+        "query_order_status",
+        "create_support_ticket"
+      ],
+      "required": [
+        "order_id",
+        "status"
+      ],
+      "parameters": {
+        "order_id": {
+          "type": "string",
+          "description": "The order identifier to update.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "status": {
+          "type": "string",
+          "description": "The new order status.",
+          "grounded": true,
+          "enum": [
+            "pending",
+            "packed",
+            "shipped",
+            "cancelled",
+            "delivered"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional operator note explaining the change.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Mark order ORD-10428 as shipped and add note handed to courier.",
+          "arguments": {
+            "order_id": "ORD-10428",
+            "status": "shipped",
+            "note": "handed to courier"
+          }
+        }
+      ]
+    },
+    {
+      "name": "book_flight",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "high",
+      "description": "Book a flight when travel date, flight number, origin, and destination are all provided clearly.",
+      "confusion_with": [
+        "change_flight",
+        "search_web"
+      ],
+      "required": [
+        "date",
+        "flight_no",
+        "origin",
+        "destination"
+      ],
+      "parameters": {
+        "date": {
+          "type": "string",
+          "description": "Travel date in YYYY-MM-DD format.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "flight_no": {
+          "type": "string",
+          "description": "Flight number such as MU123.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "origin": {
+          "type": "string",
+          "description": "Departure city or airport.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "destination": {
+          "type": "string",
+          "description": "Arrival city or airport.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "seat_class": {
+          "type": "string",
+          "description": "Optional seat class.",
+          "grounded": false,
+          "enum": [
+            "economy",
+            "premium_economy",
+            "business"
+          ],
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Book flight MU123 on 2026-05-12 from Shanghai to Beijing in economy.",
+          "arguments": {
+            "date": "2026-05-12",
+            "flight_no": "MU123",
+            "origin": "Shanghai",
+            "destination": "Beijing",
+            "seat_class": "economy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "change_flight",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "high",
+      "description": "Change an existing flight reservation when the booking ID and requested new date are explicitly provided.",
+      "confusion_with": [
+        "book_flight",
+        "create_support_ticket"
+      ],
+      "required": [
+        "booking_id",
+        "new_date"
+      ],
+      "parameters": {
+        "booking_id": {
+          "type": "string",
+          "description": "Existing booking identifier.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "new_date": {
+          "type": "string",
+          "description": "New desired travel date in YYYY-MM-DD format.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "reason": {
+          "type": "string",
+          "description": "Optional change reason.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Move booking BK-8831 to 2026-05-15 because the meeting changed.",
+          "arguments": {
+            "booking_id": "BK-8831",
+            "new_date": "2026-05-15",
+            "reason": "meeting changed"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_support_ticket",
+      "group": "complex_parameters",
+      "version": "tool_v1",
+      "risk_level": "medium",
+      "description": "Create a support ticket when the user identity, category, priority, and problem description are available.",
+      "confusion_with": [
+        "update_order",
+        "query_internal_docs"
+      ],
+      "required": [
+        "user_id",
+        "category",
+        "priority",
+        "description"
+      ],
+      "parameters": {
+        "user_id": {
+          "type": "string",
+          "description": "Identifier of the affected user.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "category": {
+          "type": "string",
+          "description": "Ticket category.",
+          "grounded": true,
+          "enum": [
+            "billing",
+            "technical",
+            "travel",
+            "account",
+            "order"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "priority": {
+          "type": "string",
+          "description": "Urgency level.",
+          "grounded": true,
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "minimum": null,
+          "maximum": null
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed issue description.",
+          "grounded": false,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Open a high-priority technical ticket for user U-204 because the app keeps crashing on login.",
+          "arguments": {
+            "user_id": "U-204",
+            "category": "technical",
+            "priority": "high",
+            "description": "app keeps crashing on login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "get_weather",
+      "group": "low_ambiguity",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Get the weather forecast for a specified city and optionally a date.",
+      "confusion_with": [
+        "search_web"
+      ],
+      "required": [
+        "city"
+      ],
+      "parameters": {
+        "city": {
+          "type": "string",
+          "description": "City to query.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "date": {
+          "type": "string",
+          "description": "Optional forecast date in YYYY-MM-DD format.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "What is the weather in Hangzhou tomorrow?",
+          "arguments": {
+            "city": "Hangzhou"
+          }
+        }
+      ]
+    },
+    {
+      "name": "translate_text",
+      "group": "low_ambiguity",
+      "version": "tool_v1",
+      "risk_level": "low",
+      "description": "Translate a given text string into a specified target language.",
+      "confusion_with": [
+        "query_internal_docs",
+        "search_web"
+      ],
+      "required": [
+        "text",
+        "target_lang"
+      ],
+      "parameters": {
+        "text": {
+          "type": "string",
+          "description": "Text that should be translated.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        },
+        "target_lang": {
+          "type": "string",
+          "description": "Target language code or language name.",
+          "grounded": true,
+          "enum": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "examples": [
+        {
+          "user": "Translate 'meeting delayed by 20 minutes' to Chinese.",
+          "arguments": {
+            "text": "meeting delayed by 20 minutes",
+            "target_lang": "Chinese"
+          }
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "group": "year",
+      "case_id": "book_flight_001",
+      "template_family": "book_flight_001",
+      "language": "zh",
+      "expected_tool": "book_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "帮我预订 5月12日 的 MU123，从 Shanghai 到 Beijing，economy。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "帮我预订 2027年5月12日 的 MU123，从 Shanghai 到 Beijing，economy。"
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-05-12",
+      "missing_year": "5月12日",
+      "explicit_year": "2027年5月12日"
+    },
+    {
+      "group": "year",
+      "case_id": "book_flight_011",
+      "template_family": "book_flight_003",
+      "language": "zh",
+      "expected_tool": "book_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "预订 7月15日 的 CZ3101，从 Guangzhou 到 Chengdu，economy。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "预订 2027年7月15日 的 CZ3101，从 Guangzhou 到 Chengdu，economy。"
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-07-15",
+      "missing_year": "7月15日",
+      "explicit_year": "2027年7月15日"
+    },
+    {
+      "group": "year",
+      "case_id": "book_flight_006",
+      "template_family": "book_flight_002",
+      "language": "en",
+      "expected_tool": "book_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Book flight CA188 on June 1 from Beijing to Shenzhen in business class."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Book flight CA188 on June 1, 2027 from Beijing to Shenzhen in business class."
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-06-01",
+      "missing_year": "June 1",
+      "explicit_year": "June 1, 2027"
+    },
+    {
+      "group": "year",
+      "case_id": "book_flight_007",
+      "template_family": "book_flight_002",
+      "language": "en",
+      "expected_tool": "book_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Book flight CA193 on June 6 from Beijing to Shenzhen in premium_economy."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Book flight CA193 on June 6, 2027 from Beijing to Shenzhen in premium_economy."
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-06-06",
+      "missing_year": "June 6",
+      "explicit_year": "June 6, 2027"
+    },
+    {
+      "group": "year",
+      "case_id": "change_flight_001",
+      "template_family": "change_flight_001",
+      "language": "zh",
+      "expected_tool": "change_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "把预订 BK-8831 改到 5月15日，原因是 meeting changed。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "把预订 BK-8831 改到 2027年5月15日，原因是 meeting changed。"
+        }
+      ],
+      "date_field": "new_date",
+      "expected_date": "2027-05-15",
+      "missing_year": "5月15日",
+      "explicit_year": "2027年5月15日"
+    },
+    {
+      "group": "year",
+      "case_id": "change_flight_011",
+      "template_family": "change_flight_003",
+      "language": "zh",
+      "expected_tool": "change_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "把预订 TR-5510 改到 7月8日，原因是 weather issue。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "把预订 TR-5510 改到 2027年7月8日，原因是 weather issue。"
+        }
+      ],
+      "date_field": "new_date",
+      "expected_date": "2027-07-08",
+      "missing_year": "7月8日",
+      "explicit_year": "2027年7月8日"
+    },
+    {
+      "group": "year",
+      "case_id": "change_flight_006",
+      "template_family": "change_flight_002",
+      "language": "en",
+      "expected_tool": "change_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Change booking BK-9902 to June 20 because of a personal conflict."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Change booking BK-9902 to June 20, 2027 because of a personal conflict."
+        }
+      ],
+      "date_field": "new_date",
+      "expected_date": "2027-06-20",
+      "missing_year": "June 20",
+      "explicit_year": "June 20, 2027"
+    },
+    {
+      "group": "year",
+      "case_id": "change_flight_016",
+      "template_family": "change_flight_004",
+      "language": "en",
+      "expected_tool": "change_flight",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Change booking PNR-2026-114 to August 18 because the conference moved."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Change booking PNR-2026-114 to August 18, 2027 because the conference moved."
+        }
+      ],
+      "date_field": "new_date",
+      "expected_date": "2027-08-18",
+      "missing_year": "August 18",
+      "explicit_year": "August 18, 2027"
+    },
+    {
+      "group": "year",
+      "case_id": "get_weather_001",
+      "template_family": "get_weather_001",
+      "language": "zh",
+      "expected_tool": "get_weather",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下 5月11日 杭州的天气。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下 2027年5月11日 杭州的天气。"
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-05-11",
+      "missing_year": "5月11日",
+      "explicit_year": "2027年5月11日"
+    },
+    {
+      "group": "year",
+      "case_id": "get_weather_002",
+      "template_family": "get_weather_001",
+      "language": "zh",
+      "expected_tool": "get_weather",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下 5月14日 杭州 的天气。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下 2027年5月14日 杭州 的天气。"
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-05-14",
+      "missing_year": "5月14日",
+      "explicit_year": "2027年5月14日"
+    },
+    {
+      "group": "year",
+      "case_id": "get_weather_006",
+      "template_family": "get_weather_002",
+      "language": "en",
+      "expected_tool": "get_weather",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Get the weather for New York on June 14."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Get the weather for New York on June 14, 2027."
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-06-14",
+      "missing_year": "June 14",
+      "explicit_year": "June 14, 2027"
+    },
+    {
+      "group": "year",
+      "case_id": "get_weather_007",
+      "template_family": "get_weather_002",
+      "language": "en",
+      "expected_tool": "get_weather",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Get the weather for New York on June 17."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Get the weather for New York on June 17, 2027."
+        }
+      ],
+      "date_field": "date",
+      "expected_date": "2027-06-17",
+      "missing_year": "June 17",
+      "explicit_year": "June 17, 2027"
+    },
+    {
+      "group": "description",
+      "case_id": "search_web_001",
+      "template_family": "search_web_001",
+      "language": "zh",
+      "expected_tool": "search_web",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下 GLM 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下 GLM 最近有没有新的模型发布消息，如果数据库里也有记录你也可以看一下。"
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_web_011",
+      "template_family": "search_web_003",
+      "language": "zh",
+      "expected_tool": "search_web",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下最近有没有儿童安全座椅召回新闻，如果内部手册里提过也顺便看看。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下最近有没有儿童安全座椅召回新闻，如果内部手册里提过也顺便看看。"
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_web_006",
+      "template_family": "search_web_002",
+      "language": "en",
+      "expected_tool": "search_web",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Find recent Tesla layoff news, and if the company database has anything similar you can check that too."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Find recent Tesla layoff news, and if the company database has anything similar you can check that too."
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_web_016",
+      "template_family": "search_web_004",
+      "language": "en",
+      "expected_tool": "search_web",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Search the PyCon 2026 public schedule page, but if an internal handbook mentions it you can use that too."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Search the PyCon 2026 public schedule page, but if an internal handbook mentions it you can use that too."
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_database_006",
+      "template_family": "search_database_002",
+      "language": "zh",
+      "expected_tool": "search_database",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "去数据库里查一下 SKU-7788 的产品记录，如果公开网页上也有类似页面也可以看看。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "去数据库里查一下 SKU-7788 的产品记录，如果公开网页上也有类似页面也可以看看。"
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_database_016",
+      "template_family": "search_database_004",
+      "language": "zh",
+      "expected_tool": "search_database",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "去数据库里查一下订单 ORD-99117 的完整记录，如果只是状态也许网页上也能看。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "去数据库里查一下订单 ORD-99117 的完整记录，如果只是状态也许网页上也能看。"
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_database_001",
+      "template_family": "search_database_001",
+      "language": "en",
+      "expected_tool": "search_database",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Look up Olivia Chen in the CRM, and if the website has something similar you can check that too."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Look up Olivia Chen in the CRM, and if the website has something similar you can check that too."
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "search_database_021",
+      "template_family": "search_database_005",
+      "language": "en",
+      "expected_tool": "search_database",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Search the database for ticket TCK-4471, and if you need internal docs for context you can check those."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Search the database for ticket TCK-4471, and if you need internal docs for context you can check those."
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "query_internal_docs_021",
+      "template_family": "query_internal_docs_005",
+      "language": "zh",
+      "expected_tool": "query_internal_docs",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下内部退款升级流程，如果网页上也有相关说明你也可以看。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "查一下内部退款升级流程，如果网页上也有相关说明你也可以看。"
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "query_internal_docs_022",
+      "template_family": "query_internal_docs_005",
+      "language": "zh",
+      "expected_tool": "query_internal_docs",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "帮我查内部文档里关于 premium customer escalation matrix 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "帮我查内部文档里关于 premium customer escalation matrix 的内容；如果公开网页或数据库里有类似材料你也可以顺手看。"
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "query_internal_docs_006",
+      "template_family": "query_internal_docs_002",
+      "language": "en",
+      "expected_tool": "query_internal_docs",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Search the internal docs for the VPN setup guide, though a web search might also look relevant."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Search the internal docs for the VPN setup guide, though a web search might also look relevant."
+        }
+      ]
+    },
+    {
+      "group": "description",
+      "case_id": "query_internal_docs_016",
+      "template_family": "query_internal_docs_004",
+      "language": "en",
+      "expected_tool": "query_internal_docs",
+      "control_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Find the warehouse safety checklist in internal operations docs, but if the public web has something similar you can use that too."
+        }
+      ],
+      "treatment_messages": [
+        {
+          "role": "system",
+          "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+        },
+        {
+          "role": "user",
+          "content": "Find the warehouse safety checklist in internal operations docs, but if the public web has something similar you can use that too."
+        }
+      ]
+    }
+  ]
+}

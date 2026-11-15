@@ -1,0 +1,92 @@
+{
+  "feature_rows": 2000,
+  "skipped_request_or_parse_errors": 0,
+  "feature_columns": [
+    "utterance_chars",
+    "whitespace_tokens",
+    "cjk_fraction",
+    "digit_groups",
+    "has_year",
+    "has_month_day",
+    "quoted_spans",
+    "has_question_mark",
+    "identifier_mentions",
+    "tools_available",
+    "tool_groups_available",
+    "required_params_mean",
+    "required_params_max",
+    "candidate_required_params",
+    "candidate_optional_params",
+    "candidate_enum_params",
+    "tool_lexical_top",
+    "tool_lexical_margin",
+    "tools_with_lexical_overlap",
+    "exact_tool_name_mentions"
+  ],
+  "constant_in_train": [
+    "tools_available",
+    "tool_groups_available",
+    "required_params_mean",
+    "required_params_max",
+    "exact_tool_name_mentions"
+  ],
+  "missing_train": {
+    "candidate_required_params": 618,
+    "candidate_optional_params": 618,
+    "candidate_enum_params": 618
+  },
+  "train_unique_candidate_by_language": {
+    "en": {
+      "unique_candidate": 496,
+      "rows": 520
+    },
+    "zh": {
+      "unique_candidate": 86,
+      "rows": 680
+    }
+  },
+  "dev_rows_matching_a_train_request": 42,
+  "auto_labels_train_dev": {
+    "glm-4.7": {
+      "correct": 663,
+      "param_error": 91,
+      "wrong_tool": 42,
+      "should_clarify_but_called": 4
+    },
+    "qwen2.5:7b": {
+      "correct": 568,
+      "param_error": 161,
+      "clarification_error": 26,
+      "wrong_tool": 25,
+      "should_clarify_but_called": 20
+    }
+  },
+  "clear_ambiguous_pairs_train_dev": {
+    "glm-4.7": {
+      "pairs": 200,
+      "clear_only_correct": 13,
+      "ambiguous_only_correct": 3
+    },
+    "qwen2.5:7b": {
+      "pairs": 200,
+      "clear_only_correct": 36,
+      "ambiguous_only_correct": 1
+    }
+  },
+  "baseline_by_model": {
+    "glm-4.7": {
+      "train_rows": 600,
+      "dev_rows": 179,
+      "dev_errors": 51,
+      "dev_error_prevalence": 0.2849162011173184,
+      "dev_average_precision": 0.6428221695379928
+    },
+    "qwen2.5:7b": {
+      "train_rows": 600,
+      "dev_rows": 179,
+      "dev_errors": 70,
+      "dev_error_prevalence": 0.39106145251396646,
+      "dev_average_precision": 0.601169583429224
+    }
+  }
+}

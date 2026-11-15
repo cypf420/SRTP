@@ -1,7 +1,11 @@
 from types import SimpleNamespace
 
+import httpx
+from openai import OpenAI
+
 import runner.client as client_module
 from runner.client import OpenAICompatibleChatToolClient
+from runner.io_utils import load_model_config, load_tools
 from runner.schemas import ModelConfig
 
 
@@ -115,3 +119,40 @@ def test_generate_retries_after_connection_error(monkeypatch) -> None:
     assert prediction.tool_name_pred is None
     assert latency_ms >= 0
     assert usage == {}
+
+
+def test_terra_sends_function_tools_to_official_chat_completions(monkeypatch) -> None:
+    import json
+
+    monkeypatch.setenv("OPENAI_API_KEY", "offline-test-key")
+    monkeypatch.setenv("OPENAI_BASE_URL", "https://example.invalid/v1")
+    messages = [{"role": "user", "content": "Check the weather in Seattle."}]
+    tools = [tool for tool in load_tools("tools/tool_schemas_v1.json") if tool.name == "get_weather"]
+
+    def respond(request: httpx.Request) -> httpx.Response:
+        assert str(request.url) == "https://api.openai.com/v1/chat/completions"
+        body = json.loads(request.content)
+        assert body["model"] == "gpt-5.6-terra"
+        assert body["reasoning_effort"] == "none"
+        assert body["max_completion_tokens"] == 512
+        assert "max_tokens" not in body
+        assert body["messages"] == messages
+        assert body["tool_choice"] == "auto"
+        assert body["tools"][0]["function"]["name"] == "get_weather"
+        return httpx.Response(200, json={
+            "id": "offline-test", "object": "chat.completion", "created": 0, "model": "gpt-5.6-terra",
+            "choices": [{"index": 0, "finish_reason": "tool_calls", "message": {
+                "role": "assistant", "content": None,
+                "tool_calls": [{"id": "offline-call", "type": "function", "function": {
+                    "name": "get_weather", "arguments": '{"city":"Seattle"}',
+                }}],
+            }}],
+        })
+
+    with httpx.Client(transport=httpx.MockTransport(respond)) as transport_client:
+        monkeypatch.setattr(client_module, "OpenAI", lambda **kwargs: OpenAI(**kwargs, http_client=transport_client))
+        config = load_model_config("configs/models/gpt_5_6_terra.yaml")
+        prediction, _, _ = OpenAICompatibleChatToolClient(config).generate(messages, tools)
+    assert prediction.tool_name_pred == "get_weather"
+    assert prediction.arguments_pred == {"city": "Seattle"}
+    assert prediction.raw_response["model"] == "gpt-5.6-terra"

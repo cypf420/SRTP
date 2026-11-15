@@ -66,17 +66,10 @@ external_eval 单独保留：
 
 ## 9. 已知局限
 
-- 当前工作区没有模型凭据，因此 `episodes.jsonl / labels.csv / run_metadata.csv / boundary_subset.jsonl` 还没有真实运行结果
-- external_eval 目前是 held-out realistic-style 集，而不是公开 benchmark 直接切分
+- 主任务有 GLM-4.7 和 Qwen2.5-7B 各 1,000 条运行记录。每个模型运行同一批样本 ID，保留自动标签，人工仲裁待完成。
+- `external_eval` 为同家族留出实例，和主任务共享模板家族，尚无运行结果。
 - 数据仍然以模板化构造为主，适合机制分析，不应过度外推到所有 agent 场景
 
 ## 10. 后续更新条件
 
-当接入真实模型运行后，应补齐：
-
-- `episodes.jsonl`
-- `labels.csv`
-- `run_metadata.csv`
-- `boundary_subset.jsonl`
-
-并在论文中分别报告域内结果与 external_eval 结果。
+人工仲裁和评估规则冻结后，补齐留出集采集，并分别报告主任务家族切分和留出实例的结果。期中复核与基线见[期中报告](../../paper/midterm_report_cn.md)。

@@ -1,5 +1,7 @@
 # SRTP 工具调用失败分析
 
+期中提交版含[报告 PDF](paper/midterm_report_cn.pdf)、[报告 Markdown](paper/midterm_report_cn.md)和[已有实验结果](paper/midterm_results/README.md)。跨模型复验待补。
+
 本仓库不是成品应用，而是一个研究实验仓库。  
 当前研究目标是：
 
@@ -15,24 +17,10 @@
 - Phase 2：工具 schema、50 个 base task、prompt、runner、evaluator
 - Phase 3：扩展任务池、external eval、split 元数据、标注规范、processed 数据构建管线
 
-还没完成：
+- GLM-4.7 与 Qwen2.5-7B 各完成 1,000 条主任务采集，合并数据与自动标签已落盘。
+- 已完成评估规则修订、历史结果重评和调用前特征基线。Qwen 已完成年份显式性及工具描述的两组配对干预。结果见[期中报告](paper/midterm_report_cn.md)。
 
-- 真实模型批量跑数
-- 真正的 `episodes.jsonl`
-- 真正的 `labels.csv`
-- 真正的 `run_metadata.csv`
-- 真正的 `boundary_subset.jsonl`
-
-原因不是代码没写，而是这台机器现在还没有：
-
-- `GLM_API_KEY`
-- `OPEN_MODEL_API_KEY`
-- `OPEN_MODEL_ENDPOINT`
-- `LOCAL_HF_MODEL_ID`
-
-所以你可以把当前状态理解成：
-
-> **Phase 1~3 的静态资产已经齐了，真实模型结果只差凭据和跑数。**
+待完成的工作包括团队人工仲裁、留出集采集、GLM 干预复验和防御原型。
 
 ## Phase 3 新增了什么
 
@@ -144,6 +132,6 @@ python runner/run_batch.py --config configs/runs/phase3_glm_main.yaml --run-id <
 ## 现在你最该知道的事实
 
 - `data/processed/split.csv` 和 `data/processed/task_metadata.csv` 已经是正式资产
-- `episodes.jsonl`、`labels.csv`、`run_metadata.csv`、`boundary_subset.jsonl` 目前还是“结构已准备好，但没有真实模型结果”
+- `episodes.jsonl`、`labels.csv`、`run_metadata.csv`、`boundary_subset.jsonl` 分别包含 2,000 条主任务记录、2,000 条自动标签、2 条运行元数据和 1,000 条 Qwen 表征分析的输入记录。
 - external eval 当前是 held-out realistic-style 集，不是公开 benchmark 的直接切分
 - 当前推荐的模型组合是 `GLM-4.7 + Qwen2.5-7B-Instruct`

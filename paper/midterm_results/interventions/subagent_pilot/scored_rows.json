@@ -1,0 +1,688 @@
+[
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "book_flight_001",
+    "output": {
+      "case": 1,
+      "tool": null,
+      "arguments": {},
+      "reply": "请提供完整的出行日期（YYYY-MM-DD 格式），以便为您预订航班。"
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "book_flight_011",
+    "output": {
+      "case": 2,
+      "tool": null,
+      "arguments": {},
+      "reply": "请提供完整的出行日期（YYYY-MM-DD 格式），以便为您预订航班。"
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "book_flight_006",
+    "output": {
+      "case": 3,
+      "tool": null,
+      "arguments": {},
+      "reply": "Please provide the full travel date in YYYY-MM-DD format so I can book the flight."
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "book_flight_007",
+    "output": {
+      "case": 4,
+      "tool": null,
+      "arguments": {},
+      "reply": "Please provide the full travel date in YYYY-MM-DD format so I can book the flight."
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "change_flight_001",
+    "output": {
+      "case": 5,
+      "tool": null,
+      "arguments": {},
+      "reply": "请提供完整的新出行日期（YYYY-MM-DD 格式），以便修改预订。"
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "change_flight_011",
+    "output": {
+      "case": 6,
+      "tool": null,
+      "arguments": {},
+      "reply": "请提供完整的新出行日期（YYYY-MM-DD 格式），以便修改预订。"
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "change_flight_006",
+    "output": {
+      "case": 7,
+      "tool": null,
+      "arguments": {},
+      "reply": "Please provide the full new travel date in YYYY-MM-DD format so I can change the booking."
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "change_flight_016",
+    "output": {
+      "case": 8,
+      "tool": null,
+      "arguments": {},
+      "reply": "Please provide the full new travel date in YYYY-MM-DD format so I can change the booking."
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "get_weather_001",
+    "output": {
+      "case": 9,
+      "tool": null,
+      "arguments": {},
+      "reply": "请提供完整的日期（YYYY-MM-DD 格式），以便查询杭州的天气。"
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "get_weather_002",
+    "output": {
+      "case": 10,
+      "tool": null,
+      "arguments": {},
+      "reply": "请提供完整的日期（YYYY-MM-DD 格式），以便查询杭州的天气。"
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "get_weather_006",
+    "output": {
+      "case": 11,
+      "tool": null,
+      "arguments": {},
+      "reply": "Please provide the full date in YYYY-MM-DD format so I can check the weather for New York."
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "control",
+    "case_id": "get_weather_007",
+    "output": {
+      "case": 12,
+      "tool": null,
+      "arguments": {},
+      "reply": "Please provide the full date in YYYY-MM-DD format so I can check the weather for New York."
+    },
+    "outcome": "asked_year"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "book_flight_001",
+    "output": {
+      "case": 1,
+      "tool": "book_flight",
+      "arguments": {
+        "date": "2027-05-12",
+        "flight_no": "MU123",
+        "origin": "Shanghai",
+        "destination": "Beijing",
+        "seat_class": "economy"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "book_flight_011",
+    "output": {
+      "case": 2,
+      "tool": "book_flight",
+      "arguments": {
+        "date": "2027-07-15",
+        "flight_no": "CZ3101",
+        "origin": "Guangzhou",
+        "destination": "Chengdu",
+        "seat_class": "economy"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "book_flight_006",
+    "output": {
+      "case": 3,
+      "tool": "book_flight",
+      "arguments": {
+        "date": "2027-06-01",
+        "flight_no": "CA188",
+        "origin": "Beijing",
+        "destination": "Shenzhen",
+        "seat_class": "business"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "book_flight_007",
+    "output": {
+      "case": 4,
+      "tool": "book_flight",
+      "arguments": {
+        "date": "2027-06-06",
+        "flight_no": "CA193",
+        "origin": "Beijing",
+        "destination": "Shenzhen",
+        "seat_class": "premium_economy"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "change_flight_001",
+    "output": {
+      "case": 5,
+      "tool": "change_flight",
+      "arguments": {
+        "booking_id": "BK-8831",
+        "new_date": "2027-05-15",
+        "reason": "meeting changed"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "change_flight_011",
+    "output": {
+      "case": 6,
+      "tool": "change_flight",
+      "arguments": {
+        "booking_id": "TR-5510",
+        "new_date": "2027-07-08",
+        "reason": "weather issue"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "change_flight_006",
+    "output": {
+      "case": 7,
+      "tool": "change_flight",
+      "arguments": {
+        "booking_id": "BK-9902",
+        "new_date": "2027-06-20",
+        "reason": "personal conflict"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "change_flight_016",
+    "output": {
+      "case": 8,
+      "tool": "change_flight",
+      "arguments": {
+        "booking_id": "PNR-2026-114",
+        "new_date": "2027-08-18",
+        "reason": "the conference moved"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "get_weather_001",
+    "output": {
+      "case": 9,
+      "tool": "get_weather",
+      "arguments": {
+        "city": "杭州",
+        "date": "2027-05-11"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "get_weather_002",
+    "output": {
+      "case": 10,
+      "tool": "get_weather",
+      "arguments": {
+        "city": "杭州",
+        "date": "2027-05-14"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "get_weather_006",
+    "output": {
+      "case": 11,
+      "tool": "get_weather",
+      "arguments": {
+        "city": "New York",
+        "date": "2027-06-14"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "year",
+    "arm": "treatment",
+    "case_id": "get_weather_007",
+    "output": {
+      "case": 12,
+      "tool": "get_weather",
+      "arguments": {
+        "city": "New York",
+        "date": "2027-06-17"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_date"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_web_001",
+    "output": {
+      "case": 1,
+      "tool": "search_web",
+      "arguments": {
+        "query": "GLM 最近 新模型 发布消息"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_web_011",
+    "output": {
+      "case": 2,
+      "tool": "search_web",
+      "arguments": {
+        "query": "最近 儿童安全座椅 召回 新闻"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_web_006",
+    "output": {
+      "case": 3,
+      "tool": "search_web",
+      "arguments": {
+        "query": "recent Tesla layoff news"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_web_016",
+    "output": {
+      "case": 4,
+      "tool": "search_web",
+      "arguments": {
+        "query": "PyCon 2026 public schedule"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_database_006",
+    "output": {
+      "case": 5,
+      "tool": "search_database",
+      "arguments": {
+        "query": "SKU-7788",
+        "entity_type": "product"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_database_016",
+    "output": {
+      "case": 6,
+      "tool": "search_database",
+      "arguments": {
+        "query": "ORD-99117",
+        "entity_type": "order"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_database_001",
+    "output": {
+      "case": 7,
+      "tool": "search_database",
+      "arguments": {
+        "query": "Olivia Chen",
+        "entity_type": "customer"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "search_database_021",
+    "output": {
+      "case": 8,
+      "tool": "search_database",
+      "arguments": {
+        "query": "TCK-4471",
+        "entity_type": "ticket"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "query_internal_docs_021",
+    "output": {
+      "case": 9,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "退款升级流程"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "query_internal_docs_022",
+    "output": {
+      "case": 10,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "premium customer escalation matrix"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "query_internal_docs_006",
+    "output": {
+      "case": 11,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "VPN setup guide"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "control",
+    "case_id": "query_internal_docs_016",
+    "output": {
+      "case": 12,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "warehouse safety checklist",
+        "department": "operations"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_web_001",
+    "output": {
+      "case": 1,
+      "tool": "search_web",
+      "arguments": {
+        "query": "GLM 最近 新模型 发布消息"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_web_011",
+    "output": {
+      "case": 2,
+      "tool": "search_web",
+      "arguments": {
+        "query": "最近 儿童安全座椅 召回 新闻"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_web_006",
+    "output": {
+      "case": 3,
+      "tool": "search_web",
+      "arguments": {
+        "query": "recent Tesla layoff news"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_web_016",
+    "output": {
+      "case": 4,
+      "tool": "search_web",
+      "arguments": {
+        "query": "PyCon 2026 public schedule"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_database_006",
+    "output": {
+      "case": 5,
+      "tool": "search_database",
+      "arguments": {
+        "query": "SKU-7788",
+        "entity_type": "product"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_database_016",
+    "output": {
+      "case": 6,
+      "tool": "search_database",
+      "arguments": {
+        "query": "ORD-99117",
+        "entity_type": "order"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_database_001",
+    "output": {
+      "case": 7,
+      "tool": "search_database",
+      "arguments": {
+        "query": "Olivia Chen",
+        "entity_type": "customer"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "search_database_021",
+    "output": {
+      "case": 8,
+      "tool": "search_database",
+      "arguments": {
+        "query": "TCK-4471",
+        "entity_type": "ticket"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "query_internal_docs_021",
+    "output": {
+      "case": 9,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "内部退款升级流程"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "query_internal_docs_022",
+    "output": {
+      "case": 10,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "premium customer escalation matrix"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "query_internal_docs_006",
+    "output": {
+      "case": 11,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "VPN setup guide"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  },
+  {
+    "group": "description",
+    "arm": "treatment",
+    "case_id": "query_internal_docs_016",
+    "output": {
+      "case": 12,
+      "tool": "query_internal_docs",
+      "arguments": {
+        "query": "warehouse safety checklist",
+        "department": "operations"
+      },
+      "reply": ""
+    },
+    "outcome": "correct_tool"
+  }
+]

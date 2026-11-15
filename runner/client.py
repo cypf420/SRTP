@@ -18,12 +18,19 @@ class OpenAICompatibleChatToolClient:
         if not api_key:
             raise ValueError(f"Environment variable {config.api_key_env} is not set.")
 
-        base_url = os.getenv(config.base_url_env) if config.base_url_env else None
+        if config.backend == "openai_chat":
+            base_url = "https://api.openai.com/v1"
+        else:
+            base_url = os.getenv(config.base_url_env) if config.base_url_env else None
         self.config = config
         self.client = OpenAI(api_key=api_key, base_url=base_url)
 
     def generate(self, messages: List[Dict[str, str]], tools: List[ToolSchema]) -> tuple[PredictionRecord, int, Dict[str, Any]]:
         openai_tools = to_openai_tools(tools)
+        if self.config.backend == "openai_chat":
+            generation_options = {"max_completion_tokens": self.config.max_tokens, "reasoning_effort": "none"}
+        else:
+            generation_options = {"max_tokens": self.config.max_tokens}
         rate_limit_retries = 0
         connection_retries = 0
 
@@ -37,8 +44,8 @@ class OpenAICompatibleChatToolClient:
                     tool_choice="auto",
                     temperature=self.config.temperature,
                     top_p=self.config.top_p,
-                    max_tokens=self.config.max_tokens,
                     timeout=self.config.timeout_seconds,
+                    **generation_options,
                 )
                 break
             except RateLimitError as exc:

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from evaluator.rules import evaluate_prediction
+from evaluator.rules import assistant_reply, evaluate_prediction
 from runner.io_utils import load_tasks, load_tools
 
 
@@ -42,6 +42,7 @@ def main() -> None:
                 predicted_tool=prediction.get("tool_name_pred"),
                 predicted_args=prediction.get("arguments_pred", {}),
                 tool_registry=tools,
+                reply=assistant_reply(prediction),
             )
             rows.append(result.model_dump())
 

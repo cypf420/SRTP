@@ -1,0 +1,14 @@
+[
+  {"case":1,"tool":null,"arguments":{},"reply":"请提供完整的出行日期（YYYY-MM-DD 格式），以便为您预订航班。"},
+  {"case":2,"tool":null,"arguments":{},"reply":"请提供完整的出行日期（YYYY-MM-DD 格式），以便为您预订航班。"},
+  {"case":3,"tool":null,"arguments":{},"reply":"Please provide the full travel date in YYYY-MM-DD format so I can book the flight."},
+  {"case":4,"tool":null,"arguments":{},"reply":"Please provide the full travel date in YYYY-MM-DD format so I can book the flight."},
+  {"case":5,"tool":null,"arguments":{},"reply":"请提供完整的新出行日期（YYYY-MM-DD 格式），以便修改预订。"},
+  {"case":6,"tool":null,"arguments":{},"reply":"请提供完整的新出行日期（YYYY-MM-DD 格式），以便修改预订。"},
+  {"case":7,"tool":null,"arguments":{},"reply":"Please provide the full new travel date in YYYY-MM-DD format so I can change the booking."},
+  {"case":8,"tool":null,"arguments":{},"reply":"Please provide the full new travel date in YYYY-MM-DD format so I can change the booking."},
+  {"case":9,"tool":null,"arguments":{},"reply":"请提供完整的日期（YYYY-MM-DD 格式），以便查询杭州的天气。"},
+  {"case":10,"tool":null,"arguments":{},"reply":"请提供完整的日期（YYYY-MM-DD 格式），以便查询杭州的天气。"},
+  {"case":11,"tool":null,"arguments":{},"reply":"Please provide the full date in YYYY-MM-DD format so I can check the weather for New York."},
+  {"case":12,"tool":null,"arguments":{},"reply":"Please provide the full date in YYYY-MM-DD format so I can check the weather for New York."}
+]

@@ -1,5 +1,7 @@
 # SRTP Tool-Calling Failure Analysis
 
+The midterm submission includes the [report PDF](paper/midterm_report_cn.pdf), [Markdown report](paper/midterm_report_cn.md), and [experiment evidence](paper/midterm_results/README.md). Cross-model replication is pending.
+
 Chinese version: [README_CN.md](./README_CN.md)
 
 This repository is a research workspace for analyzing tool-calling failures in LLMs.
@@ -12,15 +14,10 @@ Completed:
 - Phase 2: tool schemas, base tasks, prompt, runner, evaluator
 - Phase 3: expanded task pool, external eval set, split metadata, annotation guideline, processed-data build pipeline
 
-Not completed in this workspace yet:
+- GLM-4.7 and Qwen2.5-7B ran the same 1,000 main inputs. The merged data, automatic labels, and Qwen inputs for representation analysis are available.
+- The [midterm report in Chinese](paper/midterm_report_cn.md) covers the revised evaluation, pre-call feature baseline and two paired Qwen interventions.
 
-- API-backed model runs
-- merged real `episodes.jsonl`
-- real `labels.csv`
-- real `run_metadata.csv`
-- real `boundary_subset.jsonl`
-
-The blocker is simple: this machine still has no GLM API credential or usable local-model endpoint configuration.
+Human adjudication, held-out runs, GLM replication of the interventions and the defense prototype are pending.
 
 ## What Phase 3 Added
 
@@ -114,6 +111,6 @@ Resume mode skips `sample_id`s that already exist in `episodes.jsonl`.
 ## Notes
 
 - `data/processed/split.csv` and `data/processed/task_metadata.csv` are already generated.
-- `episodes.jsonl`, `labels.csv`, `run_metadata.csv`, and `boundary_subset.jsonl` are structurally ready but still empty because no real model run has been executed.
+- `episodes.jsonl`, `labels.csv`, `run_metadata.csv`, and `boundary_subset.jsonl` contain 2,000 main episodes, 2,000 automatic labels, 2 run records, and 1,000 Qwen inputs for representation analysis, respectively.
 - The external eval set is a held-out realistic-style set, not a direct import from a public benchmark.
 - The recommended model pair is `GLM-4.7 + Qwen2.5-7B-Instruct`.

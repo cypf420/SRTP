@@ -1,0 +1,440 @@
+{
+  "common_messages": [
+    {
+      "role": "system",
+      "content": "You are a careful tool-calling assistant.\n\nRules:\n1. Use a tool only when one tool is clearly supported by the user request and available schemas.\n2. Never invent required parameter values that are missing from the user message or dialogue context.\n3. If a required parameter is missing, do not guess. Ask a clarification question instead.\n4. Prefer the narrowest valid tool instead of a broader search tool when both appear plausible.\n5. Return a tool call only when you have enough information to execute it correctly.\n6. If you choose not to call a tool because clarification is required, respond with plain text asking for the missing fields.\n\nWhen deciding between similar tools:\n- `search_web` is for public internet information.\n- `search_database` is for structured business records inside a database.\n- `query_internal_docs` is for internal policies, manuals, SOPs, and knowledge-base documents.\n\nBe conservative with high-risk tools such as status-changing or travel-changing operations.\n"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "search_web",
+        "description": "Search public internet sources for recent or general factual information such as news, public company details, and public websites.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The public-facing search query."
+            },
+            "max_results": {
+              "type": "integer",
+              "description": "Maximum number of search results to retrieve.",
+              "minimum": 1.0,
+              "maximum": 10.0
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "search_database",
+        "description": "Search structured internal database records such as customers, products, transactions, and CRM entities.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The structured record lookup query."
+            },
+            "entity_type": {
+              "type": "string",
+              "description": "The database entity family to search.",
+              "enum": [
+                "customer",
+                "product",
+                "order",
+                "employee",
+                "ticket"
+              ]
+            },
+            "limit": {
+              "type": "integer",
+              "description": "Maximum number of records to return.",
+              "minimum": 1.0,
+              "maximum": 20.0
+            }
+          },
+          "required": [
+            "query",
+            "entity_type"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "query_internal_docs",
+        "description": "Search internal SOPs, policy documents, onboarding guides, and internal knowledge-base articles.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The internal documentation question or keyword query."
+            },
+            "department": {
+              "type": "string",
+              "description": "Optional department namespace for the query.",
+              "enum": [
+                "hr",
+                "finance",
+                "it",
+                "operations",
+                "support"
+              ]
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "query_order_status",
+        "description": "Retrieve the current fulfillment or shipping status for one specific order by order ID.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order_id": {
+              "type": "string",
+              "description": "The order identifier to query."
+            }
+          },
+          "required": [
+            "order_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "update_order",
+        "description": "Change the status or internal note for an existing order record when the order ID and new status are explicitly provided.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order_id": {
+              "type": "string",
+              "description": "The order identifier to update."
+            },
+            "status": {
+              "type": "string",
+              "description": "The new order status.",
+              "enum": [
+                "pending",
+                "packed",
+                "shipped",
+                "cancelled",
+                "delivered"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "description": "Optional operator note explaining the change."
+            }
+          },
+          "required": [
+            "order_id",
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "book_flight",
+        "description": "Book a flight when travel date, flight number, origin, and destination are all provided clearly.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string",
+              "description": "Travel date in YYYY-MM-DD format."
+            },
+            "flight_no": {
+              "type": "string",
+              "description": "Flight number such as MU123."
+            },
+            "origin": {
+              "type": "string",
+              "description": "Departure city or airport."
+            },
+            "destination": {
+              "type": "string",
+              "description": "Arrival city or airport."
+            },
+            "seat_class": {
+              "type": "string",
+              "description": "Optional seat class.",
+              "enum": [
+                "economy",
+                "premium_economy",
+                "business"
+              ]
+            }
+          },
+          "required": [
+            "date",
+            "flight_no",
+            "origin",
+            "destination"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "change_flight",
+        "description": "Change an existing flight reservation when the booking ID and requested new date are explicitly provided.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "booking_id": {
+              "type": "string",
+              "description": "Existing booking identifier."
+            },
+            "new_date": {
+              "type": "string",
+              "description": "New desired travel date in YYYY-MM-DD format."
+            },
+            "reason": {
+              "type": "string",
+              "description": "Optional change reason."
+            }
+          },
+          "required": [
+            "booking_id",
+            "new_date"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "create_support_ticket",
+        "description": "Create a support ticket when the user identity, category, priority, and problem description are available.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "user_id": {
+              "type": "string",
+              "description": "Identifier of the affected user."
+            },
+            "category": {
+              "type": "string",
+              "description": "Ticket category.",
+              "enum": [
+                "billing",
+                "technical",
+                "travel",
+                "account",
+                "order"
+              ]
+            },
+            "priority": {
+              "type": "string",
+              "description": "Urgency level.",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "description": {
+              "type": "string",
+              "description": "Detailed issue description."
+            }
+          },
+          "required": [
+            "user_id",
+            "category",
+            "priority",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_weather",
+        "description": "Get the weather forecast for a specified city and optionally a date.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string",
+              "description": "City to query."
+            },
+            "date": {
+              "type": "string",
+              "description": "Optional forecast date in YYYY-MM-DD format."
+            }
+          },
+          "required": [
+            "city"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "translate_text",
+        "description": "Translate a given text string into a specified target language.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "Text that should be translated."
+            },
+            "target_lang": {
+              "type": "string",
+              "description": "Target language code or language name."
+            }
+          },
+          "required": [
+            "text",
+            "target_lang"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "messages": [
+        {
+          "role": "user",
+          "content": "帮我预订 5月12日 的 MU123，从 Shanghai 到 Beijing，economy。"
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "messages": [
+        {
+          "role": "user",
+          "content": "预订 7月15日 的 CZ3101，从 Guangzhou 到 Chengdu，economy。"
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Book flight CA188 on June 1 from Beijing to Shenzhen in business class."
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Book flight CA193 on June 6 from Beijing to Shenzhen in premium_economy."
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "messages": [
+        {
+          "role": "user",
+          "content": "把预订 BK-8831 改到 5月15日，原因是 meeting changed。"
+        }
+      ]
+    },
+    {
+      "case": 6,
+      "messages": [
+        {
+          "role": "user",
+          "content": "把预订 TR-5510 改到 7月8日，原因是 weather issue。"
+        }
+      ]
+    },
+    {
+      "case": 7,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Change booking BK-9902 to June 20 because of a personal conflict."
+        }
+      ]
+    },
+    {
+      "case": 8,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Change booking PNR-2026-114 to August 18 because the conference moved."
+        }
+      ]
+    },
+    {
+      "case": 9,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查一下 5月11日 杭州的天气。"
+        }
+      ]
+    },
+    {
+      "case": 10,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查一下 5月14日 杭州 的天气。"
+        }
+      ]
+    },
+    {
+      "case": 11,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Get the weather for New York on June 14."
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Get the weather for New York on June 17."
+        }
+      ]
+    }
+  ]
+}

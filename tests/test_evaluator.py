@@ -1,4 +1,7 @@
+import pytest
+
 from evaluator.rules import evaluate_prediction
+from runner.io_utils import load_tools
 from runner.schemas import ParameterSpec, TaskTemplate, TaskVariant, ToolSchema
 
 
@@ -86,3 +89,54 @@ def test_grounded_value_mismatch_is_hallucination() -> None:
     )
     assert result.main_label == "param_error"
     assert "param_value_hallucination" in result.sublabels
+
+
+@pytest.mark.parametrize(
+    ("reply", "expected"),
+    [
+        ("", "clarification_error"),
+        ("The order ID is on file. What city are you in?", "clarification_error"),
+        ("Could you provide the order ID?", "correct"),
+        ("I'll need the following information:\n\n1. **Order ID** - the identifier to update\n2. Status", "correct"),
+    ],
+)
+def test_no_call_requires_a_request_for_the_missing_slot(reply: str, expected: str) -> None:
+    tool = _build_tool()
+    result = evaluate_prediction("sample", _build_task(), "incomplete", None, {}, {tool.name: tool}, reply)
+    assert result.main_label == expected
+
+
+def test_translation_equivalence_preserves_grounded_value_errors() -> None:
+    registry = {tool.name: tool for tool in load_tools("tools/tool_schemas_v1.json")}
+    task = _build_task().model_copy(update={
+        "gold_tool": "translate_text",
+        "gold_params": {"text": "hello", "target_lang": "Chinese"},
+        "variants": {"clear": TaskVariant(utterance="Translate 'hello' into Chinese.")},
+    })
+    result = evaluate_prediction("sample", task, "clear", "translate_text",
+                                 {"text": "hello", "target_lang": "中文"}, registry)
+    assert result.main_label == "correct"
+    result = evaluate_prediction("sample", task, "clear", "translate_text",
+                                 {"text": "hello", "target_lang": "日语"}, registry)
+    assert "param_value_hallucination" in result.sublabels
+
+
+def test_missing_year_is_unsupported_even_when_it_matches_the_gold() -> None:
+    registry = {tool.name: tool for tool in load_tools("tools/tool_schemas_v1.json")}
+    task = _build_task().model_copy(update={
+        "gold_tool": "get_weather", "gold_params": {"city": "杭州", "date": "2027-05-11"},
+        "variants": {
+            "ambiguous": TaskVariant(utterance="查杭州 5 月 11 日的天气。"),
+            "clear": TaskVariant(utterance="查杭州 2027 年 5 月 11 日的天气。"),
+        },
+    })
+    args = {"city": "Hangzhou", "date": "2027-05-11"}
+    result = evaluate_prediction("sample", task, "ambiguous", "get_weather", args, registry)
+    assert result.main_label == "should_clarify_but_called"
+    assert "unsupported_date_year" in result.sublabels
+    result = evaluate_prediction("sample", task, "ambiguous", None, {}, registry, "请问您指的是哪一年的 5 月 11 日？")
+    assert result.main_label == "correct"
+    result = evaluate_prediction("sample", task, "ambiguous", None, {}, registry, "请问您想查哪个城市？")
+    assert result.main_label == "clarification_error"
+    result = evaluate_prediction("sample", task, "clear", "get_weather", args, registry)
+    assert result.main_label == "correct"

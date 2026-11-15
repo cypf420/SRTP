@@ -1,0 +1,56 @@
+{
+  "models": {
+    "qwen": {
+      "description": {
+        "planned_pairs": 12,
+        "complete_pairs": 12,
+        "families": 11,
+        "control": {
+          "correct_tool": 11,
+          "wrong_tool": 1
+        },
+        "treatment": {
+          "correct_tool": 12
+        },
+        "transitions": [
+          {
+            "control": "correct_tool",
+            "treatment": "correct_tool",
+            "pairs": 11
+          },
+          {
+            "control": "wrong_tool",
+            "treatment": "correct_tool",
+            "pairs": 1
+          }
+        ]
+      },
+      "year": {
+        "planned_pairs": 12,
+        "complete_pairs": 12,
+        "families": 9,
+        "control": {
+          "unsupported_year": 12
+        },
+        "treatment": {
+          "correct_date": 12
+        },
+        "transitions": [
+          {
+            "control": "unsupported_year",
+            "treatment": "correct_date",
+            "pairs": 12
+          }
+        ]
+      }
+    }
+  },
+  "endpoint_failures": {
+    "glm": {
+      "type": "RateLimitError",
+      "status_code": 429,
+      "provider_code": "1113",
+      "completed": 0
+    }
+  }
+}

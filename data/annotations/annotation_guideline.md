@@ -26,6 +26,7 @@
 - 参数键完整且无多余关键参数
 - grounded 参数值与 gold 一致
 - 对于本应调用工具的样本，没有错误地转成澄清或空响应
+- 对于应澄清的样本，没有调用工具，且追问了实际缺失的关键字段
 
 ### `wrong_tool`
 
@@ -49,6 +50,10 @@
 
 对于 `incomplete` 或其他缺失关键槽位的请求，如果模型直接调用工具而没有先澄清，则标为 `should_clarify_but_called`。
 
+### `clarification_error`
+
+任务需要澄清且模型没有调用工具时，空回复记为 `empty_clarification_reply`。有正文但没有追问全部缺失项时，记为 `missing_clarification_fields`。自动评分根据请求语句、问句和列表中的双语字段线索判定，间接表达由人工仲裁。
+
 ## 3. 二级子标签判定
 
 ### `missing_required_param`
@@ -71,6 +76,8 @@
 - 参数键正确，类型也正确
 - 但 grounded 参数值与用户输入事实不一致
 - 例如订单号、状态、日期、城市、booking_id 被“脑补”
+- 对工具接受自由文本的城市名和目标语言，项目词表中的中英文等价写法均可接受。结构化 ID、枚举和开放文本仍按现有比对规范处理。
+- 请求给出月日但缺少年份，且没有对话日期可作依据时，应澄清年份。直接填完整日期记为 `should_clarify_but_called`，同时加 `unsupported_date_year` 和 `param_value_hallucination` 子标签，即使填入年份恰好等于 gold。
 
 ### `param_value_mismatch`
 
@@ -94,6 +101,8 @@
 
 - 用户已经明确提供了所需槽位
 - 仅有措辞模糊，但 gold 目标仍唯一清晰
+
+任务生成器的原始字段保留在 `task_metadata.csv`。本轮用于评分的字段见 `eval_clarification_fields`，其中包括受影响的生成模板和日期情形的修正。没有确认的缺失项和词汇匹配边界可通过人工仲裁修订。
 
 ## 5. 人工复核优先级
 

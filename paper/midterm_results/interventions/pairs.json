@@ -1,0 +1,242 @@
+[
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_web_001",
+    "template_family": "search_web_001",
+    "expected_tool": "search_web",
+    "language": "zh",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_web_011",
+    "template_family": "search_web_003",
+    "expected_tool": "search_web",
+    "language": "zh",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_web_006",
+    "template_family": "search_web_002",
+    "expected_tool": "search_web",
+    "language": "en",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_web_016",
+    "template_family": "search_web_004",
+    "expected_tool": "search_web",
+    "language": "en",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_database_006",
+    "template_family": "search_database_002",
+    "expected_tool": "search_database",
+    "language": "zh",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_database_016",
+    "template_family": "search_database_004",
+    "expected_tool": "search_database",
+    "language": "zh",
+    "control": "wrong_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_database_001",
+    "template_family": "search_database_001",
+    "expected_tool": "search_database",
+    "language": "en",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "search_database_021",
+    "template_family": "search_database_005",
+    "expected_tool": "search_database",
+    "language": "en",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "query_internal_docs_021",
+    "template_family": "query_internal_docs_005",
+    "expected_tool": "query_internal_docs",
+    "language": "zh",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "query_internal_docs_022",
+    "template_family": "query_internal_docs_005",
+    "expected_tool": "query_internal_docs",
+    "language": "zh",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "query_internal_docs_006",
+    "template_family": "query_internal_docs_002",
+    "expected_tool": "query_internal_docs",
+    "language": "en",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "description",
+    "case_id": "query_internal_docs_016",
+    "template_family": "query_internal_docs_004",
+    "expected_tool": "query_internal_docs",
+    "language": "en",
+    "control": "correct_tool",
+    "treatment": "correct_tool"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "book_flight_001",
+    "template_family": "book_flight_001",
+    "expected_tool": "book_flight",
+    "language": "zh",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "book_flight_011",
+    "template_family": "book_flight_003",
+    "expected_tool": "book_flight",
+    "language": "zh",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "book_flight_006",
+    "template_family": "book_flight_002",
+    "expected_tool": "book_flight",
+    "language": "en",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "book_flight_007",
+    "template_family": "book_flight_002",
+    "expected_tool": "book_flight",
+    "language": "en",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "change_flight_001",
+    "template_family": "change_flight_001",
+    "expected_tool": "change_flight",
+    "language": "zh",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "change_flight_011",
+    "template_family": "change_flight_003",
+    "expected_tool": "change_flight",
+    "language": "zh",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "change_flight_006",
+    "template_family": "change_flight_002",
+    "expected_tool": "change_flight",
+    "language": "en",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "change_flight_016",
+    "template_family": "change_flight_004",
+    "expected_tool": "change_flight",
+    "language": "en",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "get_weather_001",
+    "template_family": "get_weather_001",
+    "expected_tool": "get_weather",
+    "language": "zh",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "get_weather_002",
+    "template_family": "get_weather_001",
+    "expected_tool": "get_weather",
+    "language": "zh",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "get_weather_006",
+    "template_family": "get_weather_002",
+    "expected_tool": "get_weather",
+    "language": "en",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  },
+  {
+    "model": "qwen",
+    "group": "year",
+    "case_id": "get_weather_007",
+    "template_family": "get_weather_002",
+    "expected_tool": "get_weather",
+    "language": "en",
+    "control": "unsupported_year",
+    "treatment": "correct_date"
+  }
+]

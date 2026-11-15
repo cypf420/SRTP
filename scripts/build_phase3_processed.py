@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from evaluator.rules import evaluate_prediction
+from evaluator.clarification import expected_clarification
+from evaluator.rules import assistant_reply, evaluate_prediction
 from runner.io_utils import load_tasks, load_tools
 from runner.schemas import TaskTemplate
 
@@ -69,6 +70,7 @@ def task_rows(tasks: List[TaskTemplate], split_map: Dict[str, str], task_set: st
             }
         )
         for variant_name, variant in task.variants.items():
+            eval_fields, year_field = expected_clarification(task, variant_name)
             sample_level_rows.append(
                 {
                     "sample_id": f"{task.task_id}__{variant_name}",
@@ -83,6 +85,8 @@ def task_rows(tasks: List[TaskTemplate], split_map: Dict[str, str], task_set: st
                     "intent": task.intent,
                     "need_clarification": variant.need_clarification,
                     "clarification_fields": json.dumps(variant.clarification_fields, ensure_ascii=False),
+                    "eval_clarification_fields": json.dumps(sorted(eval_fields), ensure_ascii=False),
+                    "eval_missing_year_field": year_field,
                     "distractor_tools": json.dumps(task.distractor_tools, ensure_ascii=False),
                     "gold_params": json.dumps(task.gold_params, ensure_ascii=False),
                 }
@@ -147,6 +151,7 @@ def collect_raw_runs(tasks_by_id: Dict[str, TaskTemplate], split_by_task: Dict[s
                     predicted_tool=prediction.get("tool_name_pred"),
                     predicted_args=prediction.get("arguments_pred", {}),
                     tool_registry=tool_registry,
+                    reply=assistant_reply(prediction),
                 )
                 labels.append(
                     {
@@ -168,7 +173,7 @@ def collect_raw_runs(tasks_by_id: Dict[str, TaskTemplate], split_by_task: Dict[s
 
 
 def build_boundary_subset(episodes: List[dict], labels: List[dict]) -> List[dict]:
-    label_map = {row["sample_id"]: row for row in labels}
+    label_map = {(row["run_id"], row["sample_id"]): row for row in labels}
     rows: List[dict] = []
     open_model_tokens = ("qwen", "llama", "mistral", "phi", "gemma")
     for episode in episodes:
@@ -180,7 +185,7 @@ def build_boundary_subset(episodes: List[dict], labels: List[dict]) -> List[dict
             if message.get("role") == "user":
                 user_message = message.get("content", "")
                 break
-        label_row = label_map.get(episode["sample_id"])
+        label_row = label_map.get((episode["run_id"], episode["sample_id"]))
         rows.append(
             {
                 "sample_id": episode["sample_id"],

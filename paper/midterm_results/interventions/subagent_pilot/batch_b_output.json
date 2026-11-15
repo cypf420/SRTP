@@ -1,0 +1,14 @@
+[
+  {"case": 1, "tool": "book_flight", "arguments": {"date": "2027-05-12", "flight_no": "MU123", "origin": "Shanghai", "destination": "Beijing", "seat_class": "economy"}, "reply": ""},
+  {"case": 2, "tool": "book_flight", "arguments": {"date": "2027-07-15", "flight_no": "CZ3101", "origin": "Guangzhou", "destination": "Chengdu", "seat_class": "economy"}, "reply": ""},
+  {"case": 3, "tool": "book_flight", "arguments": {"date": "2027-06-01", "flight_no": "CA188", "origin": "Beijing", "destination": "Shenzhen", "seat_class": "business"}, "reply": ""},
+  {"case": 4, "tool": "book_flight", "arguments": {"date": "2027-06-06", "flight_no": "CA193", "origin": "Beijing", "destination": "Shenzhen", "seat_class": "premium_economy"}, "reply": ""},
+  {"case": 5, "tool": "change_flight", "arguments": {"booking_id": "BK-8831", "new_date": "2027-05-15", "reason": "meeting changed"}, "reply": ""},
+  {"case": 6, "tool": "change_flight", "arguments": {"booking_id": "TR-5510", "new_date": "2027-07-08", "reason": "weather issue"}, "reply": ""},
+  {"case": 7, "tool": "change_flight", "arguments": {"booking_id": "BK-9902", "new_date": "2027-06-20", "reason": "personal conflict"}, "reply": ""},
+  {"case": 8, "tool": "change_flight", "arguments": {"booking_id": "PNR-2026-114", "new_date": "2027-08-18", "reason": "the conference moved"}, "reply": ""},
+  {"case": 9, "tool": "get_weather", "arguments": {"city": "杭州", "date": "2027-05-11"}, "reply": ""},
+  {"case": 10, "tool": "get_weather", "arguments": {"city": "杭州", "date": "2027-05-14"}, "reply": ""},
+  {"case": 11, "tool": "get_weather", "arguments": {"city": "New York", "date": "2027-06-14"}, "reply": ""},
+  {"case": 12, "tool": "get_weather", "arguments": {"city": "New York", "date": "2027-06-17"}, "reply": ""}
+]

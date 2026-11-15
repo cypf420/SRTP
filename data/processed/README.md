@@ -41,19 +41,4 @@ python scripts/build_phase3_processed.py
 
 ## 说明
 
-当前工作区尚未配置真实模型凭据，所以：
-
-- `split.csv`
-- `task_metadata.csv`
-- `data_card.md`
-
-已经完整生成；
-
-而：
-
-- `episodes.jsonl`
-- `labels.csv`
-- `run_metadata.csv`
-- `boundary_subset.jsonl`
-
-仍处于“结构已就绪，等待真实运行结果写入”的状态。
+当前包含 GLM-4.7 与 Qwen2.5-7B 的 2,000 条主任务运行记录、2,000 条自动标签、2 条运行元数据和 1,000 条 Qwen 表征分析的输入记录。模型共享任务样本 ID，跨文件关联运行结果时使用 `(run_id, sample_id)`。留出集已有任务定义和元数据，采集尚待完成。
